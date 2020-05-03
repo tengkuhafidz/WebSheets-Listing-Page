@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 /* eslint-disable @typescript-eslint/camelcase */
 module.exports = {
   siteMetadata: {
@@ -24,6 +28,13 @@ module.exports = {
         theme_color: `#2B6CB0`,
         display: `standalone`,
         icon: `static/app-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: 'gatsby-source-google-spreadsheets',
+      options: {
+        spreadsheetId: '1S-S1dzVsPlbYtYTq_jiXCcVYKf75wFlGxB2fKkdVc7w',
+        apiKey: process.env.GATSBY_GOOGLE_CREDENTIALS,
       },
     },
   ],
