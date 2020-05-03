@@ -1,8 +1,14 @@
 # SheetySite
 
-This is a Gatsby templ boilerplate for Gatsby utilising Typescript and TailwindCSS.
+This is a Gatsby template for creating a website based on Google sheets.
 
-I have also configured fundamentals setup and configurations, such as:
+## Underlying Tech
+
+- Typescript
+- TailwindCSS
+- Sheets API
+
+I have also configured the following setup and configurations, such as:
 
 - SEO
 - PWA and offline capabilities
