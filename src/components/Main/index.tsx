@@ -79,7 +79,7 @@ const Main: React.FC<Props> = ({ siteData }) => {
   }
 
   return (
-    <div className="container mx-auto mt-16 mb-32" id="main">
+    <div className="container mx-auto mt-16 mb-32 px-4" id="main">
       <h2 className="font-bold text-2xl ml-1">{siteData.listLabel}</h2>
       <ul className="mt-4 flex">{renderTabs()}</ul>
       <ItemsList items={filteredItems} numOfColumns={siteData.numOfColumns} />

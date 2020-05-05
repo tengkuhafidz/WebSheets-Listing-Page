@@ -11,7 +11,7 @@ const ItemsList: React.FC<Props> = ({ items, numOfColumns }) => {
   const renderItems = () => {
     return items.map((item) => <SingleItem item={item} key={item.id} />)
   }
-  return <div className={`grid grid-cols-${numOfColumns} gap-4`}>{renderItems()}</div>
+  return <div className={`grid md:grid-cols-${numOfColumns} gap-4`}>{renderItems()}</div>
 }
 
 export default ItemsList

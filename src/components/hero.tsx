@@ -12,7 +12,7 @@ interface Props {
 }
 
 const Hero: React.FC<Props> = ({ siteData }) => (
-  <div className="container mx-auto">
+  <div className="container mx-auto px-4">
     <h1 className="text-4xl">{siteData.heroTitle}</h1>
     <p className="font-light max-w-2xl">{siteData.heroDescription}</p>
     <div className="my-8">
