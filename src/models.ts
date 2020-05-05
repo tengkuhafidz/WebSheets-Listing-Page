@@ -16,4 +16,5 @@ export interface SiteData {
   siteLogo: string
   siteName: string
   numOfColumns: number
+  brandColor: string
 }

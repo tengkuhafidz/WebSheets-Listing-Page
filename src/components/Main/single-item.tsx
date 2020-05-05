@@ -3,9 +3,10 @@ import { ItemData } from '../../models'
 
 interface Props {
   item: ItemData
+  brandColor: string
 }
 
-const SingleItem: React.FC<Props> = ({ item }) => {
+const SingleItem: React.FC<Props> = ({ item, brandColor }) => {
   const hasProperty = (property) => property && property !== 'nil'
 
   const renderImage = () => {
@@ -31,7 +32,7 @@ const SingleItem: React.FC<Props> = ({ item }) => {
   return (
     <a href={item.url}>
       <div
-        className={`max-w-sm rounded-lg shadow-lg mt-8 bg-indigo-800 ${
+        className={`max-w-sm rounded-lg shadow-lg mt-8 bg-${brandColor}-800 ${
           hasProperty(item.url) && 'hover:shadow-2xl cursor-pointer'
         }`}
       >

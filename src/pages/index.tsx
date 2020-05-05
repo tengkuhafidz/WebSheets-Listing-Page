@@ -12,7 +12,7 @@ const Home = ({ data }) => {
   return (
     <div className="bg-gray-100 min-h-screen">
       <SEO />
-      <Navbar title={siteData.siteName} />
+      <Navbar title={siteData.siteName} brandColor={siteData.brandColor} />
       <Hero siteData={siteData} />
       <Main siteData={siteData} />
       <Footer />
@@ -33,6 +33,7 @@ export const siteData = graphql`
         siteLogo
         siteName
         numOfColumns
+        brandColor
       }
     }
   }

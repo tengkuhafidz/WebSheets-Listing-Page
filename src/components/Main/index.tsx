@@ -66,7 +66,9 @@ const Main: React.FC<Props> = ({ siteData }) => {
         <li className="mr-3" key={tag}>
           <a
             className={`inline-block rounded py-1 px-3 cursor-pointer ${
-              tag === currentTab ? 'bg-indigo-800 text-gray-100' : 'bg-gray-100 text-indigo-800'
+              tag === currentTab
+                ? `bg-${siteData.brandColor}-800 text-gray-100`
+                : `bg-gray-100 text-${siteData.brandColor}-800`
             }`}
             onClick={() => handleTabClick(tag)}
           >
@@ -80,9 +82,9 @@ const Main: React.FC<Props> = ({ siteData }) => {
 
   return (
     <div className="container mx-auto mt-16 mb-32 px-4" id="main">
-      <h2 className="font-bold text-2xl ml-1">{siteData.listLabel}</h2>
+      <h2 className="font-bold text-2xl ml-1 text-gray-800">{siteData.listLabel}</h2>
       <ul className="mt-4 flex">{renderTabs()}</ul>
-      <ItemsList items={filteredItems} numOfColumns={siteData.numOfColumns} />
+      <ItemsList items={filteredItems} numOfColumns={siteData.numOfColumns} brandColor={siteData.brandColor} />
     </div>
   )
 }
