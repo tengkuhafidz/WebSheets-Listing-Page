@@ -1,8 +1,13 @@
 import React from 'react'
 
-const Footer = () => (
-  <div className="py-4">
-    <p className="text-center text-gray-800">&copy; Copyright SheetySite 2020</p>
+interface Props {
+  footerLabel: string
+}
+
+const Footer: React.FC<Props> = ({ footerLabel }) => (
+  <div className="py-4 bg-gray-800">
+    <p className="text-center text-gray-400">{footerLabel}</p>
+    <p className="text-center text-gray-400">Powered by SheetySite</p>
   </div>
 )
 
