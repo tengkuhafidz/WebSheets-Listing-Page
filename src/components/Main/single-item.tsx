@@ -4,9 +4,10 @@ import { ItemData } from '../../models'
 interface Props {
   item: ItemData
   brandColor: string
+  handleOpenModal: (e, item: ItemData) => void
 }
 
-const SingleItem: React.FC<Props> = ({ item, brandColor }) => {
+const SingleItem: React.FC<Props> = ({ item, brandColor, handleOpenModal }) => {
   const hasProperty = (property) => property && property !== 'nil'
 
   const renderImage = () => {
@@ -23,26 +24,25 @@ const SingleItem: React.FC<Props> = ({ item, brandColor }) => {
     return <></>
   }
 
-  const renderDescription = () => {
-    if (hasProperty(item.description)) {
-      return <p className="text-gray-400 font-light text-base">{item.description}</p>
+  const renderSubtitle = () => {
+    if (hasProperty(item.subtitle)) {
+      return <p className="text-gray-400 font-light text-base">{item.subtitle}</p>
     }
     return <></>
   }
   return (
-    <a href={item.url}>
-      <div
-        className={`max-w-sm rounded-lg shadow-lg mt-8 bg-${brandColor}-800 ${
-          hasProperty(item.url) && 'hover:shadow-2xl cursor-pointer'
-        }`}
-      >
-        {renderImage()}
-        <div className="px-6 py-4">
-          {renderTitle()}
-          {renderDescription()}
-        </div>
+    <div
+      className={`max-w-sm mt-8 rounded-lg shadow-lg bg-${brandColor}-800 ${
+        hasProperty(item.url) && 'hover:shadow-2xl cursor-pointer'
+      }`}
+      onClick={(e) => handleOpenModal(e, item)}
+    >
+      {renderImage()}
+      <div className="px-6 py-4">
+        {renderTitle()}
+        {renderSubtitle()}
       </div>
-    </a>
+    </div>
   )
 }
 

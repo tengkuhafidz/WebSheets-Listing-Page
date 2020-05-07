@@ -15,7 +15,7 @@ const Home = ({ data }) => {
       <Navbar title={siteData.siteName} brandColor={siteData.brandColor} />
       <Hero siteData={siteData} />
       <Main siteData={siteData} />
-      <Footer footerLabel={siteData.footerLabel} />
+      <Footer siteData={siteData} />
     </div>
   )
 }
@@ -35,6 +35,9 @@ export const siteData = graphql`
         footerLabel
         numOfColumns
         brandColor
+        instagramUrl
+        twitterUrl
+        facebookUrl
       }
     }
   }

@@ -13,6 +13,12 @@ const Hero: React.FC<Props> = ({ siteData }) => (
       <a className={`bg-${siteData.brandColor}-800 text-sm text-gray-100 py-3 px-6 rounded-lg`} href="#main">
         {siteData.ctaButtonLabel}
       </a>
+      <a
+        className={`border border-${siteData.brandColor}-800 text-${siteData.brandColor}-800 text-sm text-gray-100 py-3 px-6 rounded-lg ml-4`}
+        href="#main"
+      >
+        Share page
+      </a>
     </div>
   </div>
 )

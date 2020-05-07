@@ -4,6 +4,7 @@ export interface ItemData {
   url: string
   tags: string
   itemId: string
+  subtitle: string
   description: string
   image: string
 }
@@ -15,6 +16,10 @@ export interface SiteData {
   listLabel: string
   siteLogo: string
   siteName: string
+  footerLabel: string
   numOfColumns: number
   brandColor: string
+  facebookUrl: string
+  instagramUrl: string
+  twitterUrl: string
 }
