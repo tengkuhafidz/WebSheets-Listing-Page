@@ -1,15 +1,16 @@
 import React, { useState } from 'react'
 import ItemsList from './items-list'
 import { useStaticQuery, graphql } from 'gatsby'
-import { SiteData, ItemData } from '../../models'
+import { SiteData, ItemData, Theme } from '../../models'
 import Fuse from 'fuse.js'
 import useModal from 'use-react-modal'
 
 interface Props {
   siteData: SiteData
+  theme: Theme
 }
 
-const Main: React.FC<Props> = ({ siteData }) => {
+const Main: React.FC<Props> = ({ siteData, theme }) => {
   const { allGoogleItemsSheet } = useStaticQuery(graphql`
     query allGoogleItemsSheetQuery {
       allGoogleItemsSheet {
@@ -28,6 +29,8 @@ const Main: React.FC<Props> = ({ siteData }) => {
   `)
 
   const ALL = 'All'
+
+  const { primary, secondary, text, subtext, altText, altBackground } = theme
 
   const getAllItems = () => {
     const allItems = allGoogleItemsSheet.nodes
@@ -58,7 +61,15 @@ const Main: React.FC<Props> = ({ siteData }) => {
   const [searchTerm, setSearchTerm] = useState('')
   const [currentModalItem, setCurrentModalItem] = useState(allItems[0])
 
-  const { isOpen, openModal, closeModal, Modal } = useModal()
+  const useModalOptions = {
+    background: 'rgba(0, 0, 0, 0.8)',
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    onOpen: () => {},
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    onClose: () => {},
+  }
+
+  const { isOpen, openModal, Modal } = useModal(useModalOptions)
 
   const getFuseSearchResult = (items: ItemData[], searchTerm: string): object[] => {
     const options = {
@@ -107,9 +118,7 @@ const Main: React.FC<Props> = ({ siteData }) => {
         <li className="mr-3" key={tag}>
           <a
             className={`inline-block rounded py-1 px-3 cursor-pointer ${
-              tag === currentTab
-                ? `bg-${siteData.brandColor}-800 text-gray-100`
-                : `bg-gray-100 text-${siteData.brandColor}-800`
+              tag === currentTab ? `${altBackground} ${text}` : `${text}`
             }`}
             onClick={() => handleTabClick(tag)}
           >
@@ -125,9 +134,24 @@ const Main: React.FC<Props> = ({ siteData }) => {
     if (isOpen) {
       return (
         <Modal>
-          <div className="bg-gray-800 text-gray-100 h-64 w-64 p-8">
-            <button onClick={closeModal}>close</button>
-            {currentModalItem.title}
+          <div
+            className={`${altBackground} shadow-xl ${text} min-h-64 p-8 rounded-lg text-center w-screen md:max-w-screen-md`}
+          >
+            <img src={currentModalItem.image} className="h-32 mx-auto" />
+            <h2 className="text-2xl">{currentModalItem.title}</h2>
+            <p className={`${subtext}`}>{currentModalItem.subtitle}</p>
+            <p className="mb-8 mt-4">
+              {currentModalItem.description} wegipyuwer gerhguo; ero;gihr we;0g8hr ogher iogawroeighj awil;gh
+              lwkhguoweag wehgljkwehvuilojhwer ogjhweruogh owerhg wrlhg uoh ergoiwhgljkwrh v uloiwehf owehf ou
+            </p>
+            <a
+              href={currentModalItem.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`bg-${primary} hover:bg-${secondary} mt-16 ${altText} font-bold py-3 px-4 border-b-4 border-${secondary} hover:border-gray-800 rounded`}
+            >
+              View Details
+            </a>
           </div>
         </Modal>
       )
@@ -137,7 +161,7 @@ const Main: React.FC<Props> = ({ siteData }) => {
 
   return (
     <div className="container mx-auto mt-16 mb-32 px-4" id="main">
-      <h2 className="font-bold text-2xl ml-1 text-gray-800 text-center">{siteData.listLabel}</h2>
+      <h2 className={`font-bold text-2xl ml-1 ${text} text-center`}>{siteData.listLabel}</h2>
       <ul className="mt-4 flex justify-center">{renderTabs()}</ul>
       <input
         className={`focus:outline-none focus:shadow-lg border border-gray-300 shadow rounded-lg py-2 px-4 block mt-8 w-1/2 mx-auto`}
@@ -148,8 +172,8 @@ const Main: React.FC<Props> = ({ siteData }) => {
       <ItemsList
         items={itemsToDisplay}
         numOfColumns={siteData.numOfColumns}
-        brandColor={siteData.brandColor}
         handleOpenModal={handleOpenModal}
+        theme={theme}
       />
       {renderModal()}
     </div>

@@ -23,3 +23,15 @@ export interface SiteData {
   instagramUrl: string
   twitterUrl: string
 }
+
+export interface Theme {
+  primary: string
+  secondary: string
+  text: string
+  subtext: string
+  altText: string
+  altSubtext: string
+  background: string
+  altBackground: string
+  customShadow: string
+}

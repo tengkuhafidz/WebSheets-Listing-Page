@@ -1,14 +1,15 @@
 import React from 'react'
-import { ItemData } from '../../models'
+import { ItemData, Theme } from '../../models'
 
 interface Props {
   item: ItemData
-  brandColor: string
+  theme: Theme
   handleOpenModal: (e, item: ItemData) => void
 }
 
-const SingleItem: React.FC<Props> = ({ item, brandColor, handleOpenModal }) => {
+const SingleItem: React.FC<Props> = ({ item, theme, handleOpenModal }) => {
   const hasProperty = (property) => property && property !== 'nil'
+  const { altBackground, text, subtext, customShadow } = theme
 
   const renderImage = () => {
     if (hasProperty(item.image)) {
@@ -19,21 +20,21 @@ const SingleItem: React.FC<Props> = ({ item, brandColor, handleOpenModal }) => {
 
   const renderTitle = () => {
     if (hasProperty(item.title)) {
-      return <div className="font-bold text-gray-100 text-xl mb-2">{item.title}</div>
+      return <div className={`font-bold ${text} text-xl`}>{item.title}</div>
     }
     return <></>
   }
 
   const renderSubtitle = () => {
     if (hasProperty(item.subtitle)) {
-      return <p className="text-gray-400 font-light text-base">{item.subtitle}</p>
+      return <p className={`${subtext} font-light text-base`}>{item.subtitle}</p>
     }
     return <></>
   }
   return (
     <div
-      className={`max-w-sm mt-8 rounded-lg shadow-lg bg-${brandColor}-800 ${
-        hasProperty(item.url) && 'hover:shadow-2xl cursor-pointer'
+      className={`max-w-sm mt-8 rounded-lg shadow-lg ${altBackground} ${
+        hasProperty(item.url) && `hover:${customShadow} cursor-pointer`
       }`}
       onClick={(e) => handleOpenModal(e, item)}
     >

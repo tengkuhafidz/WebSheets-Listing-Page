@@ -1,13 +1,15 @@
-import React from 'react'
-import { SiteData } from '../models'
 import '@fortawesome/fontawesome-free/css/all.css'
+import React from 'react'
+import { SiteData, Theme } from '../models'
 
 interface Props {
   siteData: SiteData
+  theme: Theme
 }
 
-const Footer: React.FC<Props> = ({ siteData }) => {
-  const { facebookUrl, twitterUrl, instagramUrl, footerLabel, brandColor } = siteData
+const Footer: React.FC<Props> = ({ siteData, theme }) => {
+  const { facebookUrl, twitterUrl, instagramUrl, footerLabel } = siteData
+  const { primary, subtext } = theme
 
   const renderSocialMediaLinks = () => {
     const socialMedias = [
@@ -32,7 +34,7 @@ const Footer: React.FC<Props> = ({ siteData }) => {
             href={socialMedia.url}
             target="_blank"
             rel="noopener noreferrer"
-            className={`mx-2 hover:text-${brandColor}-800 cursor-pointer`}
+            className={`mx-2 hover:text-${primary} cursor-pointer`}
             key={socialMedia.faClass}
           >
             <i className={`fab ${socialMedia.faClass} text-2xl`}></i>
@@ -43,7 +45,7 @@ const Footer: React.FC<Props> = ({ siteData }) => {
     })
   }
   return (
-    <div className="py-4 font-light">
+    <div className={`py-4 font-light ${subtext}`}>
       <div className="container mx-auto text-gray-600 text-center my-2">{renderSocialMediaLinks()}</div>
       <p className="text-center text-gray-600">{footerLabel}</p>
       <p className="text-center text-gray-600">Powered by SheetySite</p>
