@@ -8,7 +8,7 @@ This is a Gatsby template for creating a website based on Google sheets.
 
 1. Install [NodeJs](https://nodejs.org/en/download/)
 2. Install [Yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable)
-3. Obtain [Google Sheets API key](https://developers.google.com/sheets/api/guides/authorizing#APIKey)
+3. Create [Google Sheets API key](https://developers.google.com/sheets/api/guides/authorizing#APIKey)
 
 ### Preparing the Project
 1. Download this project
@@ -16,13 +16,13 @@ This is a Gatsby template for creating a website based on Google sheets.
 3. Make a copy of the [google sheets template](https://docs.google.com/spreadsheets/d/1S-S1dzVsPlbYtYTq_jiXCcVYKf75wFlGxB2fKkdVc7w/edit#gid=1818216905)
 4. Fill in the google sheets with the site's data and item listings details
    - Ensure to not leave any fields empty. Write `nil` to indicate no value instead
-5. Get the [Google Sheets Id](https://developers.google.com/sheets/api/guides/concepts#spreadsheet_id)
 
 ### Running on Dev Environment
 
 1. Create `.env.development` on the project root
    - Include `GATSBY_GOOGLE_CREDENTIALS`=Google-Sheets-Api-Key-Here
    - Include `GATSBY_SHEET_ID`=Google-Sheets-Id-Here
+      - _Where is the [Google Sheets Id](https://developers.google.com/sheets/api/guides/concepts#spreadsheet_id)?_
 
 2. Run `yarn start`
    - Your site will run at `http://localhost:8000`
@@ -32,6 +32,7 @@ This is a Gatsby template for creating a website based on Google sheets.
 1. Create `.env.production` on the project root
    - Include `GATSBY_GOOGLE_CREDENTIALS`=Google-Sheets-Api-Key-Here
    - Include `GATSBY_SHEET_ID`=Google-Sheets-Id-Here
+      - _Where is the [Google Sheets Id](https://developers.google.com/sheets/api/guides/concepts#spreadsheet_id)?_
 2. Run `yarn build`
 3. Run `yarn serve`
    - Your site will run at `http://localhost:9000`
@@ -45,6 +46,8 @@ This is a Gatsby template for creating a website based on Google sheets.
 
 The following setup have been configured in this project:
 
+- Dark Mode
+- Social Share
 - SEO
 - PWA and offline capabilities
 - Site metadata
@@ -52,11 +55,15 @@ The following setup have been configured in this project:
 - husky
 
 ## TODO
+
+SheetySite 1.0 - Dev Version
 - [ ] Build custom google sheets plugin that is more flexible
 - [ ] Create layout options
-- [ ] Add option for Google Analytics in sheetysite-data sheet
-- [ ] Add option for site's SEO in sheetysite-data sheet
-- [ ] Find a way to auto build and deploy direct via Google Sheets
+- [ ] Add option for Google Analytics in [google sheets template](https://docs.google.com/spreadsheets/d/1S-S1dzVsPlbYtYTq_jiXCcVYKf75wFlGxB2fKkdVc7w/edit#gid=1818216905)
+- [ ] Add option for site's SEO in [google sheets template](https://docs.google.com/spreadsheets/d/1S-S1dzVsPlbYtYTq_jiXCcVYKf75wFlGxB2fKkdVc7w/edit#gid=1818216905)
+
+SheetySite 2.0 - Consumer Version
+- [ ] Auto build and deploy directly via Google Sheets
 
 
 ## What's inside? 🧐
