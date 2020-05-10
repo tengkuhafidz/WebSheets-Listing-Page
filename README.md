@@ -31,8 +31,8 @@ This is a Gatsby template for creating a website based on Google sheets.
 
 ### Running on Prod Environment
 1. Create `.env.production` on the project root
-   - Include `GATSBY_GOOGLE_CREDENTIALS`=<Google Sheets Api Key Here>
-   - Include `GATSBY_SHEET_ID`=<Google Sheets Id Here>
+   - Include `GATSBY_GOOGLE_CREDENTIALS`=Google-Sheets-Api-Key-Here
+   - Include `GATSBY_SHEET_ID`=Google-Sheets-Id-Here
 2. run `yarn build`
 3. then `yarn serve`
    - Your site will run at `http://localhost:9000`
@@ -57,6 +57,7 @@ The following setup have been configured in this project:
 - [ ] Create layout options
 - [ ] Add option for Google Analytics in sheetysite-data sheet
 - [ ] Add option for site's SEO in sheetysite-data sheet
+- [ ] Find a way to auto build and deploy direct via Google Sheets
 
 
 ## What's inside? 🧐
