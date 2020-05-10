@@ -148,7 +148,7 @@ const Main: React.FC<Props> = ({ siteData, theme }) => {
               href={currentModalItem.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`bg-${primary} hover:bg-${secondary} mt-16 ${altText} font-bold py-3 px-4 border-b-4 border-${secondary} hover:border-gray-800 rounded`}
+              className={`bg-${primary} hover:bg-${secondary} mt-16 text-white font-bold py-3 px-4 shadow border-b-4 border-${secondary} hover:border-gray-800 rounded`}
             >
               View Details
             </a>
