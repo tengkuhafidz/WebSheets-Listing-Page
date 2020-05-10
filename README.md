@@ -16,6 +16,7 @@ This is a Gatsby template for creating a website based on Google sheets.
 4. Run `yarn install` to download dependencies
 5. Make a copy of the [google sheets template](https://docs.google.com/spreadsheets/d/1S-S1dzVsPlbYtYTq_jiXCcVYKf75wFlGxB2fKkdVc7w/edit#gid=1818216905)
 6. Fill in the google sheets with the site's data and item listings details
+   - Ensure to not leave any fields empty. Write `nil` to indicate no value instead
 7. Get the [Google Sheets Id](https://developers.google.com/sheets/api/guides/concepts#spreadsheet_id)
 
 ### Running on Dev Environment
