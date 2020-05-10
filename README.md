@@ -64,6 +64,8 @@ SheetySite 1.0 - Dev Version
 
 SheetySite 2.0 - Consumer Version
 - [ ] Auto build and deploy directly via Google Sheets
+- [ ] Build landing page to explain SheetySite
+- [ ] Create consumer-friendly explainer material on how to use SheetySite
 
 
 ## What's inside? 🧐
