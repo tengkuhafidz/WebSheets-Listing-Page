@@ -21,8 +21,8 @@ This is a Gatsby template for creating a website based on Google sheets.
 ### Running on Dev Environment
 
 1. Create `.env.development` on the project root
-   - Include `GATSBY_GOOGLE_CREDENTIALS`=<Google Sheets Api Key Here>
-   - Include `GATSBY_SHEET_ID`=<Google Sheets Id Here>
+   - Include `GATSBY_GOOGLE_CREDENTIALS`=Google-Sheets-Api-Key-Here
+   - Include `GATSBY_SHEET_ID`=Google-Sheets-Id-Here
 
 2. run `yarn start`
    - Your site will run at `http://localhost:8000`
