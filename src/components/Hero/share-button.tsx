@@ -10,9 +10,9 @@ const ShareButton: React.FC<Props> = ({ siteData, theme }) => {
   const { siteName, brandColor } = siteData
   const { primary, text, altText, altBackground, customShadow } = theme
 
-  const siteUrl = document.querySelector('link[rel=canonical]')
-    ? document.querySelector('link[rel=canonical]').href
-    : document.location.href
+  const hasWindow = typeof window !== 'undefined'
+
+  const siteUrl = hasWindow ? window.location.href : 'https://sheetysite.com'
 
   const [isOpen, setIsOpen] = useState(false)
 

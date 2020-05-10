@@ -33,7 +33,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-google-spreadsheets',
       options: {
-        spreadsheetId: '1S-S1dzVsPlbYtYTq_jiXCcVYKf75wFlGxB2fKkdVc7w',
+        spreadsheetId: process.env.GATSBY_SHEET_ID,
         apiKey: process.env.GATSBY_GOOGLE_CREDENTIALS,
       },
     },
