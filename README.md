@@ -57,6 +57,7 @@ The following setup have been configured in this project:
 ## TODO
 SheetySite - Free Version
 - [ ] Build custom google sheets plugin that is more flexible
+- [ ] Write tests
 
 SheetySite - Dev Version
 - [ ] Create layout options
