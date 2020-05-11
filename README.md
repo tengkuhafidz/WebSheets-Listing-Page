@@ -55,11 +55,11 @@ The following setup have been configured in this project:
 - husky
 
 ## TODO
-SheetySite - Free Version
+SheetySite - Free Dev Version
 - [ ] Build custom google sheets plugin that is more flexible
 - [ ] Write tests
 
-SheetySite - Dev Version
+SheetySite - Premium Dev Version
 - [ ] Create layout options
 - [ ] Add option for Google Analytics in [google sheets template](https://docs.google.com/spreadsheets/d/1S-S1dzVsPlbYtYTq_jiXCcVYKf75wFlGxB2fKkdVc7w/edit#gid=1818216905)
 - [ ] Add option for site's SEO metadata in [google sheets template](https://docs.google.com/spreadsheets/d/1S-S1dzVsPlbYtYTq_jiXCcVYKf75wFlGxB2fKkdVc7w/edit#gid=1818216905)
