@@ -1,4 +1,4 @@
-# SheetySite [Free Version]
+# SheetySite
 
 This is a Gatsby template for creating a website based on Google sheets.
 
@@ -56,18 +56,17 @@ The following setup have been configured in this project:
 - husky
 
 ## TODO
-SheetySite - Free Dev Version
+SheetySite
 - [ ] Build custom google sheets plugin that is more flexible
 - [ ] Back to top button
-- [ ] Write tests
-
-SheetySite - Premium Dev Version
-- [ ] Create layout options
-- [ ] Add option for Google Analytics in [google sheets template](https://docs.google.com/spreadsheets/d/1S-S1dzVsPlbYtYTq_jiXCcVYKf75wFlGxB2fKkdVc7w/edit#gid=1818216905)
+- [ ] Create HeroType options
+- [x] Create ListingType options
+- [ ] Add option for Google Analytics
 - [ ] Add option for site's SEO metadata in [google sheets template](https://docs.google.com/spreadsheets/d/1S-S1dzVsPlbYtYTq_jiXCcVYKf75wFlGxB2fKkdVc7w/edit#gid=1818216905)
-- [ ] Add option to remove SheetySite branding
+- [ ] Cater for private sheets
 
 SheetySite - Consumer Version
+- [ ] Generate env variables 
 - [ ] Auto build and deploy directly via Google Sheets
 - [ ] Build landing page to explain SheetySite
 - [ ] Create consumer-friendly explainer material on how to use SheetySite
