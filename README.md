@@ -14,7 +14,7 @@ This is a Gatsby template for creating a website based on Google sheets.
 1. Clone this repo `git clone https://github.com/tengkuhafidz/sheetysite.git`
 2. Run `yarn install` to download dependencies
 3. Make a copy of the [google sheets template](https://docs.google.com/spreadsheets/d/1S-S1dzVsPlbYtYTq_jiXCcVYKf75wFlGxB2fKkdVc7w/edit#gid=1818216905), and set it to public.
-4. The sheet names (`site`, `listing`) and header names (1st row of each sheet) remains unchanged.
+4. The sheet names (`site`, `listing`) and header names (1st row of each sheet) should NOT be changed.
 4. Fill in the google sheets with the site's data and item listings details
    - Ensure to not leave any fields empty. Write `nil` to indicate no value instead
 
