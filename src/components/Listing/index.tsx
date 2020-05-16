@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Fuse from 'fuse.js'
 import Compact from './Compact'
 import Basic from './Basic'
+import Events from './Events'
 
 interface Props {
   theme: Theme
@@ -114,10 +115,13 @@ const Listing: React.FC<Props> = ({ theme, siteData }) => {
   }
 
   const renderListing = () => {
-    if (siteData.listingType === ListingType.COMPACT) {
+    const { listingType } = siteData
+    if (listingType === ListingType.COMPACT) {
       return <Compact theme={theme} items={itemsToDisplay} siteData={siteData} />
-    } else if (siteData.listingType === ListingType.BASIC) {
+    } else if (listingType === ListingType.BASIC) {
       return <Basic theme={theme} items={itemsToDisplay} siteData={siteData} />
+    } else if (listingType === ListingType.EVENTS) {
+      return <Events theme={theme} items={itemsToDisplay} siteData={siteData} />
     } else {
       return <Compact theme={theme} items={itemsToDisplay} siteData={siteData} />
     }

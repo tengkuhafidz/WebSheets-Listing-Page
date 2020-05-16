@@ -1,19 +1,25 @@
 import React from 'react'
-import { ItemData, Theme } from '../../../utils/models'
+import { ItemData, Theme, SiteData } from '../../../utils/models'
 
 interface Props {
   item: ItemData
   theme: Theme
-  handleOpenModal: (e, item: ItemData) => void
+  siteData: SiteData
 }
 
-const SingleItem: React.FC<Props> = ({ item, theme, handleOpenModal }) => {
+const SingleItem: React.FC<Props> = ({ item, theme, siteData }) => {
   const hasProperty = (property) => property && property !== 'nil'
-  const { primary, text, subtext, customShadow } = theme
+  const { primary, customShadow } = theme
 
   const renderImage = () => {
     if (hasProperty(item.image)) {
-      return <img className="w-full rounded-t-lg h-32 object-cover" src={item.image} alt={`Image of ${item.title}`} />
+      return (
+        <img
+          className="w-full md:max-h-full bg-gray-900 rounded-lg object-cover md:col-span-2"
+          src={item.image}
+          alt={`Image of ${item.title}`}
+        />
+      )
     }
     return <></>
   }
@@ -31,20 +37,31 @@ const SingleItem: React.FC<Props> = ({ item, theme, handleOpenModal }) => {
     }
     return <></>
   }
+
+  const renderDescription = () => {
+    if (hasProperty(item.subtitle)) {
+      return <p className={`text-gray-600 font-light mt-4 mb-8`}>{item.description}</p>
+    }
+    return <></>
+  }
+
   return (
-    <div className={`max-w-sm mt-8 rounded-lg shadow-lg text-center bg-white`}>
+    <div className={`rounded-lg shadow-lg bg-white mb-8 p-8 grid md:grid-cols-5 gap-3`}>
       {renderImage()}
-      <div className="px-6 py-4">
+      <div className="px-6 md:col-span-3">
         {renderTitle()}
         {renderSubtitle()}
-        <button
-          onClick={(e) => handleOpenModal(e, item)}
-          className={`py-2 px-4 rounded w-full bg-${primary} text-white mt-4 ${
-            hasProperty(item.description) && `hover:${customShadow} cursor-pointer`
+        {renderDescription()}
+        <a
+          className={`py-2 px-16 rounded bg-${primary} hidden text-white text-center ${
+            hasProperty(item.url) && `hover:${customShadow} cursor-pointer block md:inline`
           }`}
+          href={item.url}
+          target="_blank"
+          rel="noreferrer"
         >
-          More Info
-        </button>
+          {siteData.listingUrlButtonLabel}
+        </a>
       </div>
     </div>
   )
