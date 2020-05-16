@@ -161,7 +161,7 @@ const Main: React.FC<Props> = ({ siteData, theme }) => {
 
   return (
     <div className="container mx-auto mt-16 mb-32 px-4" id="main">
-      <h2 className={`font-bold text-2xl ml-1 ${text} text-center`}>{siteData.listLabel}</h2>
+      <h2 className={`font-bold text-2xl ml-1 ${text} text-center`}>{siteData.listingLabel}</h2>
       <ul className="mt-4 flex justify-center">{renderTabs()}</ul>
       <input
         className={`focus:outline-none focus:shadow-lg border border-gray-300 shadow rounded-lg py-2 px-4 block mt-8 w-1/2 mx-auto`}
@@ -169,12 +169,7 @@ const Main: React.FC<Props> = ({ siteData, theme }) => {
         placeholder="Search"
         onChange={(e) => handleSearch(e)}
       />
-      <ItemsList
-        items={itemsToDisplay}
-        numOfColumns={siteData.numOfColumns}
-        handleOpenModal={handleOpenModal}
-        theme={theme}
-      />
+      <ItemsList items={itemsToDisplay} handleOpenModal={handleOpenModal} theme={theme} />
       {renderModal()}
     </div>
   )

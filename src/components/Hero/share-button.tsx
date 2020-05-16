@@ -7,7 +7,7 @@ interface Props {
 }
 
 const ShareButton: React.FC<Props> = ({ siteData, theme }) => {
-  const { siteName, brandColor } = siteData
+  const { siteName, sitePrimaryColor } = siteData
   const { primary, text, altText, altBackground, customShadow } = theme
 
   const hasWindow = typeof window !== 'undefined'
@@ -64,7 +64,7 @@ const ShareButton: React.FC<Props> = ({ siteData, theme }) => {
         href={platform.url}
         target="_blank"
         rel="noopener noreferrer"
-        className={`block px-4 py-2 ${text} hover:bg-${brandColor}-500 hover:${altText}`}
+        className={`block px-4 py-2 ${text} hover:bg-${sitePrimaryColor}-500 hover:${altText}`}
         key={platform.faClass}
       >
         <i className={`fab ${platform.faClass} text-xl mr-2`}></i>
@@ -82,7 +82,7 @@ const ShareButton: React.FC<Props> = ({ siteData, theme }) => {
         onMouseOut={() => setIsOpen(false)}
       >
         Share page
-        <i className="fas fa-share ml-2"></i>
+        <i className="fas fa-share-alt ml-2"></i>
       </a>
       <div
         className={`${altBackground} rounded ${customShadow} absolute right-0 rounded-lg mt-2 ${

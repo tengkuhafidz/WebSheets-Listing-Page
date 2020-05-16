@@ -10,15 +10,15 @@ export interface ItemData {
 }
 
 export interface SiteData {
-  ctaButtonLabel: string
+  heroButtonLabel: string
+  heroButtonUrl: string
   heroDescription: string
   heroTitle: string
-  listLabel: string
+  listingLabel: string
   siteLogo: string
   siteName: string
   footerLabel: string
-  numOfColumns: number
-  brandColor: string
+  sitePrimaryColor: string
   facebookUrl: string
   instagramUrl: string
   twitterUrl: string
