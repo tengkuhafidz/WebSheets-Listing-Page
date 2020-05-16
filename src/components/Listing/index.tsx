@@ -5,6 +5,7 @@ import Fuse from 'fuse.js'
 import Compact from './Compact'
 import Basic from './Basic'
 import Events from './Events'
+import Profiles from './Profiles'
 
 interface Props {
   theme: Theme
@@ -122,6 +123,8 @@ const Listing: React.FC<Props> = ({ theme, siteData }) => {
       return <Basic theme={theme} items={itemsToDisplay} siteData={siteData} />
     } else if (listingType === ListingType.EVENTS) {
       return <Events theme={theme} items={itemsToDisplay} siteData={siteData} />
+    } else if (listingType === ListingType.PROFILES) {
+      return <Profiles theme={theme} items={itemsToDisplay} siteData={siteData} />
     } else {
       return <Compact theme={theme} items={itemsToDisplay} siteData={siteData} />
     }
