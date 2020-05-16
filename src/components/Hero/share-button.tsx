@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { SiteData, Theme } from '../../models'
+import { SiteData, Theme } from '../../utils/models'
 
 interface Props {
   siteData: SiteData
@@ -74,7 +74,7 @@ const ShareButton: React.FC<Props> = ({ siteData, theme }) => {
   }
 
   return (
-    <div className="relative ml-4 inline w-screen py-4">
+    <div className="relative mt-4 md:mt-0 md:ml-4 md:inline w-screen py-4">
       <a
         className={`border border-${primary} text-${primary} text-gray-100 py-3 px-6 rounded-lg cursor-pointer`}
         onClick={() => handleShareButtonClick()}

@@ -1,19 +1,18 @@
 import React, { useState } from 'react'
-import ItemsList from './items-list'
+import { Theme, ItemData, SiteData, ListingType } from '../../utils/models'
 import { useStaticQuery, graphql } from 'gatsby'
-import { SiteData, ItemData, Theme } from '../../models'
 import Fuse from 'fuse.js'
-import useModal from 'use-react-modal'
+import Compact from './Compact'
 
 interface Props {
-  siteData: SiteData
   theme: Theme
+  siteData: SiteData
 }
 
-const Main: React.FC<Props> = ({ siteData, theme }) => {
-  const { allGoogleItemsSheet } = useStaticQuery(graphql`
-    query allGoogleItemsSheetQuery {
-      allGoogleItemsSheet {
+const Listing: React.FC<Props> = ({ theme, siteData }) => {
+  const { allGoogleListingSheet } = useStaticQuery(graphql`
+    query allGoogleListingSheetQuery {
+      allGoogleListingSheet {
         nodes {
           id
           title
@@ -28,12 +27,8 @@ const Main: React.FC<Props> = ({ siteData, theme }) => {
     }
   `)
 
-  const ALL = 'All'
-
-  const { primary, secondary, text, subtext, altText, altBackground } = theme
-
   const getAllItems = () => {
-    const allItems = allGoogleItemsSheet.nodes
+    const allItems = allGoogleListingSheet.nodes
     const formattedItems = allItems.map((item) => {
       if (typeof item.tags === 'string') {
         item.tags = item.tags.split(', ')
@@ -56,20 +51,10 @@ const Main: React.FC<Props> = ({ siteData, theme }) => {
   }
 
   const distinctTags = getDistinctTags()
+  const ALL = 'All'
   const tabs = [ALL, ...distinctTags]
   const [currentTab, setCurrentTab] = useState(tabs[0])
   const [searchTerm, setSearchTerm] = useState('')
-  const [currentModalItem, setCurrentModalItem] = useState(allItems[0])
-
-  const useModalOptions = {
-    background: 'rgba(0, 0, 0, 0.8)',
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    onOpen: () => {},
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    onClose: () => {},
-  }
-
-  const { isOpen, openModal, Modal } = useModal(useModalOptions)
 
   const getFuseSearchResult = (items: ItemData[], searchTerm: string): object[] => {
     const options = {
@@ -99,10 +84,7 @@ const Main: React.FC<Props> = ({ siteData, theme }) => {
 
   const itemsToDisplay = getItemsToDisplay()
 
-  const handleOpenModal = (e, item: ItemData) => {
-    setCurrentModalItem(item)
-    openModal(e)
-  }
+  const { text, altBackground } = theme
 
   const handleTabClick = (tab) => {
     setCurrentTab(tab)
@@ -130,38 +112,16 @@ const Main: React.FC<Props> = ({ siteData, theme }) => {
     return <></>
   }
 
-  const renderModal = () => {
-    if (isOpen) {
-      return (
-        <Modal>
-          <div
-            className={`${altBackground} shadow-xl ${text} min-h-64 p-8 rounded-lg text-center w-screen md:max-w-screen-md`}
-          >
-            <img src={currentModalItem.image} className="h-32 mx-auto" />
-            <h2 className="text-2xl">{currentModalItem.title}</h2>
-            <p className={`${subtext}`}>{currentModalItem.subtitle}</p>
-            <p className="mb-8 mt-4">
-              {currentModalItem.description} wegipyuwer gerhguo; ero;gihr we;0g8hr ogher iogawroeighj awil;gh
-              lwkhguoweag wehgljkwehvuilojhwer ogjhweruogh owerhg wrlhg uoh ergoiwhgljkwrh v uloiwehf owehf ou
-            </p>
-            <a
-              href={currentModalItem.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`bg-${primary} hover:bg-${secondary} mt-16 text-white font-bold py-3 px-4 shadow border-b-4 border-${secondary} hover:border-gray-800 rounded`}
-            >
-              View Details
-            </a>
-          </div>
-        </Modal>
-      )
+  const renderListing = () => {
+    if (siteData.listingType === ListingType.COMPACT) {
+      return <Compact theme={theme} items={itemsToDisplay} />
+    } else {
+      return <Compact theme={theme} items={itemsToDisplay} />
     }
-    return <></>
   }
 
   return (
     <div className="container mx-auto mt-16 mb-32 px-4" id="main">
-      <h2 className={`font-bold text-2xl ml-1 ${text} text-center`}>{siteData.listingLabel}</h2>
       <ul className="mt-4 flex justify-center">{renderTabs()}</ul>
       <input
         className={`focus:outline-none focus:shadow-lg border border-gray-300 shadow rounded-lg py-2 px-4 block mt-8 w-1/2 mx-auto`}
@@ -169,10 +129,9 @@ const Main: React.FC<Props> = ({ siteData, theme }) => {
         placeholder="Search"
         onChange={(e) => handleSearch(e)}
       />
-      <ItemsList items={itemsToDisplay} handleOpenModal={handleOpenModal} theme={theme} />
-      {renderModal()}
+      {renderListing()}
     </div>
   )
 }
 
-export default Main
+export default Listing

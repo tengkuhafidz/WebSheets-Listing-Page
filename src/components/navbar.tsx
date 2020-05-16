@@ -1,5 +1,5 @@
 import React from 'react'
-import { Theme } from '../models'
+import { Theme } from '../utils/models'
 
 interface Props {
   title: string

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import SEO from '../components/seo'
 import Navbar from '../components/navbar'
 import Hero from '../components/Hero'
-import Main from '../components/Main'
+import Listing from '../components/Listing'
 import Footer from '../components/footer'
 import { graphql } from 'gatsby'
 
@@ -52,7 +52,7 @@ const Home = ({ data }) => {
         handleDarkModeClick={handleDarkModeClick}
       />
       <Hero siteData={siteData} theme={theme} />
-      <Main siteData={siteData} theme={theme} />
+      <Listing siteData={siteData} theme={theme} />
       <Footer siteData={siteData} theme={theme} />
     </div>
   )
@@ -68,7 +68,7 @@ export const siteData = graphql`
         heroButtonUrl
         heroDescription
         heroTitle
-        listingLabel
+        listingType
         siteLogo
         siteName
         footerLabel

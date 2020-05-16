@@ -1,5 +1,5 @@
 import React from 'react'
-import { SiteData, Theme } from '../../models'
+import { SiteData, Theme } from '../../utils/models'
 import ShareButton from './share-button'
 
 interface Props {

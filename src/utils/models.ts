@@ -14,7 +14,7 @@ export interface SiteData {
   heroButtonUrl: string
   heroDescription: string
   heroTitle: string
-  listingLabel: string
+  listingType: string
   siteLogo: string
   siteName: string
   footerLabel: string
@@ -34,4 +34,11 @@ export interface Theme {
   background: string
   altBackground: string
   customShadow: string
+}
+
+export enum ListingType {
+  COMPACT = 'compact',
+  BASIC = 'basic',
+  EVENTS = 'events',
+  ACCORDION = 'accordion',
 }
