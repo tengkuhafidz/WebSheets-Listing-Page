@@ -33,7 +33,7 @@ const SingleItem: React.FC<Props> = ({ item, theme, handleOpenModal, siteData })
     return <></>
   }
   return (
-    <div className={`max-w-sm mt-8 rounded-lg shadow-lg text-center bg-white`}>
+    <div className={`max-w-sm rounded-lg shadow-lg text-center bg-white`}>
       {renderImage()}
       <div className="px-6 py-4">
         {renderTitle()}
