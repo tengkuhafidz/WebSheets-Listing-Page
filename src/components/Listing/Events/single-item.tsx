@@ -9,7 +9,7 @@ interface Props {
 
 const SingleItem: React.FC<Props> = ({ item, theme, handleOpenModal }) => {
   const hasProperty = (property) => property && property !== 'nil'
-  const { primary, customShadow } = theme
+  const { primary, text, subtext, customShadow } = theme
 
   const renderImage = () => {
     if (hasProperty(item.image)) {
