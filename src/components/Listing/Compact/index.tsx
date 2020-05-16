@@ -1,15 +1,16 @@
 import React, { useState } from 'react'
 import useModal from 'use-react-modal'
-import { ItemData, Theme } from '../../../utils/models'
+import { ItemData, Theme, SiteData } from '../../../utils/models'
 import ItemsList from './items-list'
 import ListingModal from '../listing-modal'
 
 interface Props {
   theme: Theme
   items: ItemData[]
+  siteData: SiteData
 }
 
-const Compact: React.FC<Props> = ({ theme, items }) => {
+const Compact: React.FC<Props> = ({ theme, items, siteData }) => {
   const [currentModalItem, setCurrentModalItem] = useState(items[0])
 
   const useModalOptions = {
@@ -30,7 +31,13 @@ const Compact: React.FC<Props> = ({ theme, items }) => {
   return (
     <div className="container mx-auto mt-16 mb-32 px-4" id="main">
       <ItemsList items={items} handleOpenModal={handleOpenModal} theme={theme} />
-      <ListingModal theme={theme} Modal={Modal} currentModalItem={currentModalItem} isOpen={isOpen} />
+      <ListingModal
+        theme={theme}
+        Modal={Modal}
+        currentModalItem={currentModalItem}
+        isOpen={isOpen}
+        siteData={siteData}
+      />
     </div>
   )
 }

@@ -32,18 +32,16 @@ const SingleItem: React.FC<Props> = ({ item, theme, handleOpenModal }) => {
     return <></>
   }
   return (
-    <div
-      className={`max-w-sm mt-8 rounded-lg shadow-lg text-center bg-white ${
-        hasProperty(item.url) && `hover:${customShadow} cursor-pointer`
-      }`}
-    >
+    <div className={`max-w-sm mt-8 rounded-lg shadow-lg text-center bg-white`}>
       {renderImage()}
       <div className="px-6 py-4">
         {renderTitle()}
         {renderSubtitle()}
         <button
           onClick={(e) => handleOpenModal(e, item)}
-          className={`py-2 px-4 rounded w-full bg-${primary} text-white mt-4`}
+          className={`py-2 px-4 rounded w-full bg-${primary} text-white mt-4 ${
+            hasProperty(item.description) && `hover:${customShadow} cursor-pointer`
+          }`}
         >
           More Info
         </button>

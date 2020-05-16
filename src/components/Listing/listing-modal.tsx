@@ -1,14 +1,15 @@
 import React from 'react'
-import { ItemData, Theme } from '../../utils/models'
+import { ItemData, Theme, SiteData } from '../../utils/models'
 
 interface Props {
   theme: Theme
   currentModalItem: ItemData
   Modal: (props) => JSX.Element
   isOpen: boolean
+  siteData: SiteData
 }
 
-const ListingModal: React.FC<Props> = ({ theme, Modal, currentModalItem, isOpen }) => {
+const ListingModal: React.FC<Props> = ({ theme, Modal, currentModalItem, isOpen, siteData }) => {
   const { text, subtext, primary, secondary, altBackground } = theme
 
   if (!isOpen) {
@@ -30,7 +31,7 @@ const ListingModal: React.FC<Props> = ({ theme, Modal, currentModalItem, isOpen 
           rel="noopener noreferrer"
           className={`bg-${primary} hover:bg-${secondary} mt-16 text-white font-bold py-3 px-4 shadow border-b-4 border-${secondary} hover:border-gray-800 rounded`}
         >
-          View Details
+          {siteData.listingUrlButtonLabel}
         </a>
       </div>
     </Modal>

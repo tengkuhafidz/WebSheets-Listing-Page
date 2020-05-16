@@ -115,11 +115,11 @@ const Listing: React.FC<Props> = ({ theme, siteData }) => {
 
   const renderListing = () => {
     if (siteData.listingType === ListingType.COMPACT) {
-      return <Compact theme={theme} items={itemsToDisplay} />
+      return <Compact theme={theme} items={itemsToDisplay} siteData={siteData} />
     } else if (siteData.listingType === ListingType.BASIC) {
-      return <Basic theme={theme} items={itemsToDisplay} />
+      return <Basic theme={theme} items={itemsToDisplay} siteData={siteData} />
     } else {
-      return <Compact theme={theme} items={itemsToDisplay} />
+      return <Compact theme={theme} items={itemsToDisplay} siteData={siteData} />
     }
   }
 

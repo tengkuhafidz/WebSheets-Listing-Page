@@ -69,6 +69,8 @@ export const siteData = graphql`
         heroDescription
         heroTitle
         listingType
+        listingDescriptionButtonLabel
+        listingUrlButtonLabel
         siteLogo
         siteName
         footerLabel

@@ -15,6 +15,8 @@ export interface SiteData {
   heroDescription: string
   heroTitle: string
   listingType: string
+  listingDescriptionButtonLabel: string
+  listingUrlButtonLabel: string
   siteLogo: string
   siteName: string
   footerLabel: string

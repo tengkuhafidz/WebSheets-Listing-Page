@@ -3,6 +3,7 @@ import useModal from 'use-react-modal'
 import { ItemData, Theme } from '../../../utils/models'
 import ItemsList from './items-list'
 import ListingModal from '../listing-modal'
+import { siteData } from '../../../pages'
 
 interface Props {
   theme: Theme
@@ -30,7 +31,13 @@ const Basic: React.FC<Props> = ({ theme, items }) => {
   return (
     <div className="container mx-auto mt-16 mb-32 px-4" id="main">
       <ItemsList items={items} handleOpenModal={handleOpenModal} theme={theme} />
-      <ListingModal theme={theme} Modal={Modal} currentModalItem={currentModalItem} isOpen={isOpen} />
+      <ListingModal
+        theme={theme}
+        Modal={Modal}
+        currentModalItem={currentModalItem}
+        isOpen={isOpen}
+        siteData={siteData}
+      />
     </div>
   )
 }

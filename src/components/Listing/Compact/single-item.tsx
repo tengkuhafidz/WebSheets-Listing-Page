@@ -13,7 +13,7 @@ const SingleItem: React.FC<Props> = ({ item, theme, handleOpenModal }) => {
 
   const renderImage = () => {
     if (hasProperty(item.image)) {
-      return <img className="w-full rounded-t-lg h-32 object-cover" src={item.image} alt={`Image of ${item.title}`} />
+      return <img className="w-full rounded-t-lg h-24 object-cover" src={item.image} alt={`Image of ${item.title}`} />
     }
     return <></>
   }
@@ -31,6 +31,7 @@ const SingleItem: React.FC<Props> = ({ item, theme, handleOpenModal }) => {
     }
     return <></>
   }
+
   return (
     <div
       className={`max-w-sm mt-8 rounded-lg shadow-lg ${altBackground} ${
