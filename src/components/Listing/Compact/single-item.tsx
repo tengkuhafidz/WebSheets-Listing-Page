@@ -13,21 +13,21 @@ const SingleItem: React.FC<Props> = ({ item, theme, handleOpenModal }) => {
 
   const renderImage = () => {
     if (hasProperty(item.image)) {
-      return <img className="w-full rounded-t-lg" src={item.image} alt={`Image of ${item.title}`} />
+      return <img className="w-full rounded-t-lg h-32 object-cover" src={item.image} alt={`Image of ${item.title}`} />
     }
     return <></>
   }
 
   const renderTitle = () => {
     if (hasProperty(item.title)) {
-      return <div className={`font-bold ${text} text-xl`}>{item.title}</div>
+      return <div className={`font-bold ${text} text-xl truncate`}>{item.title}</div>
     }
     return <></>
   }
 
   const renderSubtitle = () => {
     if (hasProperty(item.subtitle)) {
-      return <p className={`${subtext} font-light text-base`}>{item.subtitle}</p>
+      return <p className={`${subtext} font-light truncate`}>{item.subtitle}</p>
     }
     return <></>
   }
