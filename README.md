@@ -11,7 +11,7 @@ This is a Gatsby template for creating a website based on Google sheets.
 3. Create [Google Sheets API key](https://developers.google.com/sheets/api/guides/authorizing#APIKey)
 
 ### Preparing the Project
-1. Download this project
+1. Clone this repo `git clone https://github.com/tengkuhafidz/sheetysite.git`
 2. Run `yarn install` to download dependencies
 3. Make a copy of the [google sheets template](https://docs.google.com/spreadsheets/d/1S-S1dzVsPlbYtYTq_jiXCcVYKf75wFlGxB2fKkdVc7w/edit#gid=1818216905)
 4. Fill in the google sheets with the site's data and item listings details
@@ -19,7 +19,7 @@ This is a Gatsby template for creating a website based on Google sheets.
 
 ### Running on Dev Environment
 
-1. Create `.env.development` on the project root
+1. Create `.env.development` file on the project root
    - Include `GATSBY_GOOGLE_CREDENTIALS`=Google-Sheets-Api-Key-Here
    - Include `GATSBY_SHEET_ID`=Google-Sheets-Id-Here
       - _Where is the [Google Sheets Id](https://developers.google.com/sheets/api/guides/concepts#spreadsheet_id)?_
