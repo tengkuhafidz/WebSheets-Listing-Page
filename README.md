@@ -29,7 +29,7 @@ This is a Gatsby template for creating a website based on Google sheets.
    - You graphiql will run at`http://localhost:8000/___graphql`
 
 ### Running on Prod Environment
-1. Create `.env.production` on the project root
+1. Create `.env.production` file on the project root
    - Include `GATSBY_GOOGLE_CREDENTIALS`=Google-Sheets-Api-Key-Here
    - Include `GATSBY_SHEET_ID`=Google-Sheets-Id-Here
       - _Where is the [Google Sheets Id](https://developers.google.com/sheets/api/guides/concepts#spreadsheet_id)?_
