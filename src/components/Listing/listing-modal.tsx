@@ -29,7 +29,7 @@ const ListingModal: React.FC<Props> = ({ theme, Modal, currentModalItem, isOpen,
           href={currentModalItem.url}
           target="_blank"
           rel="noopener noreferrer"
-          className={`bg-${primary} hover:bg-${secondary} mt-16 text-white font-bold py-3 px-4 shadow border-b-4 border-${secondary} hover:border-gray-800 rounded`}
+          className={`bg-${primary} hover:bg-${secondary} px-16 mt-16 text-white font-bold py-3 px-4 shadow border-b-4 border-${secondary} hover:border-gray-800 rounded`}
         >
           {siteData.listingUrlButtonLabel}
         </a>

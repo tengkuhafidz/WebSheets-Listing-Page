@@ -43,6 +43,5 @@ export enum ListingType {
   BASIC = 'basic',
   EVENTS = 'events',
   PROFILES = 'profiles',
-  ACCORDION = 'accordion',
   MODERN = 'modern',
 }
