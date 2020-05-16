@@ -13,15 +13,16 @@ This is a Gatsby template for creating a website based on Google sheets.
 ### Preparing the Project
 1. Clone this repo `git clone https://github.com/tengkuhafidz/sheetysite.git`
 2. Run `yarn install` to download dependencies
-3. Make a copy of the [google sheets template](https://docs.google.com/spreadsheets/d/1S-S1dzVsPlbYtYTq_jiXCcVYKf75wFlGxB2fKkdVc7w/edit#gid=1818216905)
+3. Make a copy of the [google sheets template](https://docs.google.com/spreadsheets/d/1S-S1dzVsPlbYtYTq_jiXCcVYKf75wFlGxB2fKkdVc7w/edit#gid=1818216905), and set it to public.
+4. The sheet names (`site`, `listing`) and header names (1st row of each sheet) remains unchanged.
 4. Fill in the google sheets with the site's data and item listings details
    - Ensure to not leave any fields empty. Write `nil` to indicate no value instead
 
 ### Running on Dev Environment
 
 1. Create `.env.development` file on the project root
-   - Include `GATSBY_GOOGLE_CREDENTIALS`=Google-Sheets-Api-Key-Here
-   - Include `GATSBY_SHEET_ID`=Google-Sheets-Id-Here
+   - Include `GATSBY_GOOGLE_CREDENTIALS`="Google-Sheets-Api-Key-With-Quatations"
+   - Include `GATSBY_SHEET_ID`=Google-Sheets-Id-With-Quotations"
       - _Where is the [Google Sheets Id](https://developers.google.com/sheets/api/guides/concepts#spreadsheet_id)?_
 
 2. Run `yarn start`
