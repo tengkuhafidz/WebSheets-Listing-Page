@@ -46,7 +46,7 @@ const SingleItem: React.FC<Props> = ({ item, theme, handleOpenModal }) => {
 
   return (
     <div
-      className={`max-w-sm rounded-lg shadow-lg bg-white ${
+      className={`max-w-sm rounded-lg shadow-lg bg-white mb-8 ${
         hasProperty(item.url) && `hover:${customShadow} cursor-pointer`
       }`}
       onClick={(e) => handleOpenModal(e, item)}

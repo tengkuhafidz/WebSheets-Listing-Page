@@ -9,37 +9,31 @@ interface Props {
 
 const SingleItem: React.FC<Props> = ({ item, theme, handleOpenModal }) => {
   const hasProperty = (property) => property && property !== 'nil'
-  const { altBackground, text, subtext, customShadow } = theme
-
-  const renderImage = () => {
-    if (hasProperty(item.image)) {
-      return <img className="w-full rounded-t-lg h-24 object-cover" src={item.image} alt={`Image of ${item.title}`} />
-    }
-    return <></>
-  }
+  const { text, customShadow } = theme
+  const image = hasProperty(item.image) ? item.image : ''
 
   const renderTitle = () => {
     if (hasProperty(item.title)) {
-      return <div className={`font-bold ${text} text-xl truncate`}>{item.title}</div>
+      return <div className={`font-bold text-white text-xl truncate`}>{item.title}</div>
     }
     return <></>
   }
 
   const renderSubtitle = () => {
     if (hasProperty(item.subtitle)) {
-      return <p className={`${subtext} font-light truncate`}>{item.subtitle}</p>
+      return <p className={`text-white font-light truncate`}>{item.subtitle}</p>
     }
     return <></>
   }
 
   return (
     <div
-      className={`max-w-sm rounded-lg shadow-lg mb-8 ${altBackground} ${
-        hasProperty(item.url) && `hover:${customShadow} cursor-pointer`
+      className={`max-w-sm bg-cover bg-center rounded-lg shadow-lg mb-8 text-center py-8 font-bold ${
+        hasProperty(item.description) && `hover:${customShadow} cursor-pointer`
       }`}
+      style={{ backgroundImage: `url(${image})`, textShadow: `1px 1px #333333` }}
       onClick={(e) => handleOpenModal(e, item)}
     >
-      {renderImage()}
       <div className="px-6 py-4">
         {renderTitle()}
         {renderSubtitle()}
