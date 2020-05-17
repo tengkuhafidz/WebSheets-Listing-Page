@@ -61,8 +61,8 @@ SheetySite
 - [ ] Back to top button
 - [x] Create HeroType options
 - [x] Create ListingType options
-- [ ] Add option for Google Analytics
-- [ ] Add option for site's SEO metadata in [google sheets template](https://docs.google.com/spreadsheets/d/1S-S1dzVsPlbYtYTq_jiXCcVYKf75wFlGxB2fKkdVc7w/edit#gid=1818216905)
+- [x] Support Google Analytics
+- [x] SEO should be be based on the data( from the [sheets] https://docs.google.com/spreadsheets/d/1S-S1dzVsPlbYtYTq_jiXCcVYKf75wFlGxB2fKkdVc7w/edit#gid=1818216905)
 - [ ] Cater for private sheets
 
 SheetySite - Consumer Version
