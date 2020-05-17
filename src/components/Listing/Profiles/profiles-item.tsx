@@ -7,13 +7,20 @@ interface Props {
   handleOpenModal: (e, item: ItemData) => void
 }
 
-const SingleItem: React.FC<Props> = ({ item, theme, handleOpenModal }) => {
+const ProfileItem: React.FC<Props> = ({ item, theme, handleOpenModal }) => {
   const hasProperty = (property) => property && property !== 'nil'
-  const { altBackground, text, subtext, customShadow } = theme
+  const { customShadow } = theme
 
   const renderImage = () => {
     if (hasProperty(item.image)) {
-      return <img className="w-full rounded-t-lg h-64 object-cover" src={item.image} alt={`Image of ${item.title}`} />
+      return (
+        <img
+          className="w-full rounded-t-lg object-cover"
+          style={{ height: 300 }}
+          src={item.image}
+          alt={`Image of ${item.title}`}
+        />
+      )
     }
     return <></>
   }
@@ -34,12 +41,7 @@ const SingleItem: React.FC<Props> = ({ item, theme, handleOpenModal }) => {
 
   const renderDescription = () => {
     if (hasProperty(item.subtitle)) {
-      return (
-        <p className={`text-gray-800 mt-4`}>
-          {item.description} feqofh qeohgfqe o;igh eoqighe oqgh eqgh qeuhoeiqyhg oeqhgoqe guqe eqhg kejqhfiuqegc qegbi
-          ue{' '}
-        </p>
-      )
+      return <p className={`text-gray-800 mt-4`}>{item.description}</p>
     }
     return <></>
   }
@@ -61,4 +63,4 @@ const SingleItem: React.FC<Props> = ({ item, theme, handleOpenModal }) => {
   )
 }
 
-export default SingleItem
+export default ProfileItem

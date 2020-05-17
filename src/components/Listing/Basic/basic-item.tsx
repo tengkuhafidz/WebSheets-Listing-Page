@@ -8,13 +8,13 @@ interface Props {
   siteData: SiteData
 }
 
-const SingleItem: React.FC<Props> = ({ item, theme, handleOpenModal, siteData }) => {
+const BasicItem: React.FC<Props> = ({ item, theme, handleOpenModal, siteData }) => {
   const hasProperty = (property) => property && property !== 'nil'
   const { primary, customShadow } = theme
 
   const renderImage = () => {
     if (hasProperty(item.image)) {
-      return <img className="w-full rounded-t-lg h-32 object-cover" src={item.image} alt={`Image of ${item.title}`} />
+      return <img className="w-full rounded-t-lg h-64 object-cover" src={item.image} alt={`Image of ${item.title}`} />
     }
     return <></>
   }
@@ -32,6 +32,7 @@ const SingleItem: React.FC<Props> = ({ item, theme, handleOpenModal, siteData })
     }
     return <></>
   }
+
   return (
     <div className={`max-w-sm rounded-lg shadow-lg text-center bg-white mb-8`}>
       {renderImage()}
@@ -51,4 +52,4 @@ const SingleItem: React.FC<Props> = ({ item, theme, handleOpenModal, siteData })
   )
 }
 
-export default SingleItem
+export default BasicItem

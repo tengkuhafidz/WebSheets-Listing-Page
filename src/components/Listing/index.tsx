@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
-import { Theme, ItemData, SiteData, ListingType } from '../../utils/models'
-import { useStaticQuery, graphql } from 'gatsby'
 import Fuse from 'fuse.js'
-import Compact from './Compact'
+import { graphql, useStaticQuery } from 'gatsby'
+import React, { useState } from 'react'
+import { ItemData, ListingType, SiteData, Theme } from '../../utils/models'
 import Basic from './Basic'
+import Compact from './Compact'
 import Events from './Events'
-import Profiles from './Profiles'
 import ListingItems from './listing-items'
 
 interface Props {
@@ -120,14 +119,8 @@ const Listing: React.FC<Props> = ({ theme, siteData }) => {
     const { listingType } = siteData
 
     switch (listingType) {
-      case ListingType.COMPACT:
-        return <Compact theme={theme} items={itemsToDisplay} siteData={siteData} />
-      case ListingType.BASIC:
-        return <Basic theme={theme} items={itemsToDisplay} siteData={siteData} />
       case ListingType.EVENTS:
         return <Events theme={theme} items={itemsToDisplay} siteData={siteData} />
-      case ListingType.PROFILES:
-        return <Profiles theme={theme} items={itemsToDisplay} siteData={siteData} />
       default:
         return <ListingItems theme={theme} items={itemsToDisplay} siteData={siteData} />
     }

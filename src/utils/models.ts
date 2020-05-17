@@ -41,10 +41,14 @@ export interface Theme {
 }
 
 export enum ListingType {
-  COMPACT = 'compact',
-  BASIC = 'basic',
   EVENTS = 'events',
-  PROFILES = 'profiles',
+  BASIC_3 = 'basic-3',
+  BASIC_4 = 'basic-4',
+  COMPACT_4 = 'compact-4',
+  COMPACT_5 = 'compact-5',
+  COMPACT_6 = 'compact-6',
+  PROFILES_3 = 'profiles-3',
+  PROFILES_4 = 'profiles-4',
   MODERN_3 = 'modern-3',
   MODERN_4 = 'modern-4',
   MODERN_5 = 'modern-5',
