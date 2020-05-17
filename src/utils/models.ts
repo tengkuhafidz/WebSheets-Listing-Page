@@ -10,17 +10,19 @@ export interface ItemData {
 }
 
 export interface SiteData {
+  siteName: string
+  siteLogo: string
+  sitePrimaryColor: string
+  heroType: string
+  heroTitle: string
+  heroDescription: string
+  heroImage
   heroButtonLabel: string
   heroButtonUrl: string
-  heroDescription: string
-  heroTitle: string
   listingType: string
   listingDescriptionButtonLabel: string
   listingUrlButtonLabel: string
-  siteLogo: string
-  siteName: string
   footerLabel: string
-  sitePrimaryColor: string
   facebookUrl: string
   instagramUrl: string
   twitterUrl: string
@@ -44,4 +46,9 @@ export enum ListingType {
   EVENTS = 'events',
   PROFILES = 'profiles',
   MODERN = 'modern',
+}
+
+export enum HeroType {
+  MINIMAL = 'minimal',
+  MINIMAL_CENTER = 'minimal-center',
 }

@@ -12,7 +12,7 @@ const ItemsList: React.FC<Props> = ({ items, theme, handleOpenModal }) => {
   const renderItems = () => {
     return items.map((item) => <SingleItem item={item} key={item.id} theme={theme} handleOpenModal={handleOpenModal} />)
   }
-  return <div className={`grid md:grid-cols-5 gap-3`}>{renderItems()}</div>
+  return <div className={`grid md:grid-cols-5 gap-4`}>{renderItems()}</div>
 }
 
 export default ItemsList

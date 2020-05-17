@@ -1,10 +1,9 @@
+import { graphql } from 'gatsby'
 import React, { useState } from 'react'
-import SEO from '../components/seo'
-import Navbar from '../components/navbar'
+import Footer from '../components/footer'
 import Hero from '../components/Hero'
 import Listing from '../components/Listing'
-import Footer from '../components/footer'
-import { graphql } from 'gatsby'
+import SEO from '../components/seo'
 
 const Home = ({ data }) => {
   const siteData = data.allGoogleSiteSheet.nodes[0]
@@ -45,13 +44,7 @@ const Home = ({ data }) => {
   return (
     <div className={`${theme.background} min-h-screen`}>
       <SEO />
-      <Navbar
-        title={siteData.siteName}
-        theme={theme}
-        isDarkMode={isDarkMode}
-        handleDarkModeClick={handleDarkModeClick}
-      />
-      <Hero siteData={siteData} theme={theme} />
+      <Hero siteData={siteData} theme={theme} isDarkMode={isDarkMode} handleDarkModeClick={handleDarkModeClick} />
       <Listing siteData={siteData} theme={theme} />
       <Footer siteData={siteData} theme={theme} />
     </div>
@@ -64,10 +57,12 @@ export const siteData = graphql`
   query SiteSheetQuery {
     allGoogleSiteSheet {
       nodes {
-        heroButtonLabel
-        heroButtonUrl
-        heroDescription
+        heroType
         heroTitle
+        heroDescription
+        heroButtonUrl
+        heroButtonLabel
+        heroImage
         listingType
         listingDescriptionButtonLabel
         listingUrlButtonLabel
