@@ -11,9 +11,8 @@ interface Props {
 const MinimalBody: React.FC<Props> = ({ siteData, theme, isCenter }) => {
   const { primary, text, subtext } = theme
   const { heroTitle, heroDescription, heroButtonLabel, heroButtonUrl } = siteData
-  console.log('>>>>> isCenter', isCenter)
   return (
-    <div className={`container mx-auto px-4 py-12 ${isCenter && 'text-center'}`}>
+    <div className={`container mx-auto px-4 py-8 ${isCenter && 'text-center'}`}>
       <h1 className={`text-4xl ${text}`}>{heroTitle}</h1>
       <p className={`font-thin text-xl ${subtext}`}>{heroDescription}</p>
       <div className="my-12">

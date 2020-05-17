@@ -27,7 +27,7 @@ const Items: React.FC<Props> = ({ items, theme, handleOpenModal, siteData }) => 
 
   const renderProfileItems = () => {
     return items.map((item) => (
-      <ProfileItem item={item} key={item.id} theme={theme} handleOpenModal={handleOpenModal} />
+      <ProfileItem item={item} key={item.id} theme={theme} handleOpenModal={handleOpenModal} siteData={siteData} />
     ))
   }
 
@@ -43,11 +43,11 @@ const Items: React.FC<Props> = ({ items, theme, handleOpenModal, siteData }) => 
     case ListingType.BASIC_4:
       return <div className={`grid md:grid-cols-${4} gap-8`}>{renderBasicItems()}</div>
     case ListingType.COMPACT_4:
-      return <div className={`grid md:grid-cols-${4} gap-8`}>{renderCompactItems()}</div>
+      return <div className={`grid md:grid-cols-${4} gap-4`}>{renderCompactItems()}</div>
     case ListingType.COMPACT_5:
-      return <div className={`grid md:grid-cols-${5} gap-8`}>{renderCompactItems()}</div>
+      return <div className={`grid md:grid-cols-${5} gap-4`}>{renderCompactItems()}</div>
     case ListingType.COMPACT_6:
-      return <div className={`grid md:grid-cols-${6} gap-8`}>{renderCompactItems()}</div>
+      return <div className={`grid md:grid-cols-${6} gap-4`}>{renderCompactItems()}</div>
     case ListingType.PROFILES_3:
       return <div className={`grid md:grid-cols-${3} gap-8`}>{renderProfileItems()}</div>
     case ListingType.PROFILES_4:

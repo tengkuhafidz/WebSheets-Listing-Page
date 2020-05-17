@@ -2,8 +2,6 @@ import Fuse from 'fuse.js'
 import { graphql, useStaticQuery } from 'gatsby'
 import React, { useState } from 'react'
 import { ItemData, ListingType, SiteData, Theme } from '../../utils/models'
-import Basic from './Basic'
-import Compact from './Compact'
 import Events from './Events'
 import ListingItems from './listing-items'
 

@@ -14,7 +14,7 @@ const BasicItem: React.FC<Props> = ({ item, theme, handleOpenModal, siteData }) 
 
   const renderImage = () => {
     if (hasProperty(item.image)) {
-      return <img className="w-full rounded-t-lg h-64 object-cover" src={item.image} alt={`Image of ${item.title}`} />
+      return <img className="w-full rounded-t-lg h-48 object-cover" src={item.image} alt={`Image of ${item.title}`} />
     }
     return <></>
   }
