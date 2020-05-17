@@ -7,7 +7,7 @@ import SEO from '../components/seo'
 
 const Home = ({ data }) => {
   const siteData = data.allGoogleSiteSheet.nodes[0]
-  const { sitePrimaryColor } = siteData
+  const { sitePrimaryColor, siteName, siteLogo, heroTitle, heroDescription } = siteData
 
   const lightTheme = {
     primary: `${sitePrimaryColor}-600`,
@@ -43,7 +43,7 @@ const Home = ({ data }) => {
 
   return (
     <div className={`${theme.background} min-h-screen`}>
-      <SEO />
+      <SEO image={siteLogo} title={siteName} description={`${heroTitle} - ${heroDescription}`} />
       <Hero siteData={siteData} theme={theme} isDarkMode={isDarkMode} handleDarkModeClick={handleDarkModeClick} />
       <Listing siteData={siteData} theme={theme} />
       <Footer siteData={siteData} theme={theme} />

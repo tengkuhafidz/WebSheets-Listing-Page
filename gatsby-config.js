@@ -5,11 +5,11 @@ require('dotenv').config({
 /* eslint-disable @typescript-eslint/camelcase */
 module.exports = {
   siteMetadata: {
-    title: 'GatsbyTSTW',
-    titleTemplate: '%s | GatsbyTSTW',
-    description: 'Starter boilerplate for Gatsby with Typescript and TailwindCSS',
+    title: 'SheetySite',
+    titleTemplate: '%s | SheetySite',
+    description: 'Create listing websites with Google Sheets data',
     author: 'Fidz.Dev',
-    url: 'https://fidz.dev', // No trailing slash allowed!
+    url: 'https://sheetysite.com', // No trailing slash allowed!
     image: '/app-banner.png', // Path to your image you placed in the 'static' folder
     twitterUsername: 'sohafidz',
   },
@@ -18,6 +18,18 @@ module.exports = {
     `gatsby-plugin-typescript`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: 'gatsby-plugin-google-gtag',
+      options: {
+        trackingIds: [process.env.GATSBY_GA_TRACKING_ID],
+        gtagConfig: {
+          anonymize_ip: true,
+        },
+        pluginConfig: {
+          head: true,
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
