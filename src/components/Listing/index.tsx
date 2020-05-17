@@ -6,7 +6,7 @@ import Compact from './Compact'
 import Basic from './Basic'
 import Events from './Events'
 import Profiles from './Profiles'
-import Modern from './Modern'
+import ListingItems from './listing-items'
 
 interface Props {
   theme: Theme
@@ -118,16 +118,18 @@ const Listing: React.FC<Props> = ({ theme, siteData }) => {
 
   const renderListing = () => {
     const { listingType } = siteData
-    if (listingType === ListingType.COMPACT) {
-      return <Compact theme={theme} items={itemsToDisplay} siteData={siteData} />
-    } else if (listingType === ListingType.BASIC) {
-      return <Basic theme={theme} items={itemsToDisplay} siteData={siteData} />
-    } else if (listingType === ListingType.EVENTS) {
-      return <Events theme={theme} items={itemsToDisplay} siteData={siteData} />
-    } else if (listingType === ListingType.PROFILES) {
-      return <Profiles theme={theme} items={itemsToDisplay} siteData={siteData} />
-    } else {
-      return <Modern theme={theme} items={itemsToDisplay} siteData={siteData} />
+
+    switch (listingType) {
+      case ListingType.COMPACT:
+        return <Compact theme={theme} items={itemsToDisplay} siteData={siteData} />
+      case ListingType.BASIC:
+        return <Basic theme={theme} items={itemsToDisplay} siteData={siteData} />
+      case ListingType.EVENTS:
+        return <Events theme={theme} items={itemsToDisplay} siteData={siteData} />
+      case ListingType.PROFILES:
+        return <Profiles theme={theme} items={itemsToDisplay} siteData={siteData} />
+      default:
+        return <ListingItems theme={theme} items={itemsToDisplay} siteData={siteData} />
     }
   }
 

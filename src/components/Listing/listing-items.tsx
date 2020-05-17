@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import useModal from 'use-react-modal'
-import { ItemData, Theme, SiteData } from '../../../utils/models'
-import ItemsList from './items-list'
-import ListingModal from '../listing-modal'
+import { ItemData, Theme, SiteData } from '../../utils/models'
+import Items from './items'
+import ListingModal from './listing-modal'
 
 interface Props {
   theme: Theme
@@ -10,7 +10,7 @@ interface Props {
   siteData: SiteData
 }
 
-const Modern: React.FC<Props> = ({ theme, items, siteData }) => {
+const ListingItems: React.FC<Props> = ({ theme, items, siteData }) => {
   const [currentModalItem, setCurrentModalItem] = useState(items[0])
 
   const useModalOptions = {
@@ -30,7 +30,7 @@ const Modern: React.FC<Props> = ({ theme, items, siteData }) => {
 
   return (
     <div className="container mx-auto mt-16 mb-32 px-4" id="main">
-      <ItemsList items={items} handleOpenModal={handleOpenModal} theme={theme} />
+      <Items items={items} handleOpenModal={handleOpenModal} theme={theme} listingType={siteData.listingType} />
       <ListingModal
         theme={theme}
         Modal={Modal}
@@ -42,4 +42,4 @@ const Modern: React.FC<Props> = ({ theme, items, siteData }) => {
   )
 }
 
-export default Modern
+export default ListingItems

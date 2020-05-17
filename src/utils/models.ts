@@ -13,13 +13,13 @@ export interface SiteData {
   siteName: string
   siteLogo: string
   sitePrimaryColor: string
-  heroType: string
+  heroType: HeroType
   heroTitle: string
   heroDescription: string
   heroImage
   heroButtonLabel: string
   heroButtonUrl: string
-  listingType: string
+  listingType: ListingType
   listingDescriptionButtonLabel: string
   listingUrlButtonLabel: string
   footerLabel: string
@@ -45,7 +45,9 @@ export enum ListingType {
   BASIC = 'basic',
   EVENTS = 'events',
   PROFILES = 'profiles',
-  MODERN = 'modern',
+  MODERN_3 = 'modern-3',
+  MODERN_4 = 'modern-4',
+  MODERN_5 = 'modern-5',
 }
 
 export enum HeroType {

@@ -7,9 +7,9 @@ interface Props {
   handleOpenModal: (e, item: ItemData) => void
 }
 
-const SingleItem: React.FC<Props> = ({ item, theme, handleOpenModal }) => {
+const ModernItem: React.FC<Props> = ({ item, theme, handleOpenModal }) => {
   const hasProperty = (property) => property && property !== 'nil'
-  const { text, customShadow } = theme
+  const { customShadow } = theme
   const image = hasProperty(item.image) ? item.image : ''
 
   const renderTitle = () => {
@@ -42,4 +42,4 @@ const SingleItem: React.FC<Props> = ({ item, theme, handleOpenModal }) => {
   )
 }
 
-export default SingleItem
+export default ModernItem
