@@ -1,6 +1,6 @@
 # SheetySite
 
-This is a Gatsby template for creating a website based on Google sheets.
+This is a Gatsby template for creating listing websites based on Google sheets data.
 
 ## Getting Started 🚀
 
