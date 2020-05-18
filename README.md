@@ -8,6 +8,7 @@ This is a Gatsby template for creating listing websites based on Google sheets d
 
 1. Install [NodeJs](https://nodejs.org/en/download/)
 2. Install [Yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable)
+3. Install [Gatsby]`yarn install gatsby -g`
 3. Create [Google Sheets API key](https://developers.google.com/sheets/api/guides/authorizing#APIKey)
 
 ### Preparing the Project
