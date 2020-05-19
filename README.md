@@ -60,10 +60,11 @@ The following setup have been configured in this project:
 SheetySite
 - [ ] Build custom google sheets plugin that is more flexible
 - [ ] Back to top button
+- [ ] Enable font change
 - [x] Create HeroType options
 - [x] Create ListingType options
 - [x] Support Google Analytics
-- [x] SEO should be be based on the data( from the [sheets] https://docs.google.com/spreadsheets/d/1S-S1dzVsPlbYtYTq_jiXCcVYKf75wFlGxB2fKkdVc7w/edit#gid=1818216905)
+- [x] SEO should be be based on the data from the [sheets] (https://docs.google.com/spreadsheets/d/1S-S1dzVsPlbYtYTq_jiXCcVYKf75wFlGxB2fKkdVc7w/edit#gid=1818216905)
 - [ ] Cater for private sheets
 
 SheetySite - Consumer Version
