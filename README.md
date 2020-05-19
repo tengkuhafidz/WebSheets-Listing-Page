@@ -9,7 +9,8 @@ This is a Gatsby template for creating listing websites based on Google sheets d
 1. Install [NodeJs](https://nodejs.org/en/download/)
 2. Install [Yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable)
 3. Install [Gatsby](https://www.gatsbyjs.org/docs/glossary/yarn/) `yarn global add gatsby-cli`
-3. Create [Google Sheets API key](https://developers.google.com/sheets/api/guides/authorizing#APIKey)
+4. Create [Google API key](https://developers.google.com/sheets/api/guides/authorizing#APIKey)
+5. Enable [Google Sheets API](https://console.developers.google.com/apis/library/sheets.googleapis.com?project=sheetysite&folder&organizationId)
 
 ### Preparing the Project
 1. Clone this repo `git clone https://github.com/tengkuhafidz/sheetysite.git`
