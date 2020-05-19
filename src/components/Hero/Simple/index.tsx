@@ -1,7 +1,7 @@
 import React from 'react'
-import Navbar from './navbar'
-import MinimalBody from './/minimal-body'
 import { SiteData, Theme } from '../../../utils/models'
+import Navbar from './navbar'
+import SimpleBody from './simple-body'
 
 interface Props {
   siteData: SiteData
@@ -11,20 +11,18 @@ interface Props {
   isCenter?: boolean
 }
 
-const Minimal: React.FC<Props> = ({ siteData, theme, isDarkMode, handleDarkModeClick, isCenter = false }) => {
-  console.log('>>> Minimal isCenter', isCenter)
-
+const Simple: React.FC<Props> = ({ siteData, theme, isDarkMode, handleDarkModeClick, isCenter = false }) => {
   return (
-    <div>
+    <div className={`bg-${isDarkMode ? theme.secondary : theme.primary}`}>
       <Navbar
         title={siteData.siteName}
         theme={theme}
         isDarkMode={isDarkMode}
         handleDarkModeClick={handleDarkModeClick}
       />
-      <MinimalBody siteData={siteData} theme={theme} isCenter={isCenter} />
+      <SimpleBody siteData={siteData} theme={theme} isCenter={isCenter} />
     </div>
   )
 }
 
-export default Minimal
+export default Simple

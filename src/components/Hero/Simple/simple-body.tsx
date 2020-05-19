@@ -8,17 +8,16 @@ interface Props {
   isCenter: boolean
 }
 
-const MinimalBody: React.FC<Props> = ({ siteData, theme, isCenter }) => {
-  const { primary, text, subtext } = theme
+const SimpleBody: React.FC<Props> = ({ siteData, theme, isCenter }) => {
+  const { background, text } = theme
   const { heroTitle, heroDescription, heroButtonLabel, heroButtonUrl } = siteData
-  console.log('>>> isCenter', isCenter)
   return (
     <div className={`container mx-auto px-4 py-8 ${isCenter && 'text-center'}`}>
-      <h1 className={`text-4xl ${text}`}>{heroTitle}</h1>
-      <p className={`font-thin text-xl ${subtext}`}>{heroDescription}</p>
+      <h1 className={`text-4xl text-gray-100`}>{heroTitle}</h1>
+      <p className={`font-thin text-xl text-gray-100`}>{heroDescription}</p>
       <div className="my-12">
         <a
-          className={`bg-${primary} text-gray-100 py-3 px-6 rounded-lg`}
+          className={`${background} ${text} py-3 px-6 rounded-lg`}
           href={heroButtonUrl}
           target="_blank"
           rel="noopener noreferrer"
@@ -32,4 +31,4 @@ const MinimalBody: React.FC<Props> = ({ siteData, theme, isCenter }) => {
   )
 }
 
-export default MinimalBody
+export default SimpleBody

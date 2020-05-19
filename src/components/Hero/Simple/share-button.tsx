@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { SiteData, Theme } from '../../utils/models'
+import { SiteData, Theme } from '../../../utils/models'
 
 interface Props {
   siteData: SiteData
@@ -8,7 +8,7 @@ interface Props {
 
 const ShareButton: React.FC<Props> = ({ siteData, theme }) => {
   const { siteName, sitePrimaryColor } = siteData
-  const { primary, text, altText, altBackground, customShadow } = theme
+  const { text, altText, altBackground, customShadow } = theme
 
   const hasWindow = typeof window !== 'undefined'
 
@@ -76,7 +76,7 @@ const ShareButton: React.FC<Props> = ({ siteData, theme }) => {
   return (
     <div className="relative mt-4 md:mt-0 md:ml-4 md:inline w-screen py-4">
       <a
-        className={`border border-${primary} text-${primary} text-gray-100 py-3 px-6 rounded-lg cursor-pointer`}
+        className={`border border-gray-100 text-gray-100 py-3 px-6 rounded-lg cursor-pointer`}
         onClick={() => handleShareButtonClick()}
         onMouseOver={() => setIsOpen(true)}
         onMouseOut={() => setIsOpen(false)}

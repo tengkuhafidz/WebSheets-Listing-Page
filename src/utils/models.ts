@@ -57,4 +57,6 @@ export enum ListingType {
 export enum HeroType {
   MINIMAL = 'minimal',
   MINIMAL_CENTER = 'minimal-center',
+  SIMPLE = 'simple',
+  SIMPLE_CENTER = 'simple-center',
 }

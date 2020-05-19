@@ -1,6 +1,7 @@
 import React from 'react'
 import { HeroType, SiteData, Theme } from '../../utils/models'
 import Minimal from './Minimal'
+import Simple from './Simple'
 
 interface Props {
   siteData: SiteData
@@ -11,6 +12,7 @@ interface Props {
 
 const Hero: React.FC<Props> = ({ siteData, theme, isDarkMode, handleDarkModeClick }) => {
   const { heroType } = siteData
+  console.log('>>> heroType', heroType)
 
   switch (heroType) {
     case HeroType.MINIMAL:
@@ -20,6 +22,20 @@ const Hero: React.FC<Props> = ({ siteData, theme, isDarkMode, handleDarkModeClic
     case HeroType.MINIMAL_CENTER:
       return (
         <Minimal
+          siteData={siteData}
+          theme={theme}
+          isDarkMode={isDarkMode}
+          handleDarkModeClick={handleDarkModeClick}
+          isCenter
+        />
+      )
+    case HeroType.SIMPLE:
+      return (
+        <Simple siteData={siteData} theme={theme} isDarkMode={isDarkMode} handleDarkModeClick={handleDarkModeClick} />
+      )
+    case HeroType.SIMPLE_CENTER:
+      return (
+        <Simple
           siteData={siteData}
           theme={theme}
           isDarkMode={isDarkMode}
