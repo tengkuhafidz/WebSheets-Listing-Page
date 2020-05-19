@@ -40,6 +40,12 @@ This is a Gatsby template for creating listing websites based on Google sheets d
 3. Run `yarn serve`
    - Your site will run at `http://localhost:9000`
 
+## Troubleshooting
+Having an issue? The following are common setup mistakes that might have caused it. Please ensure that the following are set properly.
+- Google Sheets MUST be set to **public**
+- [Google API](https://console.developers.google.com/apis/library/sheets.googleapis.com?project=sheetysite&folder&organizationId) MUST be **enabled**
+- The value of environment variables MUST be in between double quotations
+
 
 ## Underlying Tech
 
