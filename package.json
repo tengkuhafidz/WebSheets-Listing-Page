@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-typescript-tailwind",
+  "name": "SheetySite",
   "private": true,
-  "description": "A starter template for Gatsby with Typescript and Tailwind",
+  "description": "Create listing websites with Google Sheets data",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
@@ -48,10 +48,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
+    "url": "https://github.com/tengkuhafidz/sheetysite/"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/tengkuhafidz/sheetysite/issues"
   },
   "husky": {
     "hooks": {
