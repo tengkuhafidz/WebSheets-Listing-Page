@@ -12,7 +12,6 @@ interface Props {
 
 const Hero: React.FC<Props> = ({ siteData, theme, isDarkMode, handleDarkModeClick }) => {
   const { heroType } = siteData
-  console.log('>>> heroType', heroType)
 
   switch (heroType) {
     case HeroType.MINIMAL:

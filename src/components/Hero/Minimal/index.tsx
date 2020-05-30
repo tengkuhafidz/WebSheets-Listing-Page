@@ -12,8 +12,6 @@ interface Props {
 }
 
 const Minimal: React.FC<Props> = ({ siteData, theme, isDarkMode, handleDarkModeClick, isCenter = false }) => {
-  console.log('>>> Minimal isCenter', isCenter)
-
   return (
     <div>
       <Navbar
