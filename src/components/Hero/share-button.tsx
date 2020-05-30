@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
-import { SiteData, Theme } from '../../../utils/models'
+import { SiteData, Theme } from '../../utils/models'
 
 interface Props {
   siteData: SiteData
   theme: Theme
+  outlineColor: string
+  isCenter: boolean
 }
 
-const ShareButton: React.FC<Props> = ({ siteData, theme }) => {
+const ShareButton: React.FC<Props> = ({ siteData, theme, outlineColor, isCenter }) => {
   const { siteName, sitePrimaryColor } = siteData
   const { text, altText, altBackground, customShadow } = theme
 
@@ -74,9 +76,9 @@ const ShareButton: React.FC<Props> = ({ siteData, theme }) => {
   }
 
   return (
-    <div className="relative mt-4 md:mt-0 md:ml-4 md:inline w-screen py-4">
+    <div className="relative mt-4 md:mt-0 md:ml-4 md:inline md:w-screen py-4">
       <a
-        className={`border border-gray-100 text-gray-100 py-3 px-6 rounded-lg cursor-pointer`}
+        className={`border border-${outlineColor} text-${outlineColor} py-3 px-6 rounded-lg cursor-pointer`}
         onClick={() => handleShareButtonClick()}
         onMouseOver={() => setIsOpen(true)}
         onMouseOut={() => setIsOpen(false)}
@@ -85,7 +87,7 @@ const ShareButton: React.FC<Props> = ({ siteData, theme }) => {
         <i className="fas fa-share-alt ml-2"></i>
       </a>
       <div
-        className={`${altBackground} rounded ${customShadow} absolute right-0 rounded-lg mt-2 ${
+        className={`${altBackground} rounded rounded-lg mt-2 ${customShadow} absolute md:left-0 w-40 mx-auto text-left ${
           isOpen ? 'block' : 'hidden'
         }`}
         onMouseOver={() => setIsOpen(true)}

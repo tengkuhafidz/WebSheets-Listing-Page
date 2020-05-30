@@ -1,6 +1,6 @@
 import React from 'react'
 import { SiteData, Theme } from '../../../utils/models'
-import ShareButton from './share-button'
+import ShareButton from '../share-button'
 
 interface Props {
   siteData: SiteData
@@ -25,7 +25,7 @@ const SimpleBody: React.FC<Props> = ({ siteData, theme, isCenter }) => {
           {heroButtonLabel}
           <i className="fas fa-share ml-2"></i>
         </a>
-        <ShareButton siteData={siteData} theme={theme} />
+        <ShareButton siteData={siteData} theme={theme} outlineColor={'gray-100'} isCenter={isCenter} />
       </div>
     </div>
   )

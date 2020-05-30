@@ -1,6 +1,6 @@
 import React from 'react'
 import { SiteData, Theme } from '../../../utils/models'
-import ShareButton from './share-button'
+import ShareButton from '../share-button'
 
 interface Props {
   siteData: SiteData
@@ -11,7 +11,7 @@ interface Props {
 const MinimalBody: React.FC<Props> = ({ siteData, theme, isCenter }) => {
   const { primary, text, subtext } = theme
   const { heroTitle, heroDescription, heroButtonLabel, heroButtonUrl } = siteData
-  console.log('>>> isCenter', isCenter)
+
   return (
     <div className={`container mx-auto px-4 py-8 ${isCenter && 'text-center'}`}>
       <h1 className={`text-4xl ${text}`}>{heroTitle}</h1>
@@ -26,7 +26,7 @@ const MinimalBody: React.FC<Props> = ({ siteData, theme, isCenter }) => {
           {heroButtonLabel}
           <i className="fas fa-share ml-2"></i>
         </a>
-        <ShareButton siteData={siteData} theme={theme} />
+        <ShareButton siteData={siteData} theme={theme} outlineColor={primary} isCenter={isCenter} />
       </div>
     </div>
   )
