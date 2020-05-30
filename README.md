@@ -73,12 +73,7 @@ SheetySite
 - [x] Support Google Analytics
 - [x] SEO should be be based on the data from the [sheets] (https://docs.google.com/spreadsheets/d/1S-S1dzVsPlbYtYTq_jiXCcVYKf75wFlGxB2fKkdVc7w/edit#gid=1818216905)
 - [ ] Cater for private sheets
-
-SheetySite - Consumer Version
-- [ ] Generate env variables 
-- [ ] Auto build and deploy directly via Google Sheets
-- [ ] Build landing page to explain SheetySite
-- [ ] Create consumer-friendly explainer material on how to use SheetySite
+- [ ] Create a demo version where users can switch site templates
 
 
 ## What's inside? 🧐
