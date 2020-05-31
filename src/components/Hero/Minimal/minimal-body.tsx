@@ -26,7 +26,7 @@ const MinimalBody: React.FC<Props> = ({ siteData, theme, isCenter }) => {
           {heroButtonLabel}
           <i className="fas fa-share ml-2"></i>
         </a>
-        <ShareButton siteData={siteData} theme={theme} outlineColor={primary} isCenter={isCenter} />
+        <ShareButton siteData={siteData} theme={theme} outlineColor={primary} />
       </div>
     </div>
   )

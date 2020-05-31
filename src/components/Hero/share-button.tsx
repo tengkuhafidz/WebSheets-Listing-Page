@@ -5,10 +5,9 @@ interface Props {
   siteData: SiteData
   theme: Theme
   outlineColor: string
-  isCenter: boolean
 }
 
-const ShareButton: React.FC<Props> = ({ siteData, theme, outlineColor, isCenter }) => {
+const ShareButton: React.FC<Props> = ({ siteData, theme, outlineColor }) => {
   const { siteName, sitePrimaryColor } = siteData
   const { text, altText, altBackground, customShadow } = theme
 
