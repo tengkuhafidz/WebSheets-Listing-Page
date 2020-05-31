@@ -50,7 +50,7 @@ const Footer: React.FC<Props> = ({ siteData, theme }) => {
       <p className="text-center text-gray-600">{footerLabel}</p>
       <p className="text-center text-gray-600">
         Powered by{' '}
-        <a href="https://sheetysite.com" target="_blank" rel="noreferrer" className="font-medium hover:underline">
+        <a href="https://sheetysite.com" target="_blank" rel="noreferrer" className="hover:font-semibold underline">
           SheetySite
         </a>
       </p>
