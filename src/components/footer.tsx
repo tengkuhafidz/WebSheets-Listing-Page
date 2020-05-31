@@ -48,7 +48,12 @@ const Footer: React.FC<Props> = ({ siteData, theme }) => {
     <div className={`py-4 font-light ${subtext}`}>
       <div className="container mx-auto text-gray-600 text-center my-2">{renderSocialMediaLinks()}</div>
       <p className="text-center text-gray-600">{footerLabel}</p>
-      <p className="text-center text-gray-600">Powered by SheetySite</p>
+      <p className="text-center text-gray-600">
+        Powered by{' '}
+        <a href="https://sheetysite.com" target="_blank" rel="noreferrer" className="font-medium hover:underline">
+          SheetySite
+        </a>
+      </p>
     </div>
   )
 }
