@@ -15,7 +15,7 @@ This is a Gatsby template for creating listing websites based on Google sheets d
 ### Preparing the Project
 1. Clone this repo `git clone https://github.com/tengkuhafidz/sheetysite.git`
 2. Run `yarn install` to download dependencies
-3. Make a copy of the [google sheets template](https://docs.google.com/spreadsheets/d/1S-S1dzVsPlbYtYTq_jiXCcVYKf75wFlGxB2fKkdVc7w/edit#gid=1818216905) and **set it to public**.
+3. Make a copy of the [google sheets template](https://docs.google.com/spreadsheets/d/1S-S1dzVsPlbYtYTq_jiXCcVYKf75wFlGxB2fKkdVc7w/copy#gid=1818216905) and **set it to public**.
 4. The sheet names (`site`, `listing`) and header names (1st row of each sheet) should NOT be changed.
 5. Fill in the google sheets with the site's data and item listings details
    - Ensure to not leave any fields empty. Write `nil` to indicate no value instead
@@ -69,7 +69,7 @@ SheetySite
 - [x] Create HeroType options
 - [x] Create ListingType options
 - [x] Support Google Analytics
-- [x] SEO should be be based on site info from the [sheets] (https://docs.google.com/spreadsheets/d/1S-S1dzVsPlbYtYTq_jiXCcVYKf75wFlGxB2fKkdVc7w/edit#gid=1818216905)
+- [x] SEO should be be based on site info from the sheets
 - [ ] Back to top button
 - [ ] Enable font change
 - [ ] Cater for private sheets
