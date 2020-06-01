@@ -54,9 +54,9 @@ const SingleItem: React.FC<Props> = ({ item, theme, siteData }) => {
         {renderDescription()}
         <a
           className={`py-2 px-16 rounded bg-${primary} hidden text-white text-center ${
-            hasProperty(item.url) && `hover:${customShadow} cursor-pointer block md:inline`
+            hasProperty(item.actionUrl) && `hover:${customShadow} cursor-pointer block md:inline`
           }`}
-          href={item.url}
+          href={item.actionUrl}
           target="_blank"
           rel="noreferrer"
         >

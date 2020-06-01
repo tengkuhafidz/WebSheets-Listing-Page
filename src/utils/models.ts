@@ -1,7 +1,7 @@
 export interface ItemData {
   id: string
   title: string
-  url: string
+  actionUrl: string
   tags: string
   itemId: string
   subtitle: string
@@ -16,7 +16,6 @@ export interface SiteData {
   heroType: HeroType
   heroTitle: string
   heroDescription: string
-  heroImage
   heroButtonLabel: string
   heroButtonUrl: string
   listingType: ListingType

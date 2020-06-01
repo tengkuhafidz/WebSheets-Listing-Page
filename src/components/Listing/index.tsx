@@ -17,7 +17,7 @@ const Listing: React.FC<Props> = ({ theme, siteData }) => {
         nodes {
           id
           title
-          url
+          actionUrl
           tags
           itemId
           subtitle

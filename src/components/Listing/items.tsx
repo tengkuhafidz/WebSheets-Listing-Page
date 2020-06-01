@@ -27,7 +27,7 @@ const Items: React.FC<Props> = ({ items, theme, handleOpenModal, siteData }) => 
 
   const renderProfileItems = () => {
     return items.map((item) => (
-      <ProfileItem item={item} key={item.id} theme={theme} handleOpenModal={handleOpenModal} siteData={siteData} />
+      <ProfileItem item={item} key={item.id} theme={theme} handleOpenModal={handleOpenModal} />
     ))
   }
 
