@@ -18,7 +18,7 @@ const Navbar: React.FC<Props> = ({ title, theme, isDarkMode, handleDarkModeClick
           <span className={`font-bold text-lg tracking-tight text-${theme.primary}`}>{title}</span>
         </div>
         <div className="flex-grow"></div>
-        <div className={`flex px-4 text-${theme.primary}`}>
+        <div className={`flex px-4 text-${theme.primary} cursor-pointer`}>
           <i className={`fas ${darkModeIcon} text-2xl`} onClick={() => handleDarkModeClick()}></i>
         </div>
       </nav>
