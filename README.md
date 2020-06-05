@@ -74,7 +74,7 @@ SheetySite
 - [ ] Enable font change
 - [ ] Cater for private sheets
 - [ ] Build custom google sheets plugin that is more flexible
-- [ ] Create a demo version where users can switch site templates
+- [x] Create a demo version where users can switch site templates -> https://sheety.site
 
 
 ## What's inside? 🧐
