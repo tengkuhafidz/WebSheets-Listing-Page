@@ -13,6 +13,7 @@ export interface SiteData {
   siteName: string
   siteLogo: string
   sitePrimaryColor: string
+  darkMode: string
   heroType: HeroType
   heroTitle: string
   heroDescription: string

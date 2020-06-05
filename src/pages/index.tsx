@@ -7,7 +7,7 @@ import SEO from '../components/seo'
 
 const Home = ({ data }) => {
   const siteData = data.allGoogleSiteSheet.nodes[0]
-  const { sitePrimaryColor, siteName, siteLogo, heroTitle, heroDescription } = siteData
+  const { sitePrimaryColor, siteName, siteLogo, heroTitle, heroDescription, darkMode } = siteData
 
   const lightTheme = {
     primary: `${sitePrimaryColor}-600`,
@@ -32,8 +32,8 @@ const Home = ({ data }) => {
     altBackground: 'bg-gray-600',
     customShadow: 'shadow-white',
   }
-
-  const [isDarkMode, setIsDarkMode] = useState(false)
+  const defaultDarkMode = darkMode === 'TRUE'
+  const [isDarkMode, setIsDarkMode] = useState(defaultDarkMode)
 
   const handleDarkModeClick = () => {
     setIsDarkMode(!isDarkMode)
@@ -62,6 +62,7 @@ export const siteData = graphql`
         heroDescription
         heroButtonUrl
         heroButtonLabel
+        darkMode
         listingType
         listingDescriptionButtonLabel
         listingUrlButtonLabel
