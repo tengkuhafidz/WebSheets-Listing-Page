@@ -15,7 +15,7 @@ const Navbar: React.FC<Props> = ({ title, theme, isDarkMode, handleDarkModeClick
       <div className={`bg-${theme.primary} h-2`}></div>
       <nav className={`container mx-auto py-8 flex`}>
         <div className="px-4 flex">
-          <span className={`font-bold text-lg tracking-tight text-${theme.primary}`}>{title}</span>
+          <span className={`font-bold text-lg tracking-tight text-${theme.primary} cursor-default`}>{title}</span>
         </div>
         <div className="flex-grow"></div>
         <div className={`flex px-4 text-${theme.primary}`}>
