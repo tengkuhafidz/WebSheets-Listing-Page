@@ -1,5 +1,5 @@
 import React from 'react'
-import { SiteData, Theme } from '../../../utils/models'
+import { SiteData, Theme } from '../../../../utils/models'
 import Navbar from './navbar'
 import SimpleBody from './simple-body'
 

@@ -1,9 +1,9 @@
 import { graphql } from 'gatsby'
 import React, { useState } from 'react'
-import Footer from '../components/footer'
-import Hero from '../components/Hero'
-import Listing from '../components/Listing'
-import SEO from '../components/seo'
+import Footer from '../components/ListingPage/footer'
+import Hero from '../components/ListingPage/Hero'
+import Listing from '../components/ListingPage/Listing'
+import SEO from '../components/ListingPage/seo'
 
 const Home = ({ data }) => {
   const siteData = data.allGoogleSiteSheet.nodes[0]

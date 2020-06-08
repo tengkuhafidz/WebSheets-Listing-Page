@@ -1,7 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { StringLiteral } from 'typescript'
 
 enum TwitterCard {
   Summary = 'summary',
@@ -9,7 +8,7 @@ enum TwitterCard {
 }
 
 interface Props {
-  title?: StringLiteral
+  title?: string
   description?: string
   image?: string
   twitterCard?: TwitterCard

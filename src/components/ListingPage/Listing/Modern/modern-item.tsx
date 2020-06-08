@@ -1,5 +1,5 @@
 import React from 'react'
-import { ItemData, Theme } from '../../../utils/models'
+import { ItemData, Theme } from '../../../../utils/models'
 
 interface Props {
   item: ItemData

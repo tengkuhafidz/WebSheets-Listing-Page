@@ -1,6 +1,6 @@
 import Fuse from 'fuse.js'
 import React, { useState } from 'react'
-import { ItemData, ListingType, SiteData, Theme } from '../../utils/models'
+import { ItemData, ListingType, SiteData, Theme } from '../../../utils/models'
 import Events from './Events'
 import ListingItems from './listing-items'
 
@@ -11,12 +11,16 @@ interface Props {
 }
 
 const Listing: React.FC<Props> = ({ theme, siteData, listingData }) => {
+  const allItems = listingData
+
   const getDistinctTags = () => {
     const distinctTags = []
-    listingData.forEach((item) => {
-      item.tags.forEach((tag) => {
-        !distinctTags.includes(tag) && distinctTags.push(tag)
-      })
+    allItems.forEach((item) => {
+      if (item.tags) {
+        item.tags.forEach((tag) => {
+          !distinctTags.includes(tag) && distinctTags.push(tag)
+        })
+      }
     })
     return distinctTags
   }
@@ -47,8 +51,8 @@ const Listing: React.FC<Props> = ({ theme, siteData, listingData }) => {
     return fuseSearchResult.map((result) => result.item)
   }
 
-  const getItemsToDisplay = (): ItemData[] => {
-    const itemsInTab = currentTab !== ALL ? listingData.filter((item) => item.tags.includes(currentTab)) : listingData
+  const getItemsToDisplay = () => {
+    const itemsInTab = currentTab !== ALL ? allItems.filter((item) => item.tags.includes(currentTab)) : allItems
     const searchResult = searchTerm ? getFuseSearchResult(itemsInTab, searchTerm) : itemsInTab
     return searchResult
   }

@@ -1,6 +1,6 @@
 import React from 'react'
 import ModernItem from './Modern/modern-item'
-import { ItemData, Theme, ListingType, SiteData } from '../../utils/models'
+import { ItemData, Theme, ListingType, SiteData } from '../../../utils/models'
 import ProfileItem from './Profiles/profiles-item'
 import BasicItem from './Basic/basic-item'
 import CompactItem from './Compact/compact-item'
@@ -15,24 +15,26 @@ interface Props {
 const Items: React.FC<Props> = ({ items, theme, handleOpenModal, siteData }) => {
   const renderBasicItems = () => {
     return items.map((item) => (
-      <BasicItem item={item} key={item.id} theme={theme} handleOpenModal={handleOpenModal} siteData={siteData} />
+      <BasicItem item={item} key={item.itemId} theme={theme} handleOpenModal={handleOpenModal} siteData={siteData} />
     ))
   }
 
   const renderCompactItems = () => {
     return items.map((item) => (
-      <CompactItem item={item} key={item.id} theme={theme} handleOpenModal={handleOpenModal} />
+      <CompactItem item={item} key={item.itemId} theme={theme} handleOpenModal={handleOpenModal} />
     ))
   }
 
   const renderProfileItems = () => {
     return items.map((item) => (
-      <ProfileItem item={item} key={item.id} theme={theme} handleOpenModal={handleOpenModal} />
+      <ProfileItem item={item} key={item.itemId} theme={theme} handleOpenModal={handleOpenModal} />
     ))
   }
 
   const renderModernItems = () => {
-    return items.map((item) => <ModernItem item={item} key={item.id} theme={theme} handleOpenModal={handleOpenModal} />)
+    return items.map((item) => (
+      <ModernItem item={item} key={item.itemId} theme={theme} handleOpenModal={handleOpenModal} />
+    ))
   }
 
   const { listingType } = siteData

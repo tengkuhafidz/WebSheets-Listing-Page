@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import useModal from 'use-react-modal'
-import { ItemData, Theme, SiteData } from '../../utils/models'
+import { ItemData, Theme, SiteData } from '../../../utils/models'
 import Items from './items'
 import ListingModal from './listing-modal'
 

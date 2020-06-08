@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { SiteData, Theme } from '../../utils/models'
+import { SiteData, Theme } from '../../../utils/models'
 
 interface Props {
   siteData: SiteData

@@ -1,6 +1,6 @@
 import '@fortawesome/fontawesome-free/css/all.css'
 import React from 'react'
-import { SiteData, Theme } from '../utils/models'
+import { SiteData, Theme } from '../../utils/models'
 
 interface Props {
   siteData: SiteData

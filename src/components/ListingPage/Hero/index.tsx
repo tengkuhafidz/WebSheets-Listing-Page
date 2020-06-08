@@ -1,5 +1,5 @@
 import React from 'react'
-import { HeroType, SiteData, Theme } from '../../utils/models'
+import { HeroType, SiteData, Theme } from '../../../utils/models'
 import Minimal from './Minimal'
 import Simple from './Simple'
 
