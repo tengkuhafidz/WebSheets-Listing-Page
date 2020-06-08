@@ -7,6 +7,19 @@ import SEO from '../components/seo'
 
 const Home = ({ data }) => {
   const siteData = data.allGoogleSiteSheet.nodes[0]
+  const rawListingData = data.allGoogleListingSheet.nodes
+
+  const formatListingData = () => {
+    return rawListingData.map((item) => {
+      if (typeof item.tags === 'string') {
+        item.tags = item.tags.split(', ')
+      }
+      return item
+    })
+  }
+
+  const listingData = formatListingData()
+
   const { sitePrimaryColor, siteName, siteLogo, heroTitle, heroDescription, darkMode } = siteData
 
   const lightTheme = {
@@ -45,7 +58,7 @@ const Home = ({ data }) => {
     <div className={`${theme.background} min-h-screen`}>
       <SEO image={siteLogo} title={siteName} description={`${heroTitle} - ${heroDescription}`} />
       <Hero siteData={siteData} theme={theme} isDarkMode={isDarkMode} handleDarkModeClick={handleDarkModeClick} />
-      <Listing siteData={siteData} theme={theme} />
+      <Listing siteData={siteData} listingData={listingData} theme={theme} />
       <Footer siteData={siteData} theme={theme} />
     </div>
   )
@@ -73,6 +86,18 @@ export const siteData = graphql`
         instagramUrl
         twitterUrl
         facebookUrl
+      }
+    }
+    allGoogleListingSheet {
+      nodes {
+        id
+        title
+        actionUrl
+        tags
+        itemId
+        subtitle
+        description
+        image
       }
     }
   }

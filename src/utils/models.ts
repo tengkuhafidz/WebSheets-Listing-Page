@@ -2,7 +2,7 @@ export interface ItemData {
   id: string
   title: string
   actionUrl: string
-  tags: string
+  tags: string[]
   itemId: string
   subtitle: string
   description: string

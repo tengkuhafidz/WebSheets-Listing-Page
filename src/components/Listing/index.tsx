@@ -1,5 +1,4 @@
 import Fuse from 'fuse.js'
-import { graphql, useStaticQuery } from 'gatsby'
 import React, { useState } from 'react'
 import { ItemData, ListingType, SiteData, Theme } from '../../utils/models'
 import Events from './Events'
@@ -8,42 +7,13 @@ import ListingItems from './listing-items'
 interface Props {
   theme: Theme
   siteData: SiteData
+  listingData: ItemData[]
 }
 
-const Listing: React.FC<Props> = ({ theme, siteData }) => {
-  const { allGoogleListingSheet } = useStaticQuery(graphql`
-    query allGoogleListingSheetQuery {
-      allGoogleListingSheet {
-        nodes {
-          id
-          title
-          actionUrl
-          tags
-          itemId
-          subtitle
-          description
-          image
-        }
-      }
-    }
-  `)
-
-  const getAllItems = () => {
-    const allItems = allGoogleListingSheet.nodes
-    const formattedItems = allItems.map((item) => {
-      if (typeof item.tags === 'string') {
-        item.tags = item.tags.split(', ')
-      }
-      return item
-    })
-    return formattedItems
-  }
-
-  const allItems = getAllItems()
-
+const Listing: React.FC<Props> = ({ theme, siteData, listingData }) => {
   const getDistinctTags = () => {
     const distinctTags = []
-    allItems.forEach((item) => {
+    listingData.forEach((item) => {
       item.tags.forEach((tag) => {
         !distinctTags.includes(tag) && distinctTags.push(tag)
       })
@@ -57,7 +27,7 @@ const Listing: React.FC<Props> = ({ theme, siteData }) => {
   const [currentTab, setCurrentTab] = useState(tabs[0])
   const [searchTerm, setSearchTerm] = useState('')
 
-  const getFuseSearchResult = (items: ItemData[], searchTerm: string): object[] => {
+  const getFuseSearchResult = (items: ItemData[], searchTerm: string): ItemData[] => {
     const options = {
       isCaseSensitive: false,
       findAllMatches: false,
@@ -77,8 +47,8 @@ const Listing: React.FC<Props> = ({ theme, siteData }) => {
     return fuseSearchResult.map((result) => result.item)
   }
 
-  const getItemsToDisplay = () => {
-    const itemsInTab = currentTab !== ALL ? allItems.filter((item) => item.tags.includes(currentTab)) : allItems
+  const getItemsToDisplay = (): ItemData[] => {
+    const itemsInTab = currentTab !== ALL ? listingData.filter((item) => item.tags.includes(currentTab)) : listingData
     const searchResult = searchTerm ? getFuseSearchResult(itemsInTab, searchTerm) : itemsInTab
     return searchResult
   }
