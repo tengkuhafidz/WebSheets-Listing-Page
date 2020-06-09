@@ -16,6 +16,7 @@ const Minimal: React.FC<Props> = ({ siteData, theme, isDarkMode, handleDarkModeC
     <div>
       <Navbar
         title={siteData.siteName}
+        logo={siteData.siteLogo}
         theme={theme}
         isDarkMode={isDarkMode}
         handleDarkModeClick={handleDarkModeClick}

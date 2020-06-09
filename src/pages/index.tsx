@@ -4,12 +4,13 @@ import Footer from '../components/ListingPage/footer'
 import Hero from '../components/ListingPage/Hero'
 import Listing from '../components/ListingPage/Listing'
 import SEO from '../components/ListingPage/seo'
+import { SiteData, ItemData } from '../utils/models'
 
 const Home = ({ data }) => {
-  const siteData = data.allGoogleSiteSheet.nodes[0]
+  const siteData: SiteData = data.allGoogleSiteSheet.nodes[0]
   const rawListingData = data.allGoogleListingSheet.nodes
 
-  const formatListingData = () => {
+  const formatListingData = (): ItemData[] => {
     return rawListingData.map((item) => {
       if (typeof item.tags === 'string') {
         item.tags = item.tags.split(', ')
@@ -18,9 +19,9 @@ const Home = ({ data }) => {
     })
   }
 
-  const listingData = formatListingData()
+  const listingData: ItemData[] = formatListingData()
 
-  const { sitePrimaryColor, siteName, siteLogo, heroTitle, heroDescription, darkMode } = siteData
+  const { siteName, sitePrimaryColor, heroTitle, heroDescription, darkMode } = siteData
 
   const lightTheme = {
     primary: `${sitePrimaryColor}-600`,
@@ -56,7 +57,7 @@ const Home = ({ data }) => {
 
   return (
     <div className={`${theme.background} min-h-screen`}>
-      <SEO image={siteLogo} title={siteName} description={`${heroTitle} - ${heroDescription}`} />
+      <SEO title={siteName} description={`${heroTitle} - ${heroDescription}`} />
       <Hero siteData={siteData} theme={theme} isDarkMode={isDarkMode} handleDarkModeClick={handleDarkModeClick} />
       <Listing siteData={siteData} listingData={listingData} theme={theme} />
       <Footer siteData={siteData} theme={theme} />

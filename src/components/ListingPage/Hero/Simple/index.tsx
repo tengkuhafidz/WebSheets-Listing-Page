@@ -16,6 +16,7 @@ const Simple: React.FC<Props> = ({ siteData, theme, isDarkMode, handleDarkModeCl
     <div className={`bg-${isDarkMode ? theme.secondary : theme.primary}`}>
       <Navbar
         title={siteData.siteName}
+        logo={siteData.siteLogo}
         theme={theme}
         isDarkMode={isDarkMode}
         handleDarkModeClick={handleDarkModeClick}
