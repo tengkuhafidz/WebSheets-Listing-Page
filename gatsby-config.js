@@ -19,6 +19,26 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
+      resolve: 'gatsby-source-gsheets-all-options',
+      options: {
+        apiKey: process.env.GATSBY_GOOGLE_CREDENTIALS,
+        spreadsheetId: '16x6gtYQl7TAhehSqcaf_SAMDKNpEgoMxAGgMpQ7NUMs',
+        tabName: 'site',
+        cellRange: 'A1:B21',
+        majorDimension: 'COLUMNS',
+      },
+    },
+    {
+      resolve: 'gatsby-source-gsheets-all-options',
+      options: {
+        apiKey: process.env.GATSBY_GOOGLE_CREDENTIALS,
+        spreadsheetId: '16x6gtYQl7TAhehSqcaf_SAMDKNpEgoMxAGgMpQ7NUMs',
+        tabName: 'listing',
+        cellRange: 'A1:G1000',
+        majorDimension: 'ROWS',
+      },
+    },
+    {
       resolve: 'gatsby-plugin-google-gtag',
       options: {
         trackingIds: [process.env.GATSBY_GA_TRACKING_ID],

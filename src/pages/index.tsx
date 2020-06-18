@@ -4,22 +4,12 @@ import Footer from '../components/ListingPage/footer'
 import Hero from '../components/ListingPage/Hero'
 import Listing from '../components/ListingPage/Listing'
 import SEO from '../components/ListingPage/seo'
-import { SiteData, ItemData } from '../utils/models'
+import { transformListingData, transformSiteData } from '../transformers'
+import { ItemData, SiteData } from '../utils/models'
 
 const Home = ({ data }) => {
-  const siteData: SiteData = data.allGoogleSiteSheet.nodes[0]
-  const rawListingData = data.allGoogleListingSheet.nodes
-
-  const formatListingData = (): ItemData[] => {
-    return rawListingData.map((item) => {
-      if (typeof item.tags === 'string') {
-        item.tags = item.tags.split(', ')
-      }
-      return item
-    })
-  }
-
-  const listingData: ItemData[] = formatListingData()
+  const listingData: ItemData[] = transformListingData(data.allListingSheetsData.nodes)
+  const siteData: SiteData = transformSiteData(data.siteSheetsData)
 
   const { siteName, sitePrimaryColor, heroTitle, heroDescription, darkMode } = siteData
 
@@ -46,8 +36,8 @@ const Home = ({ data }) => {
     altBackground: 'bg-gray-600',
     customShadow: 'shadow-white',
   }
-  const defaultDarkMode = darkMode === 'TRUE'
-  const [isDarkMode, setIsDarkMode] = useState(defaultDarkMode)
+
+  const [isDarkMode, setIsDarkMode] = useState(darkMode)
 
   const handleDarkModeClick = () => {
     setIsDarkMode(!isDarkMode)
@@ -69,33 +59,30 @@ export default Home
 
 export const siteData = graphql`
   query SiteSheetQuery {
-    allGoogleSiteSheet {
-      nodes {
-        heroType
-        heroTitle
-        heroDescription
-        heroButtonUrl
-        heroButtonLabel
-        darkMode
-        listingType
-        listingDescriptionButtonLabel
-        listingUrlButtonLabel
-        siteLogo
-        siteName
-        footerLabel
-        sitePrimaryColor
-        instagramUrl
-        twitterUrl
-        facebookUrl
-      }
+    siteSheetsData {
+      siteName
+      siteLogo
+      sitePrimaryColor
+      darkMode
+      heroType
+      heroTitle
+      heroDescription
+      heroButtonLabel
+      heroButtonUrl
+      socialShareButton
+      listingType
+      listingDescriptionButtonLabel
+      listingUrlButtonLabel
+      footerLabel
+      facebookUrl
+      instagramUrl
+      twitterUrl
     }
-    allGoogleListingSheet {
+    allListingSheetsData {
       nodes {
-        id
         title
         actionUrl
         tags
-        itemId
         subtitle
         description
         image

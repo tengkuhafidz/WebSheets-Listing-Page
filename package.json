@@ -59,7 +59,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
+    "*.{ts,tsx}": [
       "yarn lint:fix"
     ]
   }

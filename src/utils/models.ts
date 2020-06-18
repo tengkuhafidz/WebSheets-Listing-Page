@@ -1,24 +1,24 @@
 export interface ItemData {
-  id: string
-  title: string
-  actionUrl: string
-  tags: string[]
   itemId: string
+  title: string
   subtitle: string
   description: string
   image: string
+  actionUrl: string
+  tags: string[]
 }
 
 export interface SiteData {
   siteName: string
   siteLogo: string
   sitePrimaryColor: string
-  darkMode: string
+  darkMode: boolean
   heroType: HeroType
   heroTitle: string
   heroDescription: string
   heroButtonLabel: string
   heroButtonUrl: string
+  socialShareButton: boolean
   listingType: ListingType
   listingDescriptionButtonLabel: string
   listingUrlButtonLabel: string
