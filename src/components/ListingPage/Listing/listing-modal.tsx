@@ -1,5 +1,7 @@
 import React from 'react'
 import { ItemData, Theme, SiteData } from '../../../utils/models'
+import { OutboundLink } from 'gatsby-plugin-google-gtag'
+import { gtagEventClick } from '../../../utils/gtag'
 
 interface Props {
   theme: Theme
@@ -16,6 +18,23 @@ const ListingModal: React.FC<Props> = ({ theme, Modal, currentModalItem, isOpen,
     return <></>
   }
 
+  const renderActionButton = () => {
+    if (!!currentModalItem.actionUrl) {
+      return (
+        <OutboundLink
+          href={currentModalItem.actionUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`bg-${primary} hover:bg-${secondary} px-16 mt-16 text-white font-bold py-3 px-4 shadow border-b-4 border-${secondary} hover:border-gray-800 rounded`}
+          onClick={() => gtagEventClick('click_item_action', currentModalItem.actionUrl)}
+        >
+          {siteData.listingUrlButtonLabel}
+        </OutboundLink>
+      )
+    }
+    return <></>
+  }
+
   return (
     <Modal>
       <div
@@ -25,14 +44,7 @@ const ListingModal: React.FC<Props> = ({ theme, Modal, currentModalItem, isOpen,
         <h2 className="text-2xl">{currentModalItem.title}</h2>
         <p className={`${subtext}`}>{currentModalItem.subtitle}</p>
         <p className="mb-8 mt-4">{currentModalItem.description}</p>
-        <a
-          href={currentModalItem.actionUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`bg-${primary} hover:bg-${secondary} px-16 mt-16 text-white font-bold py-3 px-4 shadow border-b-4 border-${secondary} hover:border-gray-800 rounded`}
-        >
-          {siteData.listingUrlButtonLabel}
-        </a>
+        {renderActionButton()}
       </div>
     </Modal>
   )

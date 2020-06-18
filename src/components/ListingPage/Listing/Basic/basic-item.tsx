@@ -1,5 +1,6 @@
 import React from 'react'
 import { ItemData, Theme, SiteData } from '../../../../utils/models'
+import { gtagEventClick } from '../../../../utils/gtag'
 
 interface Props {
   item: ItemData
@@ -9,44 +10,56 @@ interface Props {
 }
 
 const BasicItem: React.FC<Props> = ({ item, theme, handleOpenModal, siteData }) => {
-  const hasProperty = (property) => property && property !== 'nil'
   const { primary, customShadow } = theme
 
   const renderImage = () => {
-    if (hasProperty(item.image)) {
+    if (!!item.image) {
       return <img className="w-full rounded-t-lg h-48 object-cover" src={item.image} alt={`Image of ${item.title}`} />
     }
     return <></>
   }
 
-  const renderTitle = () => {
-    if (hasProperty(item.title)) {
-      return <div className={`font-bold text-gray-800 text-xl truncate`}>{item.title}</div>
-    }
-    return <></>
-  }
-
   const renderSubtitle = () => {
-    if (hasProperty(item.subtitle)) {
+    if (!!item.subtitle) {
       return <p className={`text-gray-600 font-light truncate`}>{item.subtitle}</p>
     }
     return <></>
   }
 
-  return (
-    <div className={`max-w-sm rounded-lg shadow-lg text-center bg-white mb-8`}>
-      {renderImage()}
-      <div className="px-6 py-4">
-        {renderTitle()}
-        {renderSubtitle()}
+  const handleButtonClick = (e, item: ItemData) => {
+    if (!!item.description) {
+      gtagEventClick('open_item_modal', item.title)
+      handleOpenModal(e, item)
+    } else if (!!item.actionUrl && window !== undefined) {
+      gtagEventClick('click_item_action', item.actionUrl)
+      window.open(item.actionUrl, '_blank')
+    }
+  }
+
+  const renderButton = () => {
+    const buttonLabel = !!item.description ? siteData.listingDescriptionButtonLabel : siteData.listingUrlButtonLabel
+    if (!!item.description || !!item.actionUrl) {
+      return (
         <button
-          onClick={(e) => handleOpenModal(e, item)}
+          onClick={(e) => handleButtonClick(e, item)}
           className={`py-2 px-4 rounded w-full bg-${primary} text-white mt-4 ${
-            hasProperty(item.description) && `hover:${customShadow} cursor-pointer`
+            !!item.description && `hover:${customShadow} cursor-pointer`
           }`}
         >
-          {siteData.listingDescriptionButtonLabel}
+          {buttonLabel}
         </button>
+      )
+    }
+    return <></>
+  }
+
+  return (
+    <div className={`rounded-lg shadow-lg text-center bg-white mb-8`}>
+      {renderImage()}
+      <div className="px-6 py-4">
+        <div className={`font-bold text-gray-800 text-xl truncate`}>{item.title}</div>
+        {renderSubtitle()}
+        {renderButton()}
       </div>
     </div>
   )

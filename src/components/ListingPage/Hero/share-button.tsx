@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { SiteData, Theme } from '../../../utils/models'
+import { OutboundLink } from 'gatsby-plugin-google-gtag'
+import { gtagEventClick } from '../../../utils/gtag'
 
 interface Props {
   siteData: SiteData
@@ -61,21 +63,22 @@ const ShareButton: React.FC<Props> = ({ siteData, theme, outlineColor }) => {
     ]
 
     return sharePlatforms.map((platform) => (
-      <a
+      <OutboundLink
         href={platform.url}
         target="_blank"
         rel="noopener noreferrer"
         className={`block px-4 py-2 ${text} hover:bg-${sitePrimaryColor}-500 hover:${altText}`}
         key={platform.faClass}
+        onClick={() => gtagEventClick('social_share', platform.name)}
       >
         <i className={`fab ${platform.faClass} text-xl mr-2`}></i>
         {platform.name}
-      </a>
+      </OutboundLink>
     ))
   }
 
   return (
-    <div className="relative mt-4 md:mt-0 md:ml-4 md:inline md:w-screen py-4">
+    <div className="relative mt-4 md:mt-0 md:inline md:w-screen py-4">
       <a
         className={`border border-${outlineColor} text-${outlineColor} py-3 px-6 rounded-lg cursor-pointer`}
         onClick={() => handleShareButtonClick()}

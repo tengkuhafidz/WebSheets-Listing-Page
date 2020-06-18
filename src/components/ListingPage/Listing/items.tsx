@@ -26,9 +26,7 @@ const Items: React.FC<Props> = ({ items, theme, handleOpenModal, siteData }) => 
   }
 
   const renderProfileItems = () => {
-    return items.map((item) => (
-      <ProfileItem item={item} key={item.itemId} theme={theme} handleOpenModal={handleOpenModal} />
-    ))
+    return items.map((item) => <ProfileItem item={item} key={item.itemId} theme={theme} />)
   }
 
   const renderModernItems = () => {
@@ -41,27 +39,27 @@ const Items: React.FC<Props> = ({ items, theme, handleOpenModal, siteData }) => 
 
   switch (listingType) {
     case ListingType.BASIC_3:
-      return <div className={`grid md:grid-cols-${3} gap-8`}>{renderBasicItems()}</div>
+      return <div className={`grid grid-cols-1 md:grid-cols-${3} gap-8`}>{renderBasicItems()}</div>
     case ListingType.BASIC_4:
-      return <div className={`grid md:grid-cols-${4} gap-8`}>{renderBasicItems()}</div>
+      return <div className={`grid grid-cols-1 md:grid-cols-${4} gap-8`}>{renderBasicItems()}</div>
     case ListingType.COMPACT_4:
-      return <div className={`grid md:grid-cols-${4} gap-4`}>{renderCompactItems()}</div>
+      return <div className={`grid grid-cols-1 md:grid-cols-${4} gap-4`}>{renderCompactItems()}</div>
     case ListingType.COMPACT_5:
-      return <div className={`grid md:grid-cols-${5} gap-4`}>{renderCompactItems()}</div>
+      return <div className={`grid grid-cols-1 md:grid-cols-${5} gap-4`}>{renderCompactItems()}</div>
     case ListingType.COMPACT_6:
-      return <div className={`grid md:grid-cols-${6} gap-4`}>{renderCompactItems()}</div>
+      return <div className={`grid grid-cols-1 md:grid-cols-${6} gap-4`}>{renderCompactItems()}</div>
     case ListingType.PROFILES_3:
-      return <div className={`grid md:grid-cols-${3} gap-8`}>{renderProfileItems()}</div>
+      return <div className={`grid grid-cols-1 md:grid-cols-${3} gap-8`}>{renderProfileItems()}</div>
     case ListingType.PROFILES_4:
-      return <div className={`grid md:grid-cols-${4} gap-8`}>{renderProfileItems()}</div>
+      return <div className={`grid grid-cols-1 md:grid-cols-${4} gap-8`}>{renderProfileItems()}</div>
     case ListingType.MODERN_3:
-      return <div className={`grid md:grid-cols-${3} gap-8`}>{renderModernItems()}</div>
+      return <div className={`grid grid-cols-1 md:grid-cols-${3} gap-8`}>{renderModernItems()}</div>
     case ListingType.MODERN_4:
-      return <div className={`grid md:grid-cols-${4} gap-8`}>{renderModernItems()}</div>
+      return <div className={`grid grid-cols-1 md:grid-cols-${4} gap-8`}>{renderModernItems()}</div>
     case ListingType.MODERN_5:
-      return <div className={`grid md:grid-cols-${5} gap-8`}>{renderModernItems()}</div>
+      return <div className={`grid grid-cols-1 md:grid-cols-${5} gap-8`}>{renderModernItems()}</div>
     default:
-      return <div className={`grid md:grid-cols-${4} gap-8`}>{renderModernItems()}</div>
+      return <div className={`grid grid-cols-1 md:grid-cols-${4} gap-8`}>{renderModernItems()}</div>
   }
 }
 

@@ -1,4 +1,4 @@
-import { SiteData, ListingType, HeroType } from './utils/models'
+import { SiteData, ListingType, HeroType } from './models'
 
 export const transformSiteData = (rawSiteData): SiteData => {
   const {

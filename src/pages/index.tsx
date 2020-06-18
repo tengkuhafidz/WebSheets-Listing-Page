@@ -4,7 +4,7 @@ import Footer from '../components/ListingPage/footer'
 import Hero from '../components/ListingPage/Hero'
 import Listing from '../components/ListingPage/Listing'
 import SEO from '../components/ListingPage/seo'
-import { transformListingData, transformSiteData } from '../transformers'
+import { transformListingData, transformSiteData } from '../utils/transformers'
 import { ItemData, SiteData } from '../utils/models'
 
 const Home = ({ data }) => {
