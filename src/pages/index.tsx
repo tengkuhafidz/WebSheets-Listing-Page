@@ -86,6 +86,7 @@ export const siteData = graphql`
         subtitle
         description
         image
+        hide
       }
     }
   }

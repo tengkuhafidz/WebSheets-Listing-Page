@@ -43,7 +43,12 @@ export const transformSiteData = (rawSiteData): SiteData => {
 }
 
 export const transformListingData = (rawListingData) => {
-  return rawListingData.map((rawItem, index) => {
+  console.log('rawListingData', rawListingData)
+
+  const activeListingData = rawListingData.filter((listingData) => listingData.hide !== 'TRUE')
+  console.log('activeListingData', activeListingData)
+
+  return activeListingData.map((rawItem, index) => {
     const { title, subtitle, description, image, actionUrl, tags } = rawItem
 
     return {
