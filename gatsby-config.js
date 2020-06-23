@@ -22,7 +22,7 @@ module.exports = {
       resolve: 'gatsby-source-gsheets-all-options',
       options: {
         apiKey: process.env.GATSBY_GOOGLE_CREDENTIALS,
-        spreadsheetId: '16x6gtYQl7TAhehSqcaf_SAMDKNpEgoMxAGgMpQ7NUMs',
+        spreadsheetId: process.env.GATSBY_SHEET_ID,
         tabName: 'site',
         cellRange: 'A1:B21',
         majorDimension: 'COLUMNS',
@@ -32,7 +32,7 @@ module.exports = {
       resolve: 'gatsby-source-gsheets-all-options',
       options: {
         apiKey: process.env.GATSBY_GOOGLE_CREDENTIALS,
-        spreadsheetId: '16x6gtYQl7TAhehSqcaf_SAMDKNpEgoMxAGgMpQ7NUMs',
+        spreadsheetId: process.env.GATSBY_SHEET_ID,
         tabName: 'listing',
         cellRange: 'A1:G1000',
         majorDimension: 'ROWS',
@@ -60,13 +60,6 @@ module.exports = {
         theme_color: `#2B6CB0`,
         display: `standalone`,
         icon: `static/app-icon.png`, // This path is relative to the root of the site.
-      },
-    },
-    {
-      resolve: 'gatsby-source-google-spreadsheets',
-      options: {
-        spreadsheetId: process.env.GATSBY_SHEET_ID,
-        apiKey: process.env.GATSBY_GOOGLE_CREDENTIALS,
       },
     },
   ],
