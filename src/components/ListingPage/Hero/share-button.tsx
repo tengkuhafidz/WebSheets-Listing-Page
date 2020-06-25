@@ -10,8 +10,8 @@ interface Props {
 }
 
 const ShareButton: React.FC<Props> = ({ siteData, theme, outlineColor }) => {
-  const { siteName, sitePrimaryColor } = siteData
-  const { text, altText, altBackground, customShadow } = theme
+  const { siteName } = siteData
+  const { text, altBackground, customShadow, primary } = theme
 
   const hasWindow = typeof window !== 'undefined'
 
@@ -67,7 +67,7 @@ const ShareButton: React.FC<Props> = ({ siteData, theme, outlineColor }) => {
         href={platform.url}
         target="_blank"
         rel="noopener noreferrer"
-        className={`block px-4 py-2 ${text} hover:bg-${sitePrimaryColor}-500 hover:${altText}`}
+        className={`block px-4 py-2 ${text} hover:text-${primary}`}
         key={platform.faClass}
         onClick={() => gtagEventClick('social_share', platform.name)}
       >

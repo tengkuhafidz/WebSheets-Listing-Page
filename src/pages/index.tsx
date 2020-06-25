@@ -11,24 +11,71 @@ const Home = ({ data }) => {
   const listingData: ItemData[] = transformListingData(data.allListingSheetsData.nodes)
   const siteData: SiteData = transformSiteData(data.siteSheetsData)
 
-  const { siteName, sitePrimaryColor, heroTitle, heroDescription, darkMode } = siteData
+  const { sitePrimaryColor, heroTitle, heroDescription, darkMode } = siteData as SiteData
+
+  const getMatchedColor = (color) => {
+    switch (color) {
+      case 'peach':
+        return 'red'
+      case 'brown':
+        return 'yellow'
+      default:
+        return color
+    }
+  }
+
+  const getMatchedColorTone = (tone, colorTones) => {
+    switch (tone) {
+      case 'light':
+        return colorTones.light
+      case 'dark':
+        return colorTones.dark
+      default:
+        return colorTones.base
+    }
+  }
+
+  const getColorTones = (color: string): { light: number; base: number; dark: number } => {
+    switch (color) {
+      case 'teal':
+        return { light: 500, base: 600, dark: 700 }
+      case 'pink':
+        return { light: 300, base: 400, dark: 600 }
+      case 'blue':
+        return { light: 400, base: 600, dark: 800 }
+      case 'green':
+        return { light: 400, base: 600, dark: 800 }
+      case 'purple':
+        return { light: 400, base: 600, dark: 800 }
+      case 'peach':
+        return { light: 300, base: 400, dark: 500 }
+      case 'gray':
+        return { light: 500, base: 700, dark: 800 }
+      case 'indigo':
+        return { light: 400, base: 600, dark: 800 }
+      case 'red':
+        return { light: 600, base: 700, dark: 800 }
+      case 'brown':
+        return { light: 700, base: 800, dark: 900 }
+      default:
+        return { light: 400, base: 500, dark: 600 }
+    }
+  }
+
+  const [selectedTone, selectedColor] = sitePrimaryColor.split('-')
+  const matchedColor = getMatchedColor(selectedColor)
 
   const getPrimaryColor = () => {
-    switch (sitePrimaryColor) {
-      case 'pink':
-        return `${sitePrimaryColor}-400`
-      case 'red':
-        return `${sitePrimaryColor}-600`
-      default:
-        return `${sitePrimaryColor}-500`
-    }
+    const colorTones = getColorTones(selectedColor)
+    const matchedColorTone = getMatchedColorTone(selectedTone, colorTones)
+    return `${matchedColor}-${matchedColorTone}`
   }
 
   const primaryColor = getPrimaryColor()
 
   const lightTheme = {
     primary: primaryColor,
-    secondary: `${sitePrimaryColor}-800`,
+    secondary: `${matchedColor}-900`,
     text: 'text-gray-800',
     subtext: 'text-gray-600',
     altText: 'text-white',
@@ -39,8 +86,8 @@ const Home = ({ data }) => {
   }
 
   const darkTheme = {
-    primary: primaryColor,
-    secondary: `${sitePrimaryColor}-800`,
+    primary: `${matchedColor}-800`,
+    secondary: `${matchedColor}-900`,
     text: 'text-white',
     subtext: 'text-gray-400',
     altText: 'text-gray-800',
@@ -60,7 +107,7 @@ const Home = ({ data }) => {
 
   return (
     <div className={`${theme.background} min-h-screen`}>
-      <SEO title={siteName} description={`${heroTitle} - ${heroDescription}`} />
+      <SEO title={heroTitle} description={heroDescription} />
       <Hero siteData={siteData} theme={theme} isDarkMode={isDarkMode} handleDarkModeClick={handleDarkModeClick} />
       <Listing siteData={siteData} listingData={listingData} theme={theme} />
       <Footer siteData={siteData} theme={theme} />
@@ -84,6 +131,7 @@ export const siteData = graphql`
       heroButtonUrl
       socialShareButton
       listingCardType
+      listingCardSize
       listingDescriptionButtonLabel
       listingUrlButtonLabel
       footerLabel

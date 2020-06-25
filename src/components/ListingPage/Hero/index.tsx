@@ -13,10 +13,7 @@ interface Props {
 const Hero: React.FC<Props> = ({ siteData, theme, isDarkMode, handleDarkModeClick }) => {
   const { heroType } = siteData
 
-  const heroBg =
-    heroType === HeroType.SIMPLE || heroType === HeroType.SIMPLE_CENTER
-      ? `bg-${isDarkMode ? theme.secondary : theme.primary}`
-      : ''
+  const heroBg = heroType === HeroType.SIMPLE || heroType === HeroType.SIMPLE_CENTER ? `bg-${theme.primary}` : ''
 
   const isCenter = heroType === HeroType.SIMPLE_CENTER || heroType === HeroType.MINIMAL_CENTER ? true : false
 
