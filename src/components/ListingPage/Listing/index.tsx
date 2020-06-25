@@ -73,7 +73,7 @@ const Listing: React.FC<Props> = ({ theme, siteData, listingData }) => {
   }
 
   const renderTabs = () => {
-    if (distinctTags.length > 0) {
+    if (distinctTags.length > 1) {
       return tabs.map((tag) => (
         <li className="mr-3" key={tag}>
           <a

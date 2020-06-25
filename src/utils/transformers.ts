@@ -50,6 +50,18 @@ export const transformListingData = (rawListingData) => {
   return activeListingData.map((rawItem, index) => {
     const { title, subtitle, description, image, actionUrl, tags } = rawItem
 
+    const getTagsAsArray = () => {
+      if (typeof tags === 'string') {
+        return tags
+          .trim()
+          .split(',')
+          .map(function (item) {
+            return item.trim()
+          })
+      }
+      return null
+    }
+
     return {
       itemId: index + 1,
       title,
@@ -57,7 +69,7 @@ export const transformListingData = (rawListingData) => {
       description,
       image,
       actionUrl,
-      tags: typeof tags === 'string' && tags.split(', '),
+      tags: getTagsAsArray(),
     }
   })
 }
