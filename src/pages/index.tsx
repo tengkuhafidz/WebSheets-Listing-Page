@@ -13,25 +13,38 @@ const Home = ({ data }) => {
 
   const { siteName, sitePrimaryColor, heroTitle, heroDescription, darkMode } = siteData
 
+  const getPrimaryColor = () => {
+    switch (sitePrimaryColor) {
+      case 'pink':
+        return `${sitePrimaryColor}-400`
+      case 'red':
+        return `${sitePrimaryColor}-600`
+      default:
+        return `${sitePrimaryColor}-500`
+    }
+  }
+
+  const primaryColor = getPrimaryColor()
+
   const lightTheme = {
-    primary: `${sitePrimaryColor}-600`,
+    primary: primaryColor,
     secondary: `${sitePrimaryColor}-800`,
     text: 'text-gray-800',
     subtext: 'text-gray-600',
     altText: 'text-white',
     altSubtext: 'text-gray-400',
     background: 'bg-gray-100',
-    altBackground: 'bg-gray-400',
+    altBackground: 'bg-white',
     customShadow: 'shadow-xl',
   }
 
   const darkTheme = {
-    primary: `${sitePrimaryColor}-600`,
+    primary: primaryColor,
     secondary: `${sitePrimaryColor}-800`,
     text: 'text-white',
     subtext: 'text-gray-400',
     altText: 'text-gray-800',
-    altSubtext: 'text-gray-600',
+    altSubtext: 'text-gray-700',
     background: 'bg-gray-900',
     altBackground: 'bg-gray-600',
     customShadow: 'shadow-white',
@@ -70,7 +83,7 @@ export const siteData = graphql`
       heroButtonLabel
       heroButtonUrl
       socialShareButton
-      listingType
+      listingCardType
       listingDescriptionButtonLabel
       listingUrlButtonLabel
       footerLabel

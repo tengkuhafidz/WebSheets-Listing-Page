@@ -67,7 +67,7 @@ The following setup have been configured in this project:
 SheetySite
 
 - [x] Create HeroType options
-- [x] Create ListingType options
+- [x] Create ListingCardType options
 - [x] Support Google Analytics
 - [x] SEO should be be based on site info from the sheets
 - [ ] Back to top button

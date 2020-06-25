@@ -1,22 +1,20 @@
 import React from 'react'
-import { ItemData, Theme } from '../../../../utils/models'
-import { OutboundLink } from 'gatsby-plugin-google-gtag'
 import { gtagEventClick } from '../../../../utils/gtag'
+import { ItemData, Theme } from '../../../../utils/models'
 
 interface Props {
   item: ItemData
   theme: Theme
 }
 
-const ProfileItem: React.FC<Props> = ({ item, theme }) => {
-  const { customShadow } = theme
+const ProfilesItem: React.FC<Props> = ({ item, theme }) => {
+  const { customShadow, altBackground, text, subtext } = theme
 
   const renderImage = () => {
     if (!!item.image) {
       return (
         <img
-          className="w-full rounded-t-lg object-cover"
-          style={{ height: 300 }}
+          className={`w-full md:h-full bg-gray-900 rounded-t-lg md:rounded-t-none md:rounded-l-lg object-cover col-span-2`}
           src={item.image}
           alt={`Image of ${item.title}`}
         />
@@ -27,36 +25,41 @@ const ProfileItem: React.FC<Props> = ({ item, theme }) => {
 
   const renderSubtitle = () => {
     if (!!item.subtitle) {
-      return <p className={`text-gray-600 font-light truncate`}>{item.subtitle}</p>
+      return <p className={`${subtext} font-light`}>{item.subtitle}</p>
     }
-    return <></>
   }
 
   const renderDescription = () => {
     if (!!item.description) {
-      return <p className={`text-gray-800 mt-4`}>{item.description}</p>
+      return <p className={`${text} font-light my-4`}>{item.description}</p>
     }
     return <></>
   }
 
+  const handleActionClick = (item) => {
+    if (!!item.actionUrl && window !== undefined) {
+      gtagEventClick('click_item_action', item.actionUrl)
+      window.open(item.actionUrl, '_blank')
+    }
+  }
+
+  const contentColSpan = !!item.image ? `md:col-span-3` : `md:col-span-5`
+
   return (
-    <OutboundLink
-      className={`max-w-sm rounded-lg shadow-lg bg-white mb-8 ${
+    <div
+      className={`rounded-lg shadow-lg ${altBackground} grid md:grid-cols-5 h-full ${
         !!item.actionUrl && `hover:${customShadow} cursor-pointer`
       }`}
-      href={item.actionUrl}
-      target="_blank"
-      rel="noreferrer"
-      onClick={() => gtagEventClick('click_item_action', item.actionUrl)}
+      onClick={() => handleActionClick(item)}
     >
       {renderImage()}
-      <div className="px-6 py-6">
-        <div className={`font-bold text-gray-800 text-xl truncate`}>{item.title}</div>
+      <div className={`p-6 ${contentColSpan}`}>
+        <div className={`font-bold ${text} text-xl`}>{item.title}</div>
         {renderSubtitle()}
         {renderDescription()}
       </div>
-    </OutboundLink>
+    </div>
   )
 }
 
-export default ProfileItem
+export default ProfilesItem

@@ -1,9 +1,8 @@
 import Fuse from 'fuse.js'
 import React, { useState } from 'react'
-import { ItemData, ListingType, SiteData, Theme } from '../../../utils/models'
-import Events from './Events'
-import ListingItems from './listing-items'
 import { gtagEventClick } from '../../../utils/gtag'
+import { ItemData, SiteData, Theme } from '../../../utils/models'
+import ListingItems from './listing-items'
 
 interface Props {
   theme: Theme
@@ -60,7 +59,7 @@ const Listing: React.FC<Props> = ({ theme, siteData, listingData }) => {
 
   const itemsToDisplay = getItemsToDisplay()
 
-  const { text, altBackground } = theme
+  const { text, altBackground, secondary } = theme
 
   const handleTabClick = (tab: string) => {
     gtagEventClick('click_filter_tab', tab)
@@ -79,7 +78,7 @@ const Listing: React.FC<Props> = ({ theme, siteData, listingData }) => {
         <li className="mr-3" key={tag}>
           <a
             className={`inline-block rounded py-1 px-3 cursor-pointer ${
-              tag === currentTab ? `${altBackground} ${text}` : `${text}`
+              tag === currentTab ? `border border-${secondary} ${altBackground} ${text}` : `${text}`
             }`}
             onClick={() => handleTabClick(tag)}
           >
@@ -91,17 +90,6 @@ const Listing: React.FC<Props> = ({ theme, siteData, listingData }) => {
     return <></>
   }
 
-  const renderListing = () => {
-    const { listingType } = siteData
-
-    switch (listingType) {
-      case ListingType.EVENTS:
-        return <Events theme={theme} items={itemsToDisplay} siteData={siteData} />
-      default:
-        return <ListingItems theme={theme} items={itemsToDisplay} siteData={siteData} />
-    }
-  }
-
   return (
     <div className="container mx-auto mt-16 mb-32 px-4" id="main">
       <ul className="mt-4 flex flex-wrap justify-center">{renderTabs()}</ul>
@@ -111,7 +99,7 @@ const Listing: React.FC<Props> = ({ theme, siteData, listingData }) => {
         placeholder="Search"
         onChange={(e) => handleSearch(e)}
       />
-      {renderListing()}
+      <ListingItems theme={theme} items={itemsToDisplay} siteData={siteData} />
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import { SiteData, ListingType, HeroType } from './models'
+import { HeroType, ListingCardType, SiteData, ListingCardSize } from '../utils/models'
 
 export const transformSiteData = (rawSiteData): SiteData => {
   const {
@@ -12,7 +12,8 @@ export const transformSiteData = (rawSiteData): SiteData => {
     heroButtonLabel,
     heroButtonUrl,
     socialShareButton,
-    listingType,
+    listingCardType,
+    listingCardSize,
     listingDescriptionButtonLabel,
     listingUrlButtonLabel,
     footerLabel,
@@ -32,7 +33,8 @@ export const transformSiteData = (rawSiteData): SiteData => {
     heroButtonLabel: heroButtonLabel || 'Contact Me',
     heroButtonUrl,
     socialShareButton: socialShareButton !== null ? socialShareButton === 'show' : true,
-    listingType: listingType || ListingType.BASIC_3,
+    listingCardType: listingCardType || ListingCardType.BASIC,
+    listingCardSize: listingCardSize || ListingCardSize.MEDIUM,
     listingDescriptionButtonLabel: listingDescriptionButtonLabel || 'More Info',
     listingUrlButtonLabel: listingUrlButtonLabel || 'View Details',
     footerLabel,
@@ -43,10 +45,7 @@ export const transformSiteData = (rawSiteData): SiteData => {
 }
 
 export const transformListingData = (rawListingData) => {
-  console.log('rawListingData', rawListingData)
-
   const activeListingData = rawListingData.filter((listingData) => listingData.hide !== 'TRUE')
-  console.log('activeListingData', activeListingData)
 
   return activeListingData.map((rawItem, index) => {
     const { title, subtitle, description, image, actionUrl, tags } = rawItem

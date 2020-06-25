@@ -1,6 +1,6 @@
 import React from 'react'
-import { ItemData, Theme, SiteData } from '../../../../utils/models'
-import { gtagEventClick } from '../../../../utils/gtag'
+import { ItemData, SiteData, Theme } from '../../../../utils/models'
+import { getHeightBasedOnCardSize, handleItemClick } from '../../../../utils/util'
 
 interface Props {
   item: ItemData
@@ -10,30 +10,27 @@ interface Props {
 }
 
 const BasicItem: React.FC<Props> = ({ item, theme, handleOpenModal, siteData }) => {
-  const { primary, customShadow } = theme
+  const { primary, customShadow, text, subtext, altBackground } = theme
+  const imageHeight = getHeightBasedOnCardSize(siteData.listingCardSize)
 
   const renderImage = () => {
     if (!!item.image) {
-      return <img className="w-full rounded-t-lg h-48 object-cover" src={item.image} alt={`Image of ${item.title}`} />
+      return (
+        <img
+          className={`w-full rounded-t-lg h-${imageHeight} object-cover`}
+          src={item.image}
+          alt={`Image of ${item.title}`}
+        />
+      )
     }
     return <></>
   }
 
   const renderSubtitle = () => {
     if (!!item.subtitle) {
-      return <p className={`text-gray-600 font-light truncate`}>{item.subtitle}</p>
+      return <p className={`${subtext} font-light truncate`}>{item.subtitle}</p>
     }
     return <></>
-  }
-
-  const handleButtonClick = (e, item: ItemData) => {
-    if (!!item.description) {
-      gtagEventClick('open_item_modal', item.title)
-      handleOpenModal(e, item)
-    } else if (!!item.actionUrl && window !== undefined) {
-      gtagEventClick('click_item_action', item.actionUrl)
-      window.open(item.actionUrl, '_blank')
-    }
   }
 
   const renderButton = () => {
@@ -41,7 +38,7 @@ const BasicItem: React.FC<Props> = ({ item, theme, handleOpenModal, siteData }) 
     if (!!item.description || !!item.actionUrl) {
       return (
         <button
-          onClick={(e) => handleButtonClick(e, item)}
+          onClick={(e) => handleItemClick(e, item, handleOpenModal)}
           className={`py-2 px-4 rounded w-full bg-${primary} text-white mt-4 ${
             !!item.description && `hover:${customShadow} cursor-pointer`
           }`}
@@ -54,10 +51,10 @@ const BasicItem: React.FC<Props> = ({ item, theme, handleOpenModal, siteData }) 
   }
 
   return (
-    <div className={`rounded-lg shadow-lg text-center bg-white mb-8`}>
+    <div className={`rounded-lg shadow-lg text-center ${altBackground} mb-4`}>
       {renderImage()}
       <div className="px-6 py-4">
-        <div className={`font-bold text-gray-800 text-xl truncate`}>{item.title}</div>
+        <div className={`font-bold ${text} text-xl truncate`}>{item.title}</div>
         {renderSubtitle()}
         {renderButton()}
       </div>

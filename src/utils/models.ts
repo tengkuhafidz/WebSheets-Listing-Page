@@ -19,13 +19,19 @@ export interface SiteData {
   heroButtonLabel: string
   heroButtonUrl: string
   socialShareButton: boolean
-  listingType: ListingType
+  listingCardType: ListingCardType
+  listingCardSize: ListingCardSize
   listingDescriptionButtonLabel: string
   listingUrlButtonLabel: string
   footerLabel: string
   facebookUrl: string
   instagramUrl: string
   twitterUrl: string
+}
+
+export interface SheetsData {
+  siteData: SiteData
+  listingData: ItemData[]
 }
 
 export interface Theme {
@@ -40,18 +46,20 @@ export interface Theme {
   customShadow: string
 }
 
-export enum ListingType {
+export enum ListingCardType {
+  BASIC = 'basic',
+  COMPACT = 'compact',
+  MINIMAL = 'minimal',
+  PROFILES = 'profiles',
+  MODERN = 'modern',
+  PILL = 'pill',
   EVENTS = 'events',
-  BASIC_3 = 'basic-3',
-  BASIC_4 = 'basic-4',
-  COMPACT_4 = 'compact-4',
-  COMPACT_5 = 'compact-5',
-  COMPACT_6 = 'compact-6',
-  PROFILES_3 = 'profiles-3',
-  PROFILES_4 = 'profiles-4',
-  MODERN_3 = 'modern-3',
-  MODERN_4 = 'modern-4',
-  MODERN_5 = 'modern-5',
+}
+
+export enum ListingCardSize {
+  SMALL = 'small',
+  MEDIUM = 'medium',
+  LARGE = 'large',
 }
 
 export enum HeroType {

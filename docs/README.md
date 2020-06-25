@@ -69,7 +69,7 @@ SheetySite
 - [ ] Back to top button
 - [ ] Enable font change
 - [x] Create HeroType options
-- [x] Create ListingType options
+- [x] Create ListingCardType options
 - [x] Support Google Analytics
 - [x] SEO should be be based on the data from the [sheets] (https://docs.google.com/spreadsheets/d/1S-S1dzVsPlbYtYTq_jiXCcVYKf75wFlGxB2fKkdVc7w/edit#gid=1818216905)
 - [ ] Cater for private sheets
