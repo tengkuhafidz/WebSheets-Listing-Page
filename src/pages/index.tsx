@@ -108,13 +108,19 @@ const Home = ({ data }) => {
 
   const theme = isDarkMode ? darkTheme : lightTheme
 
+  const renderBackToTop = () => {
+    if (typeof window !== 'undefined') {
+      return <BackToTop />
+    }
+  }
+
   return (
     <div className={`${theme.background} min-h-screen`}>
       <SEO title={heroTitle} description={heroDescription} />
       <Hero siteData={siteData} theme={theme} isDarkMode={isDarkMode} handleDarkModeClick={handleDarkModeClick} />
       <Listing siteData={siteData} listingData={listingData} theme={theme} />
       <Footer siteData={siteData} theme={theme} />
-      <BackToTop />
+      {renderBackToTop()}
     </div>
   )
 }
