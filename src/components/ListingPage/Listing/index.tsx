@@ -42,7 +42,7 @@ const Listing: React.FC<Props> = ({ theme, siteData, listingData }) => {
       threshold: 0.4,
       location: 0,
       distance: 100,
-      keys: ['title', 'subtitle', 'description'],
+      keys: ['title', 'subtitle', 'description', 'categories'],
     }
 
     const fuse: Fuse<any, Fuse.IFuseOptions<any>> = new Fuse(items, options)
