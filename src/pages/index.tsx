@@ -134,6 +134,7 @@ export const siteData = graphql`
       heroButtonLabel
       heroButtonUrl
       socialShareButton
+      listingCategoryType
       listingCardType
       listingCardSize
       listingDescriptionButtonLabel
