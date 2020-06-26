@@ -5,7 +5,7 @@ export interface ItemData {
   description: string
   image: string
   actionUrl: string
-  tags: string[]
+  categories: string[]
 }
 
 export interface SiteData {
@@ -19,6 +19,7 @@ export interface SiteData {
   heroButtonLabel: string
   heroButtonUrl: string
   socialShareButton: boolean
+  listingCategoryType: ListingCategoryType
   listingCardType: ListingCardType
   listingCardSize: ListingCardSize
   listingDescriptionButtonLabel: string
@@ -44,6 +45,11 @@ export interface Theme {
   background: string
   altBackground: string
   customShadow: string
+}
+
+export enum ListingCategoryType {
+  TabsView = 'tabs-view',
+  SectionsView = 'sections-view',
 }
 
 export enum ListingCardType {

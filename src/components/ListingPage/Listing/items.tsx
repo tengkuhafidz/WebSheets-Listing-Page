@@ -1,12 +1,12 @@
 import React from 'react'
-import ModernItem from './Modern/modern-item'
 import { ItemData, Theme, SiteData, ListingCardType, ListingCardSize } from '../../../utils/models'
-import ProfileItem from './Profiles/profiles-item'
-import BasicItem from './Basic/basic-item'
-import CompactItem from './Compact/compact-item'
-import MinimalItem from './Minimal/minimal-item'
-import PillItem from './Pill/pill-item'
-import EventsItem from './Events/events-item'
+import ModernItem from './CardType/modern-item'
+import ProfileItem from './CardType/profiles-item'
+import BasicItem from './CardType/basic-item'
+import CompactItem from './CardType/compact-item'
+import MinimalItem from './CardType/minimal-item'
+import PillItem from './CardType/pill-item'
+import EventsItem from './CardType/events-item'
 
 interface Props {
   items: ItemData[]

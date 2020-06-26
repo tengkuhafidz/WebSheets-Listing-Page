@@ -29,7 +29,7 @@ const ListingItems: React.FC<Props> = ({ theme, items, siteData }) => {
   }
 
   return (
-    <div className="container mx-auto mt-16 mb-32 px-4" id="main">
+    <div id="main">
       <Items items={items} handleOpenModal={handleOpenModal} theme={theme} siteData={siteData} />
       <ListingModal
         theme={theme}

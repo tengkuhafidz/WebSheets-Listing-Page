@@ -1,8 +1,9 @@
 import Fuse from 'fuse.js'
 import React, { useState } from 'react'
 import { gtagEventClick } from '../../../utils/gtag'
-import { ItemData, SiteData, Theme } from '../../../utils/models'
-import ListingItems from './listing-items'
+import { ItemData, SiteData, Theme, ListingCategoryType } from '../../../utils/models'
+import TabView from './CategoryType/tab-view'
+import SectionView from './CategoryType/section-view'
 
 interface Props {
   theme: Theme
@@ -13,22 +14,20 @@ interface Props {
 const Listing: React.FC<Props> = ({ theme, siteData, listingData }) => {
   const allItems = listingData
 
-  const getDistinctTags = () => {
-    const distinctTags = []
+  const getDistinctCategories = () => {
+    const distinctCategories = []
     allItems.forEach((item) => {
-      if (item.tags) {
-        item.tags.forEach((tag) => {
-          !distinctTags.includes(tag) && distinctTags.push(tag)
+      if (item.categories) {
+        item.categories.forEach((category) => {
+          !distinctCategories.includes(category) && distinctCategories.push(category)
         })
       }
     })
-    return distinctTags
+    return distinctCategories
   }
 
-  const distinctTags = getDistinctTags()
-  const ALL = 'All'
-  const tabs = [ALL, ...distinctTags]
-  const [currentTab, setCurrentTab] = useState(tabs[0])
+  const distinctCategories = getDistinctCategories()
+
   const [searchTerm, setSearchTerm] = useState('')
 
   const getFuseSearchResult = (items: ItemData[], searchTerm: string): ItemData[] => {
@@ -51,20 +50,7 @@ const Listing: React.FC<Props> = ({ theme, siteData, listingData }) => {
     return fuseSearchResult.map((result) => result.item)
   }
 
-  const getItemsToDisplay = () => {
-    const itemsInTab = currentTab !== ALL ? allItems.filter((item) => item.tags.includes(currentTab)) : allItems
-    const searchResult = searchTerm ? getFuseSearchResult(itemsInTab, searchTerm) : itemsInTab
-    return searchResult
-  }
-
-  const itemsToDisplay = getItemsToDisplay()
-
-  const { text, altBackground, secondary } = theme
-
-  const handleTabClick = (tab: string) => {
-    gtagEventClick('click_filter_tab', tab)
-    setCurrentTab(tab)
-  }
+  const filteredItems = searchTerm ? getFuseSearchResult(allItems, searchTerm) : allItems
 
   const handleSearch = (e) => {
     const searchTerm = e.target.value
@@ -72,36 +58,38 @@ const Listing: React.FC<Props> = ({ theme, siteData, listingData }) => {
     setSearchTerm(searchTerm)
   }
 
-  const renderTabs = () => {
-    if (distinctTags.length > 1) {
-      return tabs.map((tag) => (
-        <li className="mr-3" key={tag}>
-          <a
-            className={`inline-block rounded py-1 px-3 cursor-pointer ${
-              tag === currentTab ? `border border-${secondary} ${altBackground} ${text}` : `${text}`
-            }`}
-            onClick={() => handleTabClick(tag)}
-          >
-            {tag}
-          </a>
-        </li>
-      ))
-    }
-    return <></>
+  switch (siteData.listingCategoryType) {
+    case ListingCategoryType.TabsView:
+      return (
+        <TabView
+          items={filteredItems}
+          categories={distinctCategories}
+          theme={theme}
+          siteData={siteData}
+          handleSearch={handleSearch}
+        />
+      )
+    case ListingCategoryType.SectionsView:
+      return (
+        <SectionView
+          items={filteredItems}
+          categories={distinctCategories}
+          theme={theme}
+          siteData={siteData}
+          handleSearch={handleSearch}
+        />
+      )
+    default:
+      return (
+        <TabView
+          items={filteredItems}
+          categories={distinctCategories}
+          theme={theme}
+          siteData={siteData}
+          handleSearch={handleSearch}
+        />
+      )
   }
-
-  return (
-    <div className="container mx-auto mt-16 mb-32 px-4" id="main">
-      <ul className="mt-4 flex flex-wrap justify-center">{renderTabs()}</ul>
-      <input
-        className={`focus:outline-none focus:shadow-lg border border-gray-300 shadow rounded-lg py-2 px-4 block mt-8 w-full md:w-1/2 mx-auto`}
-        type="text"
-        placeholder="Search"
-        onChange={(e) => handleSearch(e)}
-      />
-      <ListingItems theme={theme} items={itemsToDisplay} siteData={siteData} />
-    </div>
-  )
 }
 
 export default Listing

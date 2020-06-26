@@ -24,7 +24,7 @@ module.exports = {
         apiKey: process.env.GATSBY_GOOGLE_CREDENTIALS,
         spreadsheetId: process.env.GATSBY_SHEET_ID,
         tabName: 'site',
-        cellRange: 'A1:B22',
+        cellRange: 'A1:B23',
         majorDimension: 'COLUMNS',
       },
     },

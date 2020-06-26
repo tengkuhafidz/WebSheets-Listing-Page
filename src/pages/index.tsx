@@ -6,6 +6,7 @@ import Listing from '../components/ListingPage/Listing'
 import SEO from '../components/ListingPage/seo'
 import { transformListingData, transformSiteData } from '../utils/transformers'
 import { ItemData, SiteData } from '../utils/models'
+import BackToTop from '../components/ListingPage/back-to-top'
 
 const Home = ({ data }) => {
   const listingData: ItemData[] = transformListingData(data.allListingSheetsData.nodes)
@@ -55,10 +56,12 @@ const Home = ({ data }) => {
         return { light: 400, base: 600, dark: 800 }
       case 'red':
         return { light: 600, base: 700, dark: 800 }
+      case 'orange':
+        return { light: 400, base: 500, dark: 600 }
       case 'brown':
         return { light: 700, base: 800, dark: 900 }
       default:
-        return { light: 400, base: 500, dark: 600 }
+        return { light: 400, base: 600, dark: 800 }
     }
   }
 
@@ -111,6 +114,7 @@ const Home = ({ data }) => {
       <Hero siteData={siteData} theme={theme} isDarkMode={isDarkMode} handleDarkModeClick={handleDarkModeClick} />
       <Listing siteData={siteData} listingData={listingData} theme={theme} />
       <Footer siteData={siteData} theme={theme} />
+      <BackToTop />
     </div>
   )
 }
@@ -143,7 +147,7 @@ export const siteData = graphql`
       nodes {
         title
         actionUrl
-        tags
+        categories
         subtitle
         description
         image
