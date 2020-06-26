@@ -1,5 +1,5 @@
 import React from 'react'
-import { Theme, ItemData, SiteData } from '../../../../utils/models'
+import { Theme, ItemData, SiteData, ListingCardType } from '../../../../utils/models'
 import ListingItems from '../listing-items'
 
 interface Props {
@@ -11,13 +11,26 @@ interface Props {
 }
 
 const SectionView: React.FC<Props> = ({ items, categories, theme, siteData, handleSearch }) => {
+  const getCategoryStyle = () => {
+    const { primary, secondary, text } = theme
+
+    switch (siteData.listingCardType) {
+      case ListingCardType.PILL:
+        return `text-white border-l-4 border-r-4 border-${primary} pb-1 px-4  bg-${secondary} rounded-full`
+      case ListingCardType.MINIMAL:
+        return `${text} border-l-8 border-r-8 border-t-2  border-b-2 border-${primary} pb-1 px-4 rounded-lg`
+      default:
+        return `text-white border-l-4 border-r-4  border-${primary} pb-1 px-4 bg-${secondary} rounded-lg`
+    }
+  }
   const renderSingleSection = (itemsInCategory: ItemData[], category: string) => {
     if (!!itemsInCategory && itemsInCategory.length > 0) {
+      const categoryStyle = getCategoryStyle()
       return (
-        <div className="container mx-auto mt-16 mb-16 px-4">
-          <h3 className={`mb-8  text-2xl pb-1 px-4 inline-block rounded-lg bg-${theme.primary} text-white`}>
-            {category}
-          </h3>
+        <div className="container mx-auto mt-16 mb-20 px-4">
+          <div className={`mb-12 ml-1 inline-block ${categoryStyle}`}>
+            <h3 className={`text-2xl`}>{category}</h3>
+          </div>
           <ListingItems theme={theme} items={itemsInCategory} siteData={siteData} />
         </div>
       )
