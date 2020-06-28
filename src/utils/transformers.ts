@@ -24,7 +24,7 @@ export const transformSiteData = (rawSiteData): SiteData => {
   } = rawSiteData
 
   return {
-    siteName: siteName || 'SheetySite',
+    siteName: siteName || 'WebSheets',
     siteLogo,
     sitePrimaryColor: sitePrimaryColor || 'teal',
     darkMode: darkMode === 'true',

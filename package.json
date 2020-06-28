@@ -1,5 +1,5 @@
 {
-  "name": "SheetySite",
+  "name": "WebSheets",
   "private": true,
   "description": "Create listing websites with Google Sheets data",
   "version": "0.1.0",
@@ -48,10 +48,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tengkuhafidz/sheetysite/"
+    "url": "https://github.com/tengkuhafidz/websheets/"
   },
   "bugs": {
-    "url": "https://github.com/tengkuhafidz/sheetysite/issues"
+    "url": "https://github.com/tengkuhafidz/websheets/issues"
   },
   "husky": {
     "hooks": {

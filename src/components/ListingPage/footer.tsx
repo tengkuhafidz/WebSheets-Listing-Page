@@ -55,13 +55,13 @@ const Footer: React.FC<Props> = ({ siteData, theme }) => {
       <p className="text-center text-gray-600">
         Powered by{' '}
         <OutboundLink
-          href="https://sheetysite.com"
+          href="https://websheets.co"
           target="_blank"
           rel="noreferrer"
           className="hover:font-semibold underline"
-          onClick={() => gtagEventClick('click_footer_link', 'SheetySite link')}
+          onClick={() => gtagEventClick('click_footer_link', 'WebSheets link')}
         >
-          SheetySite
+          WebSheets
         </OutboundLink>
       </p>
     </div>

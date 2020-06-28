@@ -15,7 +15,7 @@ const ShareButton: React.FC<Props> = ({ siteData, theme, outlineColor }) => {
 
   const hasWindow = typeof window !== 'undefined'
 
-  const siteUrl = hasWindow ? window.location.href : 'https://sheetysite.com'
+  const siteUrl = hasWindow ? window.location.href : 'https://websheets.co'
 
   const [isOpen, setIsOpen] = useState(false)
 

@@ -5,11 +5,11 @@ require('dotenv').config({
 /* eslint-disable @typescript-eslint/camelcase */
 module.exports = {
   siteMetadata: {
-    title: 'SheetySite',
-    titleTemplate: '%s | SheetySite',
+    title: 'WebSheets',
+    titleTemplate: '%s | WebSheets',
     description: 'Create listing websites with Google Sheets data',
     author: 'Fidz.Dev',
-    url: 'https://sheetysite.com', // No trailing slash allowed!
+    url: 'https://websheets.co', // No trailing slash allowed!
     image: '/app-banner.png', // Path to your image you placed in the 'static' folder
     twitterUsername: 'sohafidz',
   },
