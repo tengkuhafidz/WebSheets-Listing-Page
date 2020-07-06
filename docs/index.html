@@ -9,7 +9,22 @@
       name="viewport"
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
+    <link rel="icon" type="image/png" href="https://media.devlabs.academy/file/w_30/WebSheets/app-icon.png" />
     <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Overpass" />
+    <style>
+      body {
+        font-family: 'Overpass', serif;
+      }
+      li,
+      a.section-link,
+      p {
+        font-size: 18px !important;
+      }
+      li {
+        margin: 8px;
+      }
+    </style>
   </head>
   <body>
     <div id="app"></div>
@@ -17,6 +32,8 @@
       window.$docsify = {
         name: 'WebSheets',
         repo: 'https://github.com/tengkuhafidz/websheets/',
+        themeColor: '#049663',
+        logo: 'https://media.devlabs.academy/file/w_140/WebSheets/app-icon.png',
       }
     </script>
     <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
