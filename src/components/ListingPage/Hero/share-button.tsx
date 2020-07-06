@@ -48,7 +48,7 @@ const ShareButton: React.FC<Props> = ({ siteData, theme, outlineColor }) => {
       {
         name: 'Twitter',
         faClass: 'fa-twitter',
-        url: `https://api.whatsapp.com/send?text=${siteUrl}`,
+        url: `https://twitter.com/share?url=${siteUrl}`,
       },
       {
         name: 'Telegram',
@@ -58,7 +58,7 @@ const ShareButton: React.FC<Props> = ({ siteData, theme, outlineColor }) => {
       {
         name: 'Whatsapp',
         faClass: 'fa-whatsapp',
-        url: `https://twitter.com/share?url=${siteUrl}`,
+        url: `https://api.whatsapp.com/send?text=${siteUrl}`,
       },
     ]
 
