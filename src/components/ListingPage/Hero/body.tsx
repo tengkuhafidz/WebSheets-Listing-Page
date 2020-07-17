@@ -60,7 +60,7 @@ const Body: React.FC<Props> = ({ siteData, theme, heroType, isCenter }) => {
 
   return (
     <div className={`container mx-auto px-4 py-8 ${isCenter && 'text-center'}`}>
-      <h1 className={`text-4xl ${headerTextColor}`}>{heroTitle}</h1>
+      <h1 className={`text-4xl font-bold ${headerTextColor}`}>{heroTitle}</h1>
       <p className={`font-thin text-xl ${paragraphTextColor}`}>{heroDescription}</p>
       <div className="my-12">
         {renderActionButton()}

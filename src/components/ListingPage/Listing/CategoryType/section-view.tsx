@@ -17,10 +17,8 @@ const SectionView: React.FC<Props> = ({ items, categories, theme, siteData, hand
     switch (siteData.listingCardType) {
       case ListingCardType.PILL:
         return `text-white border-l-4 border-r-4 border-${primary} pb-1 px-4  bg-${secondary} rounded-full`
-      case ListingCardType.MINIMAL:
-        return `${text} border-l-8 border-r-8 border-t-2  border-b-2 border-${primary} pb-1 px-4 rounded-lg`
       default:
-        return `text-white border-l-4 border-r-4  border-${primary} pb-1 px-4 bg-${secondary} rounded-lg`
+        return `${text} text-xs font-semibold border-b-4 border-${primary}`
     }
   }
   const renderSingleSection = (itemsInCategory: ItemData[], category: string) => {
@@ -29,7 +27,7 @@ const SectionView: React.FC<Props> = ({ items, categories, theme, siteData, hand
       return (
         <div className="container mx-auto mt-16 mb-20 px-4">
           <div className={`mb-12 ml-1 inline-block ${categoryStyle}`}>
-            <h3 className={`text-2xl`}>{category}</h3>
+            <h3 className={`text-3xl`}>{category}</h3>
           </div>
           <ListingItems theme={theme} items={itemsInCategory} siteData={siteData} />
         </div>

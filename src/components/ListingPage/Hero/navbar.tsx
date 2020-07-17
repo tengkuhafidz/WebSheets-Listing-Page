@@ -36,7 +36,7 @@ const Navbar: React.FC<Props> = ({ title, logo, theme, isDarkMode, heroType, han
       <nav className={`container mx-auto py-8 flex`}>
         <div className="px-4 flex items-center">
           {renderImage()}
-          <span className={`font-bold text-lg tracking-tight cursor-default ${textColor}`}>{title}</span>
+          <span className={`font-bold text-lg cursor-default ${textColor}`}>{title}</span>
         </div>
         <div className="flex-grow"></div>
         <div className={`flex px-4 ${textColor}`}>
