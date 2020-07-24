@@ -1,8 +1,8 @@
 {
-  "name": "WebSheets",
+  "name": "websheets-listing-page",
   "private": true,
-  "description": "Create listing websites with Google Sheets data",
-  "version": "0.1.0",
+  "description": "Create listing websites with Google Sheets",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
