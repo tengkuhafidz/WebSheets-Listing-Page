@@ -22,7 +22,7 @@ module.exports = {
       resolve: 'gatsby-source-gsheets-all-options',
       options: {
         apiKey: process.env.GATSBY_GOOGLE_CREDENTIALS,
-        spreadsheetId: process.env.GATSBY_SHEET_ID,
+        spreadsheetUrl: process.env.GATSBY_SHEET_URL,
         tabName: 'site',
         cellRange: 'A1:B23',
         majorDimension: 'COLUMNS',
@@ -32,7 +32,7 @@ module.exports = {
       resolve: 'gatsby-source-gsheets-all-options',
       options: {
         apiKey: process.env.GATSBY_GOOGLE_CREDENTIALS,
-        spreadsheetId: process.env.GATSBY_SHEET_ID,
+        spreadsheetUrl: process.env.GATSBY_SHEET_URL,
         tabName: 'listing',
         cellRange: 'A1:H1000',
         majorDimension: 'ROWS',

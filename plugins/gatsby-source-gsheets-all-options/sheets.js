@@ -35,10 +35,19 @@ const transformArrayDataToObject = (rawNestedArrayData) => {
   return arrayOfObjects
 }
 
+const extractSheetIdFromUrl = (sheetsUrl) => {
+  if (!!sheetsUrl) {
+    const pathsAsArray = sheetsUrl.replace(/^https?:\/\//, '').split('/')
+    const sheetId = pathsAsArray[3]
+    return sheetId
+  }
+  return null
+}
+
 const fetchRawSheetsData = async (options) => {
   const {
     apiKey,
-    spreadsheetId,
+    spreadsheetUrl,
     tabName,
     cellRange = '',
     majorDimension = 'ROWS',
@@ -46,6 +55,7 @@ const fetchRawSheetsData = async (options) => {
     dateTimeRenderOption = 'FORMATTED_STRING',
   } = options
 
+  const spreadsheetId = extractSheetIdFromUrl(spreadsheetUrl)
   const sheetsApiUrl = `${BASE_URL}/${spreadsheetId}/values/${tabName}!${cellRange}?majorDimension=${majorDimension}&valueRenderOption=${valueRenderOption}&dateTimeRenderOption=${dateTimeRenderOption}&key=${apiKey}`
 
   const response = await axios.get(sheetsApiUrl)
