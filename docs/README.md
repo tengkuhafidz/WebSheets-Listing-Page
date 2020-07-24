@@ -2,107 +2,86 @@
 
 This is a Gatsby template for creating listing websites based on Google sheets data.
 
-## Getting Started 🚀
+## Project Requirements 
 
-### Pre-setup Requirements
+1. [Node](https://nodejs.org/en/download/)
+2. [Gatsby CLI](https://www.gatsbyjs.org/tutorial/part-zero/#using-the-gatsby-cli) `npm install -g gatsby-cli`
 
-1. Install [NodeJs](https://nodejs.org/en/download/)
-2. Install [Yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable)
-3. Install [Gatsby](https://www.gatsbyjs.org/docs/glossary/yarn/) `yarn global add gatsby-cli`
-4. Create [Google API key](https://developers.google.com/sheets/api/guides/authorizing#APIKey)
-5. Enable [Google Sheets API](https://console.developers.google.com/apis/library/sheets.googleapis.com?project=websheets&folder&organizationId)
+## Preparing the Project 🚀
 
-### Preparing the Project
+### Manage your Google Sheets data
 
-1. Clone this repo `git clone https://github.com/tengkuhafidz/websheets.git`
-2. Run `yarn install` to download dependencies
-3. Make a copy of the [google sheets template](https://docs.google.com/spreadsheets/d/1S-S1dzVsPlbYtYTq_jiXCcVYKf75wFlGxB2fKkdVc7w/edit#gid=1818216905) and **set it to public**.
-4. The sheet names (`site`, `listing`) and header names (1st row of each sheet) should NOT be changed.
-5. Fill in the google sheets with the site's data and item listings details
-   - Ensure to not leave any fields empty. Write `nil` to indicate no value instead
+1. Make a copy of this [google sheets template](https://docs.google.com/spreadsheets/d/1S-S1dzVsPlbYtYTq_jiXCcVYKf75wFlGxB2fKkdVc7w/copy#gid=1818216905)
+2. Change the privacy setting to allow anyone with the link to view
+   - Click the **share button** and change the privacy to `Anyone on the Internet with this link can view`
+3. Fill in the google sheets with the general site information (on the `site` tab) and details of items you want to list *on the `listing` tab)
+   - The tab names (`site`, `listing`) should **NOT** be changed.
 
-### Running on Dev Environment
+### Getting your Google API key
 
-1. Create `.env.development` file on the project root
+1. Create a [Google API project](https://console.developers.google.com/projectcreate)
+2. Enable [Google Sheets API](https://console.developers.google.com/apis/library/sheets.googleapis.com?project=websheets&folder&organizationId) for that project
+   - Click the **ENABLE** button and select the project that you created
+3. Create the [Google API key](https://console.developers.google.com/apis/credentials) for that project
+   - Click **CREATE CREDENTIALS** button and select **API key**
 
-   - Include `GATSBY_GOOGLE_CREDENTIALS`="Google-Sheets-Api-Key-With-Quatations"
-   - Include `GATSBY_SHEET_ID`=Google-Sheets-Id-With-Quotations"
-     - _Where is the [Google Sheets Id](https://developers.google.com/sheets/api/guides/concepts#spreadsheet_id)?_
+### Setting up the Repo
 
-2. Run `yarn start`
+1. Clone [this repo](https://github.com/tengkuhafidz/WebSheets)  `git clone https://github.com/tengkuhafidz/websheets.git`
+2. Run `npm i` to install dependencies
+3. Create `.env.development` file on the project root and add the following environment variables
+   - `GATSBY_GOOGLE_CREDENTIALS`="Google-Api-Key-With-Quatations"
+   - `GATSBY_SHEET_URL`="Google-Sheets-URL-With-Quotations"
+4. Create `.env.production` file on the project root and **copy paste** the environment variables from `.env.development`
+
+## Running the Project 🚀
+
+### Dev Environment
+
+1. Run `npm start`
    - Your site will run at `http://localhost:8000`
    - You graphiql will run at`http://localhost:8000/___graphql`
 
-### Running on Prod Environment
+### Prod Environment
 
-1. Create `.env.production` file on the project root
-   - Include `GATSBY_GOOGLE_CREDENTIALS`=Google-Sheets-Api-Key-Here
-   - Include `GATSBY_SHEET_ID`=Google-Sheets-Id-Here
-     - _Where is the [Google Sheets Id](https://developers.google.com/sheets/api/guides/concepts#spreadsheet_id)?_
-2. Run `yarn build`
-3. Run `yarn serve`
+1. Run `npm run build`
+2. Run `npm run serve`
    - Your site will run at `http://localhost:9000`
 
 ## Troubleshooting
 
 Having an issue? The following are common setup mistakes that might have caused it. Please ensure that the following are set properly.
 
-- Google Sheets MUST be set to **public**
-- [Google API](https://console.developers.google.com/apis/library/sheets.googleapis.com?project=websheets&folder&organizationId) MUST be **enabled**
+- Google Sheets privacy settings **MUST** minimally be set to `Anyone on the Internet with this link can view`
+- [Google Sheets API](https://console.developers.google.com/apis/library/sheets.googleapis.com) **MUST** be `ENABLED` for the project that you're using the API key of
 - The value of environment variables MUST be in between double quotations
 
 ## Underlying Tech
 
+**Frameworks**
+- Gatsby
 - Typescript
 - TailwindCSS
 - Sheets API
 
-The following setup have been configured in this project:
-
-- Dark Mode
-- Social Share
-- SEO
+**Configurations**
+- SEO and site metadata
 - PWA and offline capabilities
-- Site metadata
-- eslint & prettier
-- husky
+- Prettier, eslint, husky
 
-## TODO
-
-WebSheets
-
-- [ ] Build custom google sheets plugin that is more flexible
-- [ ] Back to top button
-- [ ] Enable font change
-- [x] Create HeroType options
-- [x] Create ListingCardType options
-- [x] Support Google Analytics
-- [x] SEO should be be based on the data from the [sheets](https://docs.google.com/spreadsheets/d/1S-S1dzVsPlbYtYTq_jiXCcVYKf75wFlGxB2fKkdVc7w/edit#gid=1818216905)
-- [ ] Cater for private sheets
-
-WebSheets - Consumer Version
-
-- [ ] Generate env variables
-- [ ] Auto build and deploy directly via Google Sheets
-- [ ] Build landing page to explain WebSheets
-- [ ] Create consumer-friendly explainer material on how to use WebSheets
-
-## What's inside? 🧐
-
-A quick look at the top-level files and directories you'll see in a Gatsby project.
-
-    .
-    ├── node_modules
-    ├── src
-    ├── static
-    ├── .gitignore
-    ├── .eslintrc.js
-    ├── .prettierrc.js
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── LICENSE
-    ├── yarn-lock.json
-    ├── package.json
-    ├── tailwind.config.js
-    ├── postcss.config.js
-    └── README.md
+**Structure**
+   .
+   ├── node_modules
+   ├── src
+   ├── static
+   ├── .gitignore
+   ├── .eslintrc.js
+   ├── .prettierrc.js
+   ├── gatsby-browser.js
+   ├── gatsby-config.js
+   ├── LICENSE
+   ├── yarn-lock.json
+   ├── package.json
+   ├── tailwind.config.js
+   ├── postcss.config.js
+   └── README.md
