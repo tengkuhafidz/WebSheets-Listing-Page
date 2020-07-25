@@ -3,7 +3,7 @@
 WebSheets Listing Page is an open-sourced Gatsby template that generates listing/directory websites based on Google Sheets data. 
 The generated website will be a fast-loading static progressive web app with SEO and offline capabilities.
 
-## Buy me a coffee 
+## Sponsor Development
 If you find this project helpful in any way, please do support my coffee intake in making this at https://www.buymeacoffee.com/sohafidz. ☕️
 
 # Getting Started 🚀
