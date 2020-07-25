@@ -1,6 +1,6 @@
 url: https://demo.websheets.co
 repo: https://github.com/tengkuhafidz/WebSheets-Listing-Page
-description: WebSheets Listing Page is an open-sourced Gatsby template that generates listing/directory websites based on Google Sheets data.
+description: A starter to generate listing/directory/portfolio websites by simply managing the Google Sheets template provided.
 # These correspond to the category filters in the library
 # See docs/categories.yml for valid tags.
 tags:
@@ -25,5 +25,5 @@ features:
   - Dark Mode
   - Google Analytics
   - Search functionality
-  - Mobile Adaptive
+  - Responsive Design
   - Preconfigured prettier, eslint, husky
