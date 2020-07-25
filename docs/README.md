@@ -1,12 +1,13 @@
 # Overview
 
-WebSheets Listing Page is an open-sourced Gatsby template that generates listing websites based on Google Sheets data.
+WebSheets Listing Page is an open-sourced Gatsby template that generates listing/directory websites based on Google Sheets data. 
+The generated website will be a fast-loading static progressive web app with SEO and offline capabilities.
 
 ## Support & services
 
 **Buy me a coffee:** If you find this project helpful in any way, please do support my coffee intake in making this at https://www.buymeacoffee.com/sohafidz. Any amount is truly appreciated. 
 
-**Let me help you:**If you don't want the hassle of going through the docs and/or code, you can get my services to help at https://services.websheets.co 
+**Let me help you:** If you don't want the hassle of going through the docs and/or code, you can get my affordable services to help you get your Websheets up and running at https://services.websheets.co.
 
 # Getting Started 🚀
 
@@ -63,6 +64,7 @@ Having an issue? The following are common setup mistakes that might have caused 
 - Google Sheets privacy settings **MUST** minimally be set to `Anyone on the Internet with this link can view`
 - [Google Sheets API](https://console.developers.google.com/apis/library/sheets.googleapis.com) **MUST** be `ENABLED` for the project that you're using the API key of
 - The value of environment variables **MUST** be in between double quotations
+
 
 # Underlying Tech
 
