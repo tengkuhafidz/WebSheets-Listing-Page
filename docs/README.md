@@ -1,13 +1,13 @@
-# Overview
+# Overview 🧐
 
 WebSheets Listing Page is an open-sourced Gatsby template that generates listing/directory websites based on Google Sheets data. 
 The generated website will be a fast-loading static progressive web app with SEO and offline capabilities.
 
-## Support & services
+## Buy me a coffee 
+If you find this project helpful in any way, please do support my coffee intake in making this at https://www.buymeacoffee.com/sohafidz. ☕️
 
-**Buy me a coffee:** If you find this project helpful in any way, please do support my coffee intake in making this at https://www.buymeacoffee.com/sohafidz. Any amount is truly appreciated. 
+<style>.bmc-button img{height: 34px !important;width: 35px !important;margin-bottom: 1px !important;box-shadow: none !important;border: none !important;vertical-align: middle !important;}.bmc-button{padding: 7px 15px 7px 10px !important;line-height: 35px !important;height:51px !important;text-decoration: none !important;display:inline-flex !important;color:#ffffff !important;background-color:#79D6B5 !important;border-radius: 5px !important;border: 1px solid transparent !important;padding: 7px 15px 7px 10px !important;font-size: 22px !important;letter-spacing: 0.6px !important;box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;margin: 0 auto !important;font-family:'Cookie', cursive !important;-webkit-box-sizing: border-box !important;box-sizing: border-box !important;}.bmc-button:hover, .bmc-button:active, .bmc-button:focus {-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;text-decoration: none !important;box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;opacity: 0.85 !important;color:#ffffff !important;}</style><link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet"><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/sohafidz"><img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee"><span style="margin-left:5px;font-size:28px !important;">Buy me a coffee</span></a>
 
-**Let me help you:** If you don't want the hassle of going through the docs and/or code, you can get my affordable services to help you get your Websheets up and running at https://services.websheets.co.
 
 # Getting Started 🚀
 
@@ -43,7 +43,7 @@ The generated website will be a fast-loading static progressive web app with SEO
    - `GATSBY_SHEET_URL`="Google-Sheets-URL-With-Quotations"
 4. Create `.env.production` file on the project root and **copy paste** the environment variables from `.env.development`
 
-## Running the Project 🚀
+## Running the Project
 
 ### Running on Dev Environment
 
@@ -66,7 +66,7 @@ Having an issue? The following are common setup mistakes that might have caused 
 - The value of environment variables **MUST** be in between double quotations
 
 
-# Underlying Tech
+# Underlying Tech 🦾
 
 ## Frameworks
 - Gatsby
@@ -97,3 +97,14 @@ Having an issue? The following are common setup mistakes that might have caused 
    ├── postcss.config.js
    └── README.md
 ```
+
+# About
+
+## Contact 
+you may contact me via email 
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
