@@ -1,15 +1,23 @@
-# WebSheets
+# Overview
 
-This is a Gatsby template for creating listing websites based on Google sheets data.
+WebSheets Listing Page is an open-sourced Gatsby template that generates listing websites based on Google Sheets data.
+
+## Support & services
+
+If you find this project helpful in any way, please do support my coffee intake in making this at https://www.buymeacoffee.com/sohafidz. Any amount is truly appreciated. 
+
+If you don't want the hassle of going through the docs and/or code, you can get my services to help at https://services.websheets.co 
+
+# Getting Started 🚀
 
 ## Project Requirements 
 
 1. [Node](https://nodejs.org/en/download/)
 2. [Gatsby CLI](https://www.gatsbyjs.org/tutorial/part-zero/#using-the-gatsby-cli) `npm install -g gatsby-cli`
 
-## Preparing the Project 🚀
+## Preparing the Project 
 
-### Manage your Google Sheets data
+### Manage your Sheets data
 
 1. Make a copy of this [google sheets template](https://docs.google.com/spreadsheets/d/1S-S1dzVsPlbYtYTq_jiXCcVYKf75wFlGxB2fKkdVc7w/copy#gid=1818216905)
 2. Change the privacy setting to allow anyone with the link to view
@@ -56,20 +64,21 @@ Having an issue? The following are common setup mistakes that might have caused 
 - [Google Sheets API](https://console.developers.google.com/apis/library/sheets.googleapis.com) **MUST** be `ENABLED` for the project that you're using the API key of
 - The value of environment variables MUST be in between double quotations
 
-## Underlying Tech
+# Underlying Tech
 
-**Frameworks**
+### Frameworks**
 - Gatsby
 - Typescript
 - TailwindCSS
 - Sheets API
 
-**Configurations**
+### Configurations**
 - SEO and site metadata
 - PWA and offline capabilities
 - Prettier, eslint, husky
 
-**Structure**
+### Structure
+```
    .
    ├── node_modules
    ├── src
@@ -85,3 +94,4 @@ Having an issue? The following are common setup mistakes that might have caused 
    ├── tailwind.config.js
    ├── postcss.config.js
    └── README.md
+```
