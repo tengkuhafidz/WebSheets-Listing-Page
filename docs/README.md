@@ -101,7 +101,7 @@ Having an issue? The following are common setup mistakes that might have caused 
 # About
 
 ## Contact 
-you may contact me via email 
+you may contact me via email at [ha@fidz.dev](mailto:ha@fidz.dev).
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
