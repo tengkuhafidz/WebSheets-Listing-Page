@@ -19,7 +19,7 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
-      resolve: 'gatsby-source-gsheets-all-options',
+      resolve: 'gatsby-source-google-sheets-flexible',
       options: {
         apiKey: process.env.GATSBY_GOOGLE_CREDENTIALS,
         spreadsheetUrl: process.env.GATSBY_SHEET_URL,
@@ -29,7 +29,7 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-gsheets-all-options',
+      resolve: 'gatsby-source-google-sheets-flexible',
       options: {
         apiKey: process.env.GATSBY_GOOGLE_CREDENTIALS,
         spreadsheetUrl: process.env.GATSBY_SHEET_URL,
