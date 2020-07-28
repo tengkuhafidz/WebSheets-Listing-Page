@@ -26,7 +26,7 @@
     "gatsby-plugin-postcss": "^2.3.0",
     "gatsby-plugin-react-helmet": "^3.3.0",
     "gatsby-plugin-typescript": "^2.4.0",
-    "gatsby-source-google-spreadsheets": "^3.0.5",
+    "gatsby-source-google-sheets-flexible": "^1.0.0",
     "lint-staged": "^10.2.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
