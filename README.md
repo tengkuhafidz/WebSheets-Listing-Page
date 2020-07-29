@@ -36,10 +36,9 @@ If you find this project helpful in any way, please do support my coffee intake 
 
 1. Clone [this repo](https://github.com/tengkuhafidz/WebSheets-Listing-Page) `git clone https://github.com/tengkuhafidz/WebSheets-Listing-Page.git`
 2. Run `npm i` to install dependencies
-3. Create `.env.development` file on the project root and add the following environment variables
+3. Create `.env` file on the project root and add the following environment variables
    - `GATSBY_GOOGLE_CREDENTIALS`="Google-Api-Key-With-Quatations"
    - `GATSBY_SHEET_URL`="Google-Sheets-URL-With-Quotations"
-4. Create `.env.production` file on the project root and **copy paste** the environment variables from `.env.development`
 
 ## Running the Project
 

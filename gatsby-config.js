@@ -1,6 +1,4 @@
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
+require('dotenv').config()
 
 /* eslint-disable @typescript-eslint/camelcase */
 module.exports = {
@@ -8,7 +6,7 @@ module.exports = {
     title: 'WebSheets',
     titleTemplate: '%s | WebSheets',
     description: 'Create listing websites with Google Sheets data',
-    author: 'Fidz.Dev',
+    author: 'sohafidz',
     url: 'https://websheets.co', // No trailing slash allowed!
     image: '/app-banner.png', // Path to your image you placed in the 'static' folder
     twitterUsername: 'sohafidz',
