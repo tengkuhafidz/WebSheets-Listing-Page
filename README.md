@@ -18,7 +18,7 @@ If you find this project helpful in any way, please do support my coffee intake 
 
 ### Step 1: Preparing your Sheets data
 
-1. Make a copy of this [google sheets template](https://docs.google.com/spreadsheets/d/1S-S1dzVsPlbYtYTq_jiXCcVYKf75wFlGxB2fKkdVc7w/copy#gid=1818216905)
+1. Make a copy of this [google sheets template](https://docs.google.com/spreadsheets/d/17c2Fy1D5k2P7BkjmJoFIY_eohHBMM806_lHCYKzRtqM/copy#gid=72026853)
 2. Change the privacy setting to allow anyone with the link to view
    - Click the **share button** and change the privacy to `Anyone on the Internet with this link can view`
 3. Fill in the google sheets with the general site information (on the `site` tab) and details of items you want to list \*on the `listing` tab)
