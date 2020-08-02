@@ -51,11 +51,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `GatsbyTSTW`,
-        short_name: `GatsbyTSTW`,
+        name: `WebSheets`,
+        short_name: `WebSheets`,
         start_url: `/`,
-        background_color: `#F7FAFC`,
-        theme_color: `#2B6CB0`,
+        background_color: `#049663`,
+        theme_color: `#049663`,
         display: `standalone`,
         icon: `static/app-icon.png`, // This path is relative to the root of the site.
       },
