@@ -3,9 +3,20 @@
 WebSheets Listing Page is an open-sourced Gatsby template that generates listing/directory websites based on Google Sheets data.
 The generated website will be a fast-loading static progressive web app with SEO and offline capabilities.
 
+## Features
+
+- Manage the site with just Google Sheets
+- PWA and offline capabilities
+- SEO optimised
+- Mobile responsive
+- Dark/light mode
+- Share-page button 
+- Multiple layout combinations
+- Call to action buttons
+
 ## Sponsor Development
 
-If you find this project helpful in any way, please do support my coffee intake in making this at https://www.buymeacoffee.com/sohafidz. ☕️
+If you find this project helpful in any way, you can support my coffee intake in making this at https://www.buymeacoffee.com/sohafidz. ☕️
 
 <style>.bmc-button img{height: 34px !important;width: 35px !important; box-shadow: none !important;border: none !important;vertical-align: middle !important;}.bmc-button{padding: 7px 15px 7px 10px !important;line-height: 35px !important;height:51px !important;text-decoration: none !important;display:inline-flex !important;color:#ffffff !important;background-color:#049663 !important;border-radius: 5px !important;border: 1px solid transparent !important;padding: 7px 15px 7px 10px !important;font-size: 22px !important;letter-spacing: 0.6px !important;box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;margin: 0 auto !important;font-family:'Cookie', cursive !important;-webkit-box-sizing: border-box !important;box-sizing: border-box !important;}.bmc-button:hover, .bmc-button:active, .bmc-button:focus {-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;text-decoration: none !important;box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;opacity: 0.85 !important;color:#ffffff !important;}</style><link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet"><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/sohafidz"><img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee"><span style="margin-left:5px;font-size:28px !important;">Buy me a coffee</span></a>
 
@@ -34,11 +45,10 @@ If you find this project helpful in any way, please do support my coffee intake 
 3. Create the [Google API key](https://console.developers.google.com/apis/credentials) for that project
    - Click **CREATE CREDENTIALS** button and select **API key**
 
-### Step 3: Preparing the Repo
+### Step 3: Preparing the Repository
 
-1. Clone [this repo](https://github.com/tengkuhafidz/WebSheets-Listing-Page) `git clone https://github.com/tengkuhafidz/WebSheets-Listing-Page.git`
-2. Run `npm i` to install dependencies
-3. Create `.env` file on the project root and add the following environment variables
+1. Run `gatsby new [YOUR_SITE_NAME] tengkuhafidz/WebSheets-Listing-Page`
+2. Create `.env` file on the project root and add the following environment variables
    - `GATSBY_GOOGLE_CREDENTIALS`="Google-Api-Key-With-Quatations"
    - `GATSBY_SHEET_URL`="Google-Sheets-URL-With-Quotations"
 
@@ -56,13 +66,14 @@ If you find this project helpful in any way, please do support my coffee intake 
 2. Run `npm run serve`
    - Your site will run at `http://localhost:9000`
 
-## Troubleshooting
+### Troubleshooting
 
 Having an issue? The following are common setup mistakes that might have caused it. Please ensure that the following are set properly.
 
 - Google Sheets privacy settings **MUST** minimally be set to `Anyone on the Internet with this link can view`
 - [Google Sheets API](https://console.developers.google.com/apis/library/sheets.googleapis.com) **MUST** be `ENABLED` for the project that you're using the API key of
 - The value of environment variables **MUST** be in between double quotations
+- Ensure that you have a `.env` file on your project root with the following params: `GATSBY_GOOGLE_CREDENTIALS`, `GATSBY_SHEET_URL`
 
 # Underlying Tech 🦾
 
@@ -73,11 +84,7 @@ Having an issue? The following are common setup mistakes that might have caused 
 - TailwindCSS
 - Google Sheets API
 
-## Configured for you
-
-- SEO and site metadata
-- PWA and offline capabilities
-- Prettier, eslint, husky
+*With prettier, eslint, and husky configured out of the box.*
 
 ## Folder Structure
 

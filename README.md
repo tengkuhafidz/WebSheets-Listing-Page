@@ -3,9 +3,21 @@
 WebSheets Listing Page is an open-sourced Gatsby template that generates listing/directory websites based on Google Sheets data.
 The generated website will be a fast-loading static progressive web app with SEO and offline capabilities.
 
+## Features
+
+- Manage the site with just Google Sheets
+- PWA and offline capabilities
+- SEO optimised
+- Mobile responsive
+- Dark/light mode
+- Share-page button 
+- Multiple layout combinations
+- Call to action buttons
+
 ## Sponsor Development
 
-If you find this project helpful in any way, please do support my coffee intake in making this at https://www.buymeacoffee.com/sohafidz. ☕️
+If you find this project helpful in any way, you can support my coffee intake in making this at https://www.buymeacoffee.com/sohafidz. ☕️
+
 
 # Getting Started 🚀
 
@@ -32,11 +44,10 @@ If you find this project helpful in any way, please do support my coffee intake 
 3. Create the [Google API key](https://console.developers.google.com/apis/credentials) for that project
    - Click **CREATE CREDENTIALS** button and select **API key**
 
-### Step 3: Preparing the Repo
+### Step 3: Preparing the Repository
 
-1. Clone [this repo](https://github.com/tengkuhafidz/WebSheets-Listing-Page) `git clone https://github.com/tengkuhafidz/WebSheets-Listing-Page.git`
-2. Run `npm i` to install dependencies
-3. Create `.env` file on the project root and add the following environment variables
+1. Run `gatsby new [YOUR_SITE_NAME] tengkuhafidz/WebSheets-Listing-Page`
+2. Create `.env` file on the project root and add the following environment variables
    - `GATSBY_GOOGLE_CREDENTIALS`="Google-Api-Key-With-Quatations"
    - `GATSBY_SHEET_URL`="Google-Sheets-URL-With-Quotations"
 
@@ -54,13 +65,14 @@ If you find this project helpful in any way, please do support my coffee intake 
 2. Run `npm run serve`
    - Your site will run at `http://localhost:9000`
 
-## Troubleshooting
+### Troubleshooting
 
 Having an issue? The following are common setup mistakes that might have caused it. Please ensure that the following are set properly.
 
 - Google Sheets privacy settings **MUST** minimally be set to `Anyone on the Internet with this link can view`
 - [Google Sheets API](https://console.developers.google.com/apis/library/sheets.googleapis.com) **MUST** be `ENABLED` for the project that you're using the API key of
 - The value of environment variables **MUST** be in between double quotations
+- Ensure that you have a `.env` file on your project root with the following params: `GATSBY_GOOGLE_CREDENTIALS`, `GATSBY_SHEET_URL`
 
 # Underlying Tech 🦾
 
@@ -71,11 +83,7 @@ Having an issue? The following are common setup mistakes that might have caused 
 - TailwindCSS
 - Google Sheets API
 
-## Configured for you
-
-- SEO and site metadata
-- PWA and offline capabilities
-- Prettier, eslint, husky
+*With prettier, eslint, and husky configured out of the box.*
 
 ## Folder Structure
 
