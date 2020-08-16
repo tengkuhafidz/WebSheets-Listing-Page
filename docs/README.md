@@ -1,16 +1,17 @@
 # Overview 🧐
 
 WebSheets Listing Page is an open-sourced Gatsby template that generates listing/directory websites based on Google Sheets data.
-The generated website will be a fast-loading static progressive web app with SEO and offline capabilities.
 
 ## Features
 
-- Manage the site with just Google Sheets
-- PWA and offline capabilities
-- SEO optimised
-- Mobile responsive
+- Google Sheets as Content Management System (CMS)
+- Fast loading static site
+- Offline capable Progressive Web App (PWA)
+- SEO Optimised
+- Google analytics configured
+- Mobile responsive design
 - Dark/light mode
-- Share-page button 
+- Share-to-socials button
 - Multiple layout combinations
 - Call to action buttons
 
