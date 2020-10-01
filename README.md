@@ -51,7 +51,9 @@ If you find this project helpful in any way, you can support my coffee intake in
 1. Run `gatsby new [YOUR_SITE_NAME] tengkuhafidz/WebSheets-Listing-Page`
 2. Create `.env` file on the project root and add the following environment variables
    - `GATSBY_GOOGLE_CREDENTIALS`="Google-Api-Key-With-Quatations"
-   - `GATSBY_SHEET_URL`="Google-Sheets-URL-With-Quotations"
+   - `GATSBY_SHEET_URL`="Google-Sheets-URL-With-Quotations
+   -"https://github.com/pravin1237/WebSheets-Listing-Page/commit/cf3cd5e42f171b155cb5031771b36f39fcb8a79b
+   
 
 ## Running the Project
 
