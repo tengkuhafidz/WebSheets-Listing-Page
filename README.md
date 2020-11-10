@@ -111,7 +111,7 @@ Having an issue? The following are common setup mistakes that might have caused 
 
 ## Contact
 
-You may contact me via email at [ha@fidz.dev](mailto:ha@fidz.dev).
+You may contact me via email at [h@fidz.dev](mailto:h@fidz.dev).
 
 ## Contributing
 
