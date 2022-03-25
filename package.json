@@ -13,7 +13,9 @@
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix"
+    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0",
@@ -32,7 +34,8 @@
     "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0",
     "typescript": "^3.8.3",
-    "use-react-modal": "^0.0.9"
+    "use-react-modal": "^0.0.9",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@types/react": "^16.9.34",
@@ -62,5 +65,6 @@
     "*.{ts,tsx}": [
       "yarn lint:fix"
     ]
-  }
+  },
+  "snyk": true
 }
