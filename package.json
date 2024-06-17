@@ -19,7 +19,7 @@
     "@fortawesome/fontawesome-free": "^5.13.0",
     "eslint-plugin-react": "^7.20.6",
     "fuse.js": "^5.2.3",
-    "gatsby": "^2.24.49",
+    "gatsby": "^4.0.0",
     "gatsby-plugin-google-gtag": "^2.1.1",
     "gatsby-plugin-manifest": "^2.4.22",
     "gatsby-plugin-offline": "^3.2.22",
